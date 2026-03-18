@@ -1,6 +1,7 @@
 ---
 title: "Data Isolation and Security Controls"
 description: "Data Isolation and Security Controls"
+featurebaseId: "32729718962715"
 ---
 
 ### **Logical Isolation**
@@ -10,4 +11,5 @@ description: "Data Isolation and Security Controls"
 
 ### **Encryption**
 
--   **Data at Rest**: All customer data is encrypted using AES-256 encrypt
+-   **Data at Rest**: All customer data is encrypted using AES-256 encryption. Each tenant’s data is further protected by unique encryption keys.
+-   **Data in Transit**: Communications between customers and our platform are secured with TLS to prevent eavesdropping or tampering.

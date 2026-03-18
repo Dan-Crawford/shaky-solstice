@@ -1,6 +1,7 @@
 ---
 title: "LLM Attack Surface"
 description: "Every enterprise is racing to deploy AI. Gartner projects that over 80% of enterprises will have deployed generative AI applications by 2026, up from just 5% in"
+featurebaseId: "3299939"
 ---
 
 ## The AI Explosion and Its Security Blind Spot
@@ -11,7 +12,7 @@ But security hasn't kept up. Organizations are deploying LLMs faster than they c
 
 This isn't a theoretical concern. It's happening now, at scale, with real consequences.
 
----
+* * *
 
 ## Why LLMs Are a New Class of Attack Surface
 
@@ -35,18 +36,47 @@ The result: 86% of organizations have no inventory or visibility into where thei
 
 The OWASP Top 10 for LLM Applications identifies ten critical vulnerability categories that every LLM deployment faces:
 
-| Category | Risk |
-| --- | --- |
-| **Prompt Injection** | Attackers manipulate inputs to override system instructions, extract data, or hijack model behavior |
-| **Sensitive Information Disclosure** | Models inadvertently expose confidential data from training sets, system prompts, or connected data sources |
-| **Supply Chain Vulnerabilities** | Compromised models, plugins, or third-party components introduce backdoors or malicious behavior |
-| **Data and Model Poisoning** | Corrupted training data leads to compromised or biased model behavior |
-| **Improper Output Handling** | Inadequate validation of LLM-generated content enables downstream injection attacks |
-| **Excessive Agency** | LLMs granted unchecked autonomy to execute actions, call APIs, or modify systems |
-| **System Prompt Leakage** | Exposure of internal system prompts containing sensitive business logic or credentials |
-| **Vector and Embedding Weaknesses** | Vulnerabilities in RAG systems and vector databases that enable data poisoning or extraction |
-| **Misinformation** | False or misleading outputs with real-world business or legal consequences |
-| **Unbounded Consumption** | Uncontrolled resource usage causing financial runaway or denial of service |
+CategoryRisk
+
+**Prompt Injection**
+
+Attackers manipulate inputs to override system instructions, extract data, or hijack model behavior
+
+**Sensitive Information Disclosure**
+
+Models inadvertently expose confidential data from training sets, system prompts, or connected data sources
+
+**Supply Chain Vulnerabilities**
+
+Compromised models, plugins, or third-party components introduce backdoors or malicious behavior
+
+**Data and Model Poisoning**
+
+Corrupted training data leads to compromised or biased model behavior
+
+**Improper Output Handling**
+
+Inadequate validation of LLM-generated content enables downstream injection attacks
+
+**Excessive Agency**
+
+LLMs granted unchecked autonomy to execute actions, call APIs, or modify systems
+
+**System Prompt Leakage**
+
+Exposure of internal system prompts containing sensitive business logic or credentials
+
+**Vector and Embedding Weaknesses**
+
+Vulnerabilities in RAG systems and vector databases that enable data poisoning or extraction
+
+**Misinformation**
+
+False or misleading outputs with real-world business or legal consequences
+
+**Unbounded Consumption**
+
+Uncontrolled resource usage causing financial runaway or denial of service
 
 High and critical-severity AI CVEs have grown from 20 in 2020 to over 640 in 2025. And unlike traditional vulnerabilities, 79% of critical AI findings go unresolved — organizations don't yet have the remediation playbooks.
 
@@ -69,7 +99,7 @@ This isn't theoretical. Production LLM deployments have been compromised repeate
 
 The EU AI Act is already in enforcement, with general-purpose AI obligations taking effect in August 2025 and full high-risk requirements by August 2026. Penalties reach up to EUR 35 million or 7% of worldwide annual turnover. NIST's AI Risk Management Framework is increasingly used as procurement criteria. Organizations deploying LLMs without understanding their attack surface face not just security risk, but regulatory exposure.
 
----
+* * *
 
 ## What Guard Does About It
 
@@ -109,16 +139,39 @@ Guard's LLM vulnerability scanner executes **210+ adversarial attack probes acro
 
 **Vulnerability categories tested:**
 
-| Category | What's Tested |
-| --- | --- |
-| **Jailbreak Attacks** | DAN, AIM, Grandma, ArtPrompts, and other techniques that bypass safety alignment to make the model produce prohibited content |
-| **Prompt Injection** | Base64/ROT13/Morse encoding exploits, tag smuggling, prefix/suffix injection, payload splitting — techniques that slip malicious instructions past input filters |
-| **System Prompt Extraction** | Attempts to make the model reveal its system prompt, which often contains sensitive business logic, API keys, or access credentials |
-| **Data Exfiltration** | Link-based exfiltration, markdown injection, and techniques that trick the model into sending sensitive data to attacker-controlled endpoints |
-| **Context Manipulation** | RAG poisoning, context overflow, and continuation attacks that exploit how models handle retrieved documents and conversation history |
-| **Multi-Turn Attacks** | Crescendo (gradual escalation across conversation turns) and adaptive techniques that evade single-turn safety filters |
-| **Format Exploits** | Markdown injection, YAML/JSON parsing attacks, ANSI escape sequences, and web injection (XSS via LLM output) |
-| **Safety Benchmark Evasion** | Tests against established safety benchmarks to identify gaps in alignment and content filtering |
+CategoryWhat's Tested
+
+**Jailbreak Attacks**
+
+DAN, AIM, Grandma, ArtPrompts, and other techniques that bypass safety alignment to make the model produce prohibited content
+
+**Prompt Injection**
+
+Base64/ROT13/Morse encoding exploits, tag smuggling, prefix/suffix injection, payload splitting — techniques that slip malicious instructions past input filters
+
+**System Prompt Extraction**
+
+Attempts to make the model reveal its system prompt, which often contains sensitive business logic, API keys, or access credentials
+
+**Data Exfiltration**
+
+Link-based exfiltration, markdown injection, and techniques that trick the model into sending sensitive data to attacker-controlled endpoints
+
+**Context Manipulation**
+
+RAG poisoning, context overflow, and continuation attacks that exploit how models handle retrieved documents and conversation history
+
+**Multi-Turn Attacks**
+
+Crescendo (gradual escalation across conversation turns) and adaptive techniques that evade single-turn safety filters
+
+**Format Exploits**
+
+Markdown injection, YAML/JSON parsing attacks, ANSI escape sequences, and web injection (XSS via LLM output)
+
+**Safety Benchmark Evasion**
+
+Tests against established safety benchmarks to identify gaps in alignment and content filtering
 
 **How scanning works:**
 
@@ -126,7 +179,7 @@ The scanner authenticates with each discovered LLM using the API parameters coll
 
 Findings are categorized by type (jailbreak, prompt injection, data exfiltration, etc.) and surfaced as risks in Guard with full proof data — so your security team can see exactly what worked, why it matters, and what to fix.
 
----
+* * *
 
 ## The Discovery-to-Testing Pipeline
 
@@ -153,7 +206,7 @@ External Attack Surface Scanning
 
 This pipeline runs automatically as part of Guard's external attack surface scanning. When a new LLM service appears on your perimeter, Guard discovers it, identifies it, and tests it — without manual intervention.
 
----
+* * *
 
 ## What Users See in the Platform
 
@@ -187,7 +240,7 @@ Each vulnerability finding includes:
 
 Findings follow the same lifecycle as all Guard risks: Triage → Open → Remediated/Accepted.
 
----
+* * *
 
 ## Why This Matters Now
 

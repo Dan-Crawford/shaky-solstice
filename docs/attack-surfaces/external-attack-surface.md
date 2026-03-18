@@ -1,6 +1,7 @@
 ---
 title: "External Attack Surface"
 description: "Your external attack surface is everything an attacker can see from the outside — every domain, IP address, cloud resource, web application, and exposed service"
+featurebaseId: "4121784"
 ---
 
 ## What Is Your External Attack Surface?
@@ -9,7 +10,7 @@ Your external attack surface is everything an attacker can see from the outside 
 
 Guard continuously discovers, inventories, and tests your external attack surface so you can see what attackers see — before they exploit it.
 
----
+* * *
 
 ## Why Customers Add the External Attack Surface
 
@@ -25,7 +26,7 @@ Point-in-time assessments go stale immediately. New subdomains appear, certifica
 
 It extends into cloud provider consoles, code repositories, third-party SaaS integrations, and even SEC filings that reveal subsidiary relationships. Guard's discovery engine follows these connections to map your true perimeter.
 
----
+* * *
 
 ## What Guard Discovers and Tests
 
@@ -35,29 +36,97 @@ Guard's external scanning pipeline operates in phases, each building on the last
 
 Everything starts with a **seed** — a domain, IP range, or cloud account you provide. From that seed, Guard's automated discovery engine expands outward:
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Subdomain Enumeration** | Discovers subdomains via public DNS APIs and active brute-forcing with wildcard detection | Finds forgotten dev/staging servers, shadow IT, and assets outside your known inventory |
-| **DNS Resolution** | Maps every discovered domain to its IP addresses | Reveals shared hosting, CDN usage, and actual infrastructure behind domain names |
-| **Reverse WHOIS** | Finds related domains by registration details (registrant name, email, company) | Uncovers acquired company assets and domains registered by the same team |
-| **WHOIS Enrichment** | Extracts registration data via RDAP, traditional WHOIS, and Whoxy API | Tracks domain expiration (preventing hijacking), identifies registrant patterns |
-| **SEC EDGAR Mining** | Processes SEC 10-K/10-Q filings to extract subsidiary information | Discovers attack surface from corporate subsidiaries that security teams often miss |
-| **TLS Certificate Mining** | Extracts domains from Subject Alternative Names (SANs) in TLS certificates | Reveals internal hostnames and related services exposed in public certificates |
-| **CSP Header Mining** | Extracts third-party domains from Content-Security-Policy headers | Maps your supply chain and identifies which external services your apps trust |
-| **Analytics ID Correlation** | Collects Google Analytics and tracking IDs, then performs reverse lookup via BuiltWith | Links seemingly unrelated properties owned by the same organization |
-| **Favicon Fingerprinting** | Hashes website favicons for similarity analysis | Identifies cloned or related sites even when domains differ |
+CapabilityWhat It DoesWhy It Matters
+
+**Subdomain Enumeration**
+
+Discovers subdomains via public DNS APIs and active brute-forcing with wildcard detection
+
+Finds forgotten dev/staging servers, shadow IT, and assets outside your known inventory
+
+**DNS Resolution**
+
+Maps every discovered domain to its IP addresses
+
+Reveals shared hosting, CDN usage, and actual infrastructure behind domain names
+
+**Reverse WHOIS**
+
+Finds related domains by registration details (registrant name, email, company)
+
+Uncovers acquired company assets and domains registered by the same team
+
+**WHOIS Enrichment**
+
+Extracts registration data via RDAP, traditional WHOIS, and Whoxy API
+
+Tracks domain expiration (preventing hijacking), identifies registrant patterns
+
+**SEC EDGAR Mining**
+
+Processes SEC 10-K/10-Q filings to extract subsidiary information
+
+Discovers attack surface from corporate subsidiaries that security teams often miss
+
+**TLS Certificate Mining**
+
+Extracts domains from Subject Alternative Names (SANs) in TLS certificates
+
+Reveals internal hostnames and related services exposed in public certificates
+
+**CSP Header Mining**
+
+Extracts third-party domains from Content-Security-Policy headers
+
+Maps your supply chain and identifies which external services your apps trust
+
+**Analytics ID Correlation**
+
+Collects Google Analytics and tracking IDs, then performs reverse lookup via BuiltWith
+
+Links seemingly unrelated properties owned by the same organization
+
+**Favicon Fingerprinting**
+
+Hashes website favicons for similarity analysis
+
+Identifies cloned or related sites even when domains differ
 
 ### Network Reconnaissance
 
 Once assets are discovered, Guard maps the network-level exposure:
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Port Scanning** | Scans discovered IPs for open TCP, UDP, and SCTP ports using masscan (IPv4) and nmap (IPv6) | Identifies exposed services — every open port is a potential entry point |
-| **Honeypot Detection** | Flags IPs with >1,000 open ports as honeypots | Prevents wasting scan time on decoy systems |
-| **CDN Detection** | Identifies CDN-hosted IPs and adjusts scanning behavior | Avoids scanning infrastructure you don't own |
-| **CIDR Expansion** | Breaks down large IP ranges into scannable blocks | Ensures complete coverage of your registered IP space |
-| **Service Fingerprinting (Nerva)** | Identifies software versions and generates CPE identifiers across 120+ protocols via probe-based fingerprinting | Maps exactly what software is running, enabling precise vulnerability matching |
+CapabilityWhat It DoesWhy It Matters
+
+**Port Scanning**
+
+Scans discovered IPs for open TCP, UDP, and SCTP ports using masscan (IPv4) and nmap (IPv6)
+
+Identifies exposed services — every open port is a potential entry point
+
+**Honeypot Detection**
+
+Flags IPs with >1,000 open ports as honeypots
+
+Prevents wasting scan time on decoy systems
+
+**CDN Detection**
+
+Identifies CDN-hosted IPs and adjusts scanning behavior
+
+Avoids scanning infrastructure you don't own
+
+**CIDR Expansion**
+
+Breaks down large IP ranges into scannable blocks
+
+Ensures complete coverage of your registered IP space
+
+**Service Fingerprinting (Nerva)**
+
+Identifies software versions and generates CPE identifiers across 120+ protocols via probe-based fingerprinting
+
+Maps exactly what software is running, enabling precise vulnerability matching
 
 #### Nerva: Deep Service Fingerprinting
 
@@ -90,25 +159,73 @@ Nerva supports TCP, UDP, and SCTP transports, outputs structured JSON with CPE i
 
 HTTP/HTTPS services get deeper analysis:
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Web Application Discovery** | Detects web applications from HTTP/HTTPS port attributes with liveness validation | Identifies applications that need web-specific security testing |
-| **Web Crawling (Katana)** | Crawls web applications to discover endpoints, directories, and authentication mechanisms | Maps the application attack surface — every endpoint is a potential vulnerability |
-| **Login Detection** | Identifies authentication pages (Okta SSO, basic auth, username-only auth) | Highlights credential-based attack targets for focused testing |
-| **Screenshot Capture (Gowitness)** | Takes full-page screenshots with network activity recording | Provides visual verification and captures JavaScript-rendered content |
-| **Redirect Analysis** | Follows and analyzes HTTP redirects | Detects open redirect vulnerabilities |
+CapabilityWhat It DoesWhy It Matters
+
+**Web Application Discovery**
+
+Detects web applications from HTTP/HTTPS port attributes with liveness validation
+
+Identifies applications that need web-specific security testing
+
+**Web Crawling (Katana)**
+
+Crawls web applications to discover endpoints, directories, and authentication mechanisms
+
+Maps the application attack surface — every endpoint is a potential vulnerability
+
+**Login Detection**
+
+Identifies authentication pages (Okta SSO, basic auth, username-only auth)
+
+Highlights credential-based attack targets for focused testing
+
+**Screenshot Capture (Gowitness)**
+
+Takes full-page screenshots with network activity recording
+
+Provides visual verification and captures JavaScript-rendered content
+
+**Redirect Analysis**
+
+Follows and analyzes HTTP redirects
+
+Detects open redirect vulnerabilities
 
 ### Vulnerability Detection
 
 With the attack surface mapped, Guard tests for real security issues:
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Nuclei Scanning** | Scans across HTTP, TCP, DNS, SSL, and custom protocols using template-based detection | Covers thousands of known vulnerabilities with continuously updated templates |
-| **Burp Suite Enterprise DAST** | Runs dynamic application security testing against web applications | Deep crawl-and-audit scanning that finds complex web vulnerabilities |
-| **SQL Injection Reconnaissance** | Tests URL parameters for database injection vulnerabilities | SQLi remains one of the most impactful vulnerability classes |
-| **CVE Research** | Correlates discovered services/versions with known CVEs | Connects your specific software versions to real-world exploits |
-| **Template Refinement** | Refines scanning templates based on discovered service types | Focuses scanning on relevant vulnerability classes per target |
+CapabilityWhat It DoesWhy It Matters
+
+**Nuclei Scanning**
+
+Scans across HTTP, TCP, DNS, SSL, and custom protocols using template-based detection
+
+Covers thousands of known vulnerabilities with continuously updated templates
+
+**Burp Suite Enterprise DAST**
+
+Runs dynamic application security testing against web applications
+
+Deep crawl-and-audit scanning that finds complex web vulnerabilities
+
+**SQL Injection Reconnaissance**
+
+Tests URL parameters for database injection vulnerabilities
+
+SQLi remains one of the most impactful vulnerability classes
+
+**CVE Research**
+
+Correlates discovered services/versions with known CVEs
+
+Connects your specific software versions to real-world exploits
+
+**Template Refinement**
+
+Refines scanning templates based on discovered service types
+
+Focuses scanning on relevant vulnerability classes per target
 
 ### Credential Testing (Brutus)
 
@@ -203,11 +320,25 @@ Beyond web vulnerabilities, Guard tests **34 protocol-specific attack vectors** 
 
 ### Secret & Credential Discovery
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Repository Secret Scanning (Titus)** | Scans git repositories across full commit history for API keys, passwords, tokens, and certificates | Exposed credentials are the #1 initial access vector in breaches |
-| **Webpage Secret Extraction** | Parses HTML, JavaScript, and comments for embedded secrets | Catches hardcoded API keys and tokens in client-side code |
-| **Secret Validation** | Tests discovered secrets against source APIs to confirm they're still active | Distinguishes real risk from historical noise |
+CapabilityWhat It DoesWhy It Matters
+
+**Repository Secret Scanning (Titus)**
+
+Scans git repositories across full commit history for API keys, passwords, tokens, and certificates
+
+Exposed credentials are the #1 initial access vector in breaches
+
+**Webpage Secret Extraction**
+
+Parses HTML, JavaScript, and comments for embedded secrets
+
+Catches hardcoded API keys and tokens in client-side code
+
+**Secret Validation**
+
+Tests discovered secrets against source APIs to confirm they're still active
+
+Distinguishes real risk from historical noise
 
 ### Cloud Infrastructure Assessment
 
@@ -219,7 +350,7 @@ For connected cloud accounts, Guard extends external scanning into cloud-native 
 
 **Azure:** Resource enumeration, public access assessment, secret discovery (connection strings, API keys), multi-tenant exposure detection
 
----
+* * *
 
 ## How It All Connects: The Discovery Chain
 
@@ -246,7 +377,7 @@ Seed (domain/IP/CIDR)
 
 Each newly discovered asset re-enters the pipeline — subdomains get resolved, new IPs get port-scanned, new services get fingerprinted and tested. This recursive approach ensures complete coverage.
 
----
+* * *
 
 ## What Users See in the Platform
 
@@ -328,57 +459,149 @@ Full visibility into scanning jobs with:
 -   Bulk operations for managing scan workloads
     
 
----
+* * *
 
 ## Data Model
 
 Guard uses a unified data model linking assets, services, technologies, and vulnerabilities in a queryable graph:
 
-| Entity | Purpose | Key Fields |
-| --- | --- | --- |
-| **Asset** | Any discoverable entity (host, service, app) | DNS, Name, Class (ipv4/ipv6/domain/tld/cidr), Private flag, Status |
-| **Port** | Open network service on an asset | Protocol (tcp/udp), Port number, Service name |
-| **WebApplication** | Web application target | Primary URL, additional URLs, Burp metadata |
-| **Technology** | Detected software/component | CPE string, Name, Version, Source |
-| **CloudResource** | Cloud-hosted resource | Provider, ResourceType, Region, Account |
-| **Risk** | Security vulnerability instance | Name, Severity, Status lifecycle, Priority score, Proof |
-| **Preseed** | Pre-discovery data (WHOIS, EDGAR, CSP, TLS certs) | Type, Value, Display format |
-| **Attribute** | Key-value metadata on any entity | Name, Value, Source capability |
+EntityPurposeKey Fields
+
+**Asset**
+
+Any discoverable entity (host, service, app)
+
+DNS, Name, Class (ipv4/ipv6/domain/tld/cidr), Private flag, Status
+
+**Port**
+
+Open network service on an asset
+
+Protocol (tcp/udp), Port number, Service name
+
+**WebApplication**
+
+Web application target
+
+Primary URL, additional URLs, Burp metadata
+
+**Technology**
+
+Detected software/component
+
+CPE string, Name, Version, Source
+
+**CloudResource**
+
+Cloud-hosted resource
+
+Provider, ResourceType, Region, Account
+
+**Risk**
+
+Security vulnerability instance
+
+Name, Severity, Status lifecycle, Priority score, Proof
+
+**Preseed**
+
+Pre-discovery data (WHOIS, EDGAR, CSP, TLS certs)
+
+Type, Value, Display format
+
+**Attribute**
+
+Key-value metadata on any entity
+
+Name, Value, Source capability
 
 Relationships between entities are stored as graph edges (HAS\_PORT, HAS\_VULNERABILITY, HAS\_TECHNOLOGY, etc.), enabling complex queries like "find all external assets with critical vulnerabilities running Apache."
 
----
+* * *
 
 ## Integration Requirements
 
 Most capabilities work out of the box. Some require credentials for enhanced functionality:
 
-| Credential | Capabilities Enabled | Purpose |
-| --- | --- | --- |
-| **Whoxy API Key** | WHOIS + Reverse WHOIS | Enhanced domain registration lookups |
-| **Apollo.io API Key** | Organization Enumeration | Company and employee intelligence |
-| **BuiltWith API Key** | Web Tag Lookup | Analytics-based domain correlation |
-| **InteractSH** | Nuclei (OOB validation) | Out-of-band vulnerability confirmation |
-| **Burp Suite Enterprise** | Burp DAST Scanning | Dynamic application security testing |
-| **AWS/Azure/GCP Credentials** | Cloud scanning (Nebula) | Cloud infrastructure assessment |
-| **GitHub Token** | Gato, Dependency Confusion | CI/CD and supply chain scanning |
+CredentialCapabilities EnabledPurpose
 
----
+**Whoxy API Key**
+
+WHOIS + Reverse WHOIS
+
+Enhanced domain registration lookups
+
+**Apollo.io API Key**
+
+Organization Enumeration
+
+Company and employee intelligence
+
+**BuiltWith API Key**
+
+Web Tag Lookup
+
+Analytics-based domain correlation
+
+**InteractSH**
+
+Nuclei (OOB validation)
+
+Out-of-band vulnerability confirmation
+
+**Burp Suite Enterprise**
+
+Burp DAST Scanning
+
+Dynamic application security testing
+
+**AWS/Azure/GCP Credentials**
+
+Cloud scanning (Nebula)
+
+Cloud infrastructure assessment
+
+**GitHub Token**
+
+Gato, Dependency Confusion
+
+CI/CD and supply chain scanning
+
+* * *
 
 ## Scanning Intensity Levels
 
 Guard supports configurable scanning intensity so customers can balance thoroughness with operational impact:
 
-| Level | What Runs | Use Case |
-| --- | --- | --- |
-| **Passive** | Minimal — metadata collection only | Initial assessment, read-only environments |
-| **Low** | Discovery and enumeration — DNS, WHOIS, subdomain, certificate mining | Asset inventory without active probing |
-| **Standard** | Full vulnerability scanning — Nuclei, fingerprinting, Janus templates | Regular security monitoring |
-| **High** | Intensive scanning — extended templates, deep crawling, exhaustive port lists | Comprehensive assessments, pre-audit preparation |
+LevelWhat RunsUse Case
+
+**Passive**
+
+Minimal — metadata collection only
+
+Initial assessment, read-only environments
+
+**Low**
+
+Discovery and enumeration — DNS, WHOIS, subdomain, certificate mining
+
+Asset inventory without active probing
+
+**Standard**
+
+Full vulnerability scanning — Nuclei, fingerprinting, Janus templates
+
+Regular security monitoring
+
+**High**
+
+Intensive scanning — extended templates, deep crawling, exhaustive port lists
+
+Comprehensive assessments, pre-audit preparation
 
 Assets can be individually frozen to pause scanning, or set to specific intensity levels based on sensitivity.
 
----
+* * *
 
 ## Summary
 

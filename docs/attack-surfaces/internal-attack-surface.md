@@ -1,6 +1,7 @@
 ---
 title: "Internal Attack Surface"
 description: "Here's the uncomfortable truth about enterprise security: your perimeter will be breached. It's not a matter of if — it's a matter of when and how bad it gets a"
+featurebaseId: "0828398"
 ---
 
 ## The Assume Breach Reality
@@ -17,7 +18,7 @@ A single set of domain credentials typically gives an attacker visibility into e
 
 **This is your internal attack surface.** Not just the services running inside your network, but the trust relationships, permission chains, and configuration weaknesses that connect them. Guard maps this entire landscape — showing you the blast radius of a compromised credential before an attacker ever gets one.
 
----
+* * *
 
 ## Why Enable the Internal Attack Surface
 
@@ -37,7 +38,7 @@ When a security team asks "what's our risk?" — the real question is "if someon
 
 Guard quantifies the blast radius so you can reduce it before it matters.
 
----
+* * *
 
 ## Attack Path Visualization
 
@@ -68,7 +69,7 @@ That's a fundamentally different — and far more actionable — kind of finding
 
 Guard's attack graphs work similarly to how security teams use tools in managed Windows environments to map Azure AD and hybrid identity relationships — but applied continuously and integrated directly into your risk management workflow.
 
----
+* * *
 
 ## How Internal Scanning Works
 
@@ -87,13 +88,27 @@ Unlike external scanning which runs from the cloud, internal scanning requires a
 
 ### Supported Platforms
 
-| Platform | Installer | Agent Service |
-| --- | --- | --- |
-| **Windows** (Server 2008+, Windows 7+) | MSI package | Windows Service |
-| **Linux (Debian/Ubuntu)** | DEB package | systemd service |
-| **Linux (RHEL/CentOS)** | RPM package | systemd service |
+PlatformInstallerAgent Service
 
----
+**Windows** (Server 2008+, Windows 7+)
+
+MSI package
+
+Windows Service
+
+**Linux (Debian/Ubuntu)**
+
+DEB package
+
+systemd service
+
+**Linux (RHEL/CentOS)**
+
+RPM package
+
+systemd service
+
+* * *
 
 ## What Guard Discovers and Tests
 
@@ -101,49 +116,129 @@ Unlike external scanning which runs from the cloud, internal scanning requires a
 
 Guard provides deep visibility into Active Directory misconfigurations and attack paths — the most common vector for lateral movement and privilege escalation in enterprise environments.
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **AD Graph Collection** | Maps users, groups, computers, sessions, ACLs, trust relationships, and local admin rights across the domain | Produces the attack path graph described above — the foundation for understanding your true internal risk posture |
-| **AD Security Posture Assessment** | Analyzes domain configuration against security best practices with risk scoring and remediation recommendations | Identifies weak authentication policies, missing security controls, and configuration drift — the issues that compliance audits catch too late |
-| **Certificate Services Vulnerability Scanning** | Enumerates AD Certificate Services (ADCS) configuration and identifies vulnerable certificate templates (ESC1-ESC8) | Misconfigured certificate templates are one of the fastest paths to domain admin. A single vulnerable template can allow any domain user to impersonate any other user |
-| **GPO Security Auditing** | Scans Group Policy Objects for misconfigurations, unsafe permissions, credential exposure, and privilege escalation vectors | GPOs control security policy for every domain-joined machine. A misconfigured GPO can push plaintext passwords, create backdoors, or weaken security controls domain-wide |
-| **Logon Script Analysis** | Inspects logon scripts for plaintext credentials, unsafe file permissions, exploitable paths, and administrative users with scripts | Logon scripts frequently contain hardcoded passwords and run with elevated privileges — a common and easily exploited weakness |
-| **AD DNS Enumeration** | Enumerates Active Directory-integrated DNS records to discover internal infrastructure | Maps the internal network topology and reveals services that may not appear in asset inventories |
-| **Domain Controller SMB Signing Check** | Verifies whether domain controllers enforce SMB signing | Without SMB signing enforcement, attackers can intercept and relay authentication to gain unauthorized access to domain controllers |
-| **AD Configuration Rules Assessment** | Evaluates Active Directory against a library of security configuration rules with category-based filtering | Provides targeted assessment against specific compliance frameworks or security domains |
+CapabilityWhat It DoesWhy It Matters
+
+**AD Graph Collection**
+
+Maps users, groups, computers, sessions, ACLs, trust relationships, and local admin rights across the domain
+
+Produces the attack path graph described above — the foundation for understanding your true internal risk posture
+
+**AD Security Posture Assessment**
+
+Analyzes domain configuration against security best practices with risk scoring and remediation recommendations
+
+Identifies weak authentication policies, missing security controls, and configuration drift — the issues that compliance audits catch too late
+
+**Certificate Services Vulnerability Scanning**
+
+Enumerates AD Certificate Services (ADCS) configuration and identifies vulnerable certificate templates (ESC1-ESC8)
+
+Misconfigured certificate templates are one of the fastest paths to domain admin. A single vulnerable template can allow any domain user to impersonate any other user
+
+**GPO Security Auditing**
+
+Scans Group Policy Objects for misconfigurations, unsafe permissions, credential exposure, and privilege escalation vectors
+
+GPOs control security policy for every domain-joined machine. A misconfigured GPO can push plaintext passwords, create backdoors, or weaken security controls domain-wide
+
+**Logon Script Analysis**
+
+Inspects logon scripts for plaintext credentials, unsafe file permissions, exploitable paths, and administrative users with scripts
+
+Logon scripts frequently contain hardcoded passwords and run with elevated privileges — a common and easily exploited weakness
+
+**AD DNS Enumeration**
+
+Enumerates Active Directory-integrated DNS records to discover internal infrastructure
+
+Maps the internal network topology and reveals services that may not appear in asset inventories
+
+**Domain Controller SMB Signing Check**
+
+Verifies whether domain controllers enforce SMB signing
+
+Without SMB signing enforcement, attackers can intercept and relay authentication to gain unauthorized access to domain controllers
+
+**AD Configuration Rules Assessment**
+
+Evaluates Active Directory against a library of security configuration rules with category-based filtering
+
+Provides targeted assessment against specific compliance frameworks or security domains
 
 Guard supports both Windows-native collection (running directly on domain-joined machines) and Linux-based collection (using domain credentials from a non-domain machine), giving flexibility in how agents are deployed.
 
 ### Network Security Testing
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Internal Port Scanning** | Scans internal IP ranges and CIDRs for open ports with service version detection | Maps the internal attack surface — discovers services that shouldn't be exposed and validates that only expected services are running |
-| **Network Segmentation Validation** | Tests whether network isolation controls are working by scanning target ranges from the agent's network position | Validates that firewall rules and VLANs are actually preventing unauthorized cross-segment access — the most common gap between security policy and reality |
+CapabilityWhat It DoesWhy It Matters
+
+**Internal Port Scanning**
+
+Scans internal IP ranges and CIDRs for open ports with service version detection
+
+Maps the internal attack surface — discovers services that shouldn't be exposed and validates that only expected services are running
+
+**Network Segmentation Validation**
+
+Tests whether network isolation controls are working by scanning target ranges from the agent's network position
+
+Validates that firewall rules and VLANs are actually preventing unauthorized cross-segment access — the most common gap between security policy and reality
 
 Network segmentation testing supports three modes: quick scan (top 100 ports — only reports if services are reachable), comprehensive scan (top 1000 ports — full results), and custom port ranges for targeted validation.
 
 ### SMB File Share Assessment
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Sensitive File Discovery** | Crawls accessible SMB shares across the domain, analyzing file contents for passwords, API keys, certificates, and other credentials | Credentials stored in file shares are a top lateral movement vector. Attackers routinely find domain admin passwords in scripts, configuration files, and documentation on open shares |
-| **Share Enumeration & Permission Analysis** | Maps all network shares across the domain with access permissions and identifies overly permissive configurations | Reveals which shares are world-readable, which contain sensitive directories, and where access controls don't match security policy |
-| **SMB Share Secret Scanning** | Performs deep content analysis of files on SMB shares using pattern-based secret detection | Finds plaintext credentials, API keys, certificates, and configuration secrets buried in files across the domain |
+CapabilityWhat It DoesWhy It Matters
+
+**Sensitive File Discovery**
+
+Crawls accessible SMB shares across the domain, analyzing file contents for passwords, API keys, certificates, and other credentials
+
+Credentials stored in file shares are a top lateral movement vector. Attackers routinely find domain admin passwords in scripts, configuration files, and documentation on open shares
+
+**Share Enumeration & Permission Analysis**
+
+Maps all network shares across the domain with access permissions and identifies overly permissive configurations
+
+Reveals which shares are world-readable, which contain sensitive directories, and where access controls don't match security policy
+
+**SMB Share Secret Scanning**
+
+Performs deep content analysis of files on SMB shares using pattern-based secret detection
+
+Finds plaintext credentials, API keys, certificates, and configuration secrets buried in files across the domain
 
 ### Database Security Assessment
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **SQL Server Domain Discovery** | Queries Active Directory to find all SQL Server instances registered via Service Principal Names | Discovers database servers that may not be in your asset inventory — shadow IT databases are common in large enterprises |
-| **SQL Server UDP Discovery** | Discovers SQL Server instances via UDP broadcast on the local network | Finds database instances that aren't registered in AD but are accessible on the network |
-| **SQL Server Security Assessment** | Comprehensive assessment covering authentication, linked servers, stored procedures, CLR integration, SQL Agent, and SCCM database access | Identifies SQL Server misconfigurations that enable data access, command execution, or privilege escalation — linked server chaining alone can traverse entire environments |
+CapabilityWhat It DoesWhy It Matters
+
+**SQL Server Domain Discovery**
+
+Queries Active Directory to find all SQL Server instances registered via Service Principal Names
+
+Discovers database servers that may not be in your asset inventory — shadow IT databases are common in large enterprises
+
+**SQL Server UDP Discovery**
+
+Discovers SQL Server instances via UDP broadcast on the local network
+
+Finds database instances that aren't registered in AD but are accessible on the network
+
+**SQL Server Security Assessment**
+
+Comprehensive assessment covering authentication, linked servers, stored procedures, CLR integration, SQL Agent, and SCCM database access
+
+Identifies SQL Server misconfigurations that enable data access, command execution, or privilege escalation — linked server chaining alone can traverse entire environments
 
 ### Internal Web Application Scanning
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Internal Vulnerability Scanning** | Runs template-based vulnerability detection against internal web services covering CVEs, misconfigurations, default credentials, and exposed admin panels | Internal web applications often lack the security scrutiny of public-facing services, yet they frequently contain sensitive data and administrative interfaces |
+CapabilityWhat It DoesWhy It Matters
+
+**Internal Vulnerability Scanning**
+
+Runs template-based vulnerability detection against internal web services covering CVEs, misconfigurations, default credentials, and exposed admin panels
+
+Internal web applications often lack the security scrutiny of public-facing services, yet they frequently contain sensitive data and administrative interfaces
 
 Both Windows and Linux agents support internal web scanning, with template categories including CVEs, exposed panels, default logins, misconfigurations, network services, SSL/TLS, and DNS issues.
 
@@ -164,7 +259,7 @@ Key features for internal testing:
 -   **Manual-only execution** — runs only when explicitly triggered by a security operator
     
 
----
+* * *
 
 ## How It All Connects: The Internal Discovery Chain
 
@@ -198,7 +293,7 @@ Agent Deployed Inside Network
 
 Every finding feeds back into the attack graph. A credential discovered on a file share connects to the user it belongs to. That user's group memberships reveal what systems they can access. Those systems' local admin rights reveal the next hop. Guard connects these dots automatically — turning isolated findings into a map of real attack chains.
 
----
+* * *
 
 ## What Users See in the Platform
 
@@ -245,20 +340,49 @@ Internal findings follow the same lifecycle as external findings:
 -   Remediation recommendations specific to internal findings (AD hardening, GPO fixes, share permissions, etc.)
     
 
----
+* * *
 
 ## Capability Summary
 
 Guard's internal attack surface scanning provides **25+ agent-deployed capabilities** organized by domain:
 
-| Category | Capabilities | Platforms |
-| --- | --- | --- |
-| **Active Directory** | AD graph collection and attack path analysis, security posture assessment, certificate services scanning, GPO auditing, logon script analysis, DNS enumeration, SMB signing checks, configuration rules assessment | Windows + Linux |
-| **Network Security** | Port scanning, network segmentation validation | Windows + Linux |
-| **File Shares** | Sensitive file discovery, share enumeration, permission analysis, secret scanning | Windows + Linux |
-| **Database** | SQL Server domain discovery, UDP discovery, comprehensive security assessment | Windows |
-| **Web Applications** | Internal vulnerability scanning with template-based detection | Windows + Linux |
-| **Credentials** | Multi-protocol credential testing across 24 protocols | Cloud + Agent |
+CategoryCapabilitiesPlatforms
+
+**Active Directory**
+
+AD graph collection and attack path analysis, security posture assessment, certificate services scanning, GPO auditing, logon script analysis, DNS enumeration, SMB signing checks, configuration rules assessment
+
+Windows + Linux
+
+**Network Security**
+
+Port scanning, network segmentation validation
+
+Windows + Linux
+
+**File Shares**
+
+Sensitive file discovery, share enumeration, permission analysis, secret scanning
+
+Windows + Linux
+
+**Database**
+
+SQL Server domain discovery, UDP discovery, comprehensive security assessment
+
+Windows
+
+**Web Applications**
+
+Internal vulnerability scanning with template-based detection
+
+Windows + Linux
+
+**Credentials**
+
+Multi-protocol credential testing across 24 protocols
+
+Cloud + Agent
 
 All capabilities execute through Guard's agent infrastructure with encrypted communication, multi-tenant isolation, and centralized result aggregation. Results integrate directly into the attack path graph — so every finding is contextualized not just as an isolated issue, but as part of the broader picture of what an attacker could actually do inside your network.
 

@@ -1,6 +1,7 @@
 ---
 title: "CICD Pipeline Surface"
 description: "Every modern software organization runs code through a CI/CD pipeline — automated systems that build, test, and deploy software on every code change. These pipe"
+featurebaseId: "9050941"
 ---
 
 ## Your Build Pipeline Is a Target
@@ -11,7 +12,7 @@ Attackers have noticed. CI/CD pipelines have become one of the most consequentia
 
 Guard continuously scans your CI/CD pipeline configurations across GitHub Actions, GitLab CI, Azure DevOps, Jenkins, and more — identifying the misconfigurations, injection vectors, and supply chain risks that attackers exploit before they can be used against you.
 
----
+* * *
 
 ## Why This Keeps Happening
 
@@ -56,7 +57,7 @@ The vulnerability types that enable these attacks are specific to CI/CD:
 
 These patterns exist in YAML configuration files that change with every pull request. No human reviewer can consistently catch them across hundreds of repositories. Guard automates this analysis.
 
----
+* * *
 
 ## What Guard Discovers and Tests
 
@@ -64,14 +65,55 @@ These patterns exist in YAML configuration files that change with every pull req
 
 Guard scans CI/CD configurations across six major platforms:
 
-| Platform | Detection Plugins | Attack Validation | Enumeration |
-| --- | --- | --- | --- |
-| **GitHub Actions** | 11 | 9 | Tokens, repositories, secrets |
-| **GitLab CI** | 8 | 3 | Tokens, projects, groups, secrets, runners, branch protections |
-| **Azure DevOps** | 6 | 9 | Tokens, projects, repos, pipelines, connections, agent pools, users, groups |
-| **Jenkins** | 7 | 3 | Access, jobs, nodes, plugins |
-| **Bitbucket Pipelines** | Supported | — | Repositories |
-| **JFrog** | Scan-only | — | — |
+PlatformDetection PluginsAttack ValidationEnumeration
+
+**GitHub Actions**
+
+11
+
+9
+
+Tokens, repositories, secrets
+
+**GitLab CI**
+
+8
+
+3
+
+Tokens, projects, groups, secrets, runners, branch protections
+
+**Azure DevOps**
+
+6
+
+9
+
+Tokens, projects, repos, pipelines, connections, agent pools, users, groups
+
+**Jenkins**
+
+7
+
+3
+
+Access, jobs, nodes, plugins
+
+**Bitbucket Pipelines**
+
+Supported
+
+—
+
+Repositories
+
+**JFrog**
+
+Scan-only
+
+—
+
+—
 
 **32 detection plugins** identify vulnerabilities. **24 attack plugins** validate exploitability. This isn't just static analysis — Guard can confirm whether a detected vulnerability is actually reachable and exploitable.
 
@@ -81,40 +123,121 @@ Guard's CI/CD scanner uses graph-based analysis with taint tracking to detect vu
 
 **Pipeline Injection Attacks:**
 
-| Detection | What It Finds | Why It Matters |
-| --- | --- | --- |
-| **Workflow Injection** | Attacker-controlled values (PR titles, branch names, issue bodies) interpolated into shell commands via `${{ }}` expressions | The most common CI/CD attack vector — enables arbitrary code execution in your pipeline with a single pull request |
-| **Pwn Request** | `pull_request_target` workflows that check out fork code and execute it with the base repository's secrets | The exact pattern behind tj-actions, Shai-Hulud, and Trivy compromises |
-| **Review Injection** | Code review triggers combined with unsafe operations that allow reviewers to execute arbitrary code | Bypasses the assumption that code review is a security control |
-| **Include Injection** | Remote file inclusion in GitLab CI configurations that can be controlled by attackers | Enables pipeline hijacking through external dependency manipulation |
+DetectionWhat It FindsWhy It Matters
+
+**Workflow Injection**
+
+Attacker-controlled values (PR titles, branch names, issue bodies) interpolated into shell commands via `${{ }}` expressions
+
+The most common CI/CD attack vector — enables arbitrary code execution in your pipeline with a single pull request
+
+**Pwn Request**
+
+`pull_request_target` workflows that check out fork code and execute it with the base repository's secrets
+
+The exact pattern behind tj-actions, Shai-Hulud, and Trivy compromises
+
+**Review Injection**
+
+Code review triggers combined with unsafe operations that allow reviewers to execute arbitrary code
+
+Bypasses the assumption that code review is a security control
+
+**Include Injection**
+
+Remote file inclusion in GitLab CI configurations that can be controlled by attackers
+
+Enables pipeline hijacking through external dependency manipulation
 
 **Supply Chain Risks:**
 
-| Detection | What It Finds | Why It Matters |
-| --- | --- | --- |
-| **Unpinned Actions** | Actions referenced by mutable version tags instead of commit SHA pins | A tag can be silently updated to point to malicious code — exactly how tj-actions was weaponized |
-| **Known Vulnerable Actions** | Actions with published CVEs or known compromise history | Identifies immediate risk from actions your pipelines already depend on |
-| **Artifact Poisoning** | Workflows where untrusted artifacts from PRs are consumed by privileged jobs | Cache and artifact boundaries don't enforce trust separation by default |
-| **Cache Poisoning** | Low-privilege jobs that can poison caches restored by privileged release workflows | Enables persistent backdoors that survive across workflow runs |
-| **Dependency Confusion** | Internal package names shadowed by malicious public packages | Exploits package manager resolution order to substitute attacker-controlled code |
+DetectionWhat It FindsWhy It Matters
+
+**Unpinned Actions**
+
+Actions referenced by mutable version tags instead of commit SHA pins
+
+A tag can be silently updated to point to malicious code — exactly how tj-actions was weaponized
+
+**Known Vulnerable Actions**
+
+Actions with published CVEs or known compromise history
+
+Identifies immediate risk from actions your pipelines already depend on
+
+**Artifact Poisoning**
+
+Workflows where untrusted artifacts from PRs are consumed by privileged jobs
+
+Cache and artifact boundaries don't enforce trust separation by default
+
+**Cache Poisoning**
+
+Low-privilege jobs that can poison caches restored by privileged release workflows
+
+Enables persistent backdoors that survive across workflow runs
+
+**Dependency Confusion**
+
+Internal package names shadowed by malicious public packages
+
+Exploits package manager resolution order to substitute attacker-controlled code
 
 **Permission and Configuration Issues:**
 
-| Detection | What It Finds | Why It Matters |
-| --- | --- | --- |
-| **Excessive Permissions** | Workflows with `write-all` or unnecessary permission grants | Violates principle of least privilege — amplifies blast radius of any compromise |
-| **Self-Hosted Runner Risks** | Public repositories using non-ephemeral self-hosted runners | Any contributor can execute code on your internal infrastructure |
-| **Secrets Exposure** | Secrets available in contexts where they shouldn't be (PR workflows, inherited secrets in reusable workflows) | Leaked secrets enable lateral movement across your entire CI/CD estate |
-| **Token Exposure** | CI tokens accessible in untrusted workflow contexts | The `GITHUB_TOKEN` alone can modify code, create releases, and access private repositories |
-| **TOCTOU Race Conditions** | Time-of-check/time-of-use gaps between approval and execution | Allows approved PRs to be modified between review and merge |
+DetectionWhat It FindsWhy It Matters
+
+**Excessive Permissions**
+
+Workflows with `write-all` or unnecessary permission grants
+
+Violates principle of least privilege — amplifies blast radius of any compromise
+
+**Self-Hosted Runner Risks**
+
+Public repositories using non-ephemeral self-hosted runners
+
+Any contributor can execute code on your internal infrastructure
+
+**Secrets Exposure**
+
+Secrets available in contexts where they shouldn't be (PR workflows, inherited secrets in reusable workflows)
+
+Leaked secrets enable lateral movement across your entire CI/CD estate
+
+**Token Exposure**
+
+CI tokens accessible in untrusted workflow contexts
+
+The `GITHUB_TOKEN` alone can modify code, create releases, and access private repositories
+
+**TOCTOU Race Conditions**
+
+Time-of-check/time-of-use gaps between approval and execution
+
+Allows approved PRs to be modified between review and merge
 
 **AI-Specific CI/CD Risks:**
 
-| Detection | What It Finds | Why It Matters |
-| --- | --- | --- |
-| **AI Token Exfiltration** | Workflows exposing LLM API keys to untrusted contexts | AI tokens can be expensive and grant access to sensitive model interactions |
-| **AI Code Injection** | AI coding assistants executing untrusted code suggestions in CI | Emerging attack vector where prompt injection in PRs triggers malicious code execution |
-| **AI MCP Abuse** | Model Context Protocol tools with excessive CI/CD permissions | New attack surface where AI agents can be manipulated to abuse CI/CD access |
+DetectionWhat It FindsWhy It Matters
+
+**AI Token Exfiltration**
+
+Workflows exposing LLM API keys to untrusted contexts
+
+AI tokens can be expensive and grant access to sensitive model interactions
+
+**AI Code Injection**
+
+AI coding assistants executing untrusted code suggestions in CI
+
+Emerging attack vector where prompt injection in PRs triggers malicious code execution
+
+**AI MCP Abuse**
+
+Model Context Protocol tools with excessive CI/CD permissions
+
+New attack surface where AI agents can be manipulated to abuse CI/CD access
 
 ### Graph-Based Analysis
 
@@ -139,13 +262,37 @@ This approach eliminates the false positives that plague simpler tools. A workfl
 
 Beyond pipeline configuration, Guard monitors your source code management posture:
 
-| Capability | What It Does | Why It Matters |
-| --- | --- | --- |
-| **Repository Enumeration** | Discovers all repositories across GitHub, GitLab, Azure DevOps, and Bitbucket organizations | Maps the full scope of code assets — including repositories created outside normal processes |
-| **Public Exposure Detection** | Identifies newly-created public repositories and private repositories that were recently made public | Catches accidental code exposure before sensitive data leaks |
-| **Secret Scanning** | Scans full git commit history for API keys, passwords, tokens, and certificates with live validation | Exposed credentials are the entry point for the attacks described above — live validation confirms whether they're still active |
-| **GitHub Actions Artifact Scanning** | Searches workflow artifacts for hardcoded secrets in cached build outputs | Finds secrets that survive in CI artifacts long after the workflow that created them has finished |
-| **Dependency Confusion Detection** | Identifies internal packages that could be shadowed by public registry packages | The attack that breached Apple, Microsoft, PayPal, and 35+ other companies in 2021 |
+CapabilityWhat It DoesWhy It Matters
+
+**Repository Enumeration**
+
+Discovers all repositories across GitHub, GitLab, Azure DevOps, and Bitbucket organizations
+
+Maps the full scope of code assets — including repositories created outside normal processes
+
+**Public Exposure Detection**
+
+Identifies newly-created public repositories and private repositories that were recently made public
+
+Catches accidental code exposure before sensitive data leaks
+
+**Secret Scanning**
+
+Scans full git commit history for API keys, passwords, tokens, and certificates with live validation
+
+Exposed credentials are the entry point for the attacks described above — live validation confirms whether they're still active
+
+**GitHub Actions Artifact Scanning**
+
+Searches workflow artifacts for hardcoded secrets in cached build outputs
+
+Finds secrets that survive in CI artifacts long after the workflow that created them has finished
+
+**Dependency Confusion Detection**
+
+Identifies internal packages that could be shadowed by public registry packages
+
+The attack that breached Apple, Microsoft, PayPal, and 35+ other companies in 2021
 
 ### Internal CI/CD Assessment
 
@@ -156,7 +303,7 @@ For organizations running internal GitLab instances, Guard's agent-based scannin
 -   **Internal pipeline scanning** — The same CI/CD scanning engine runs against self-hosted GitLab, Jenkins, and Azure DevOps instances accessible from inside your network
     
 
----
+* * *
 
 ## How It All Connects
 
@@ -185,7 +332,7 @@ Source Code Management Integration
 
 Every finding feeds into Guard's unified risk model alongside external and internal findings — giving security teams a complete picture of their exposure across all attack surfaces.
 
----
+* * *
 
 ## What Users See in the Platform
 
@@ -223,20 +370,49 @@ All discovered repositories appear as assets with:
 -   Pipeline vulnerability count by severity
     
 
----
+* * *
 
 ## Capability Summary
 
 Guard's CI/CD attack surface scanning provides:
 
-| Category | Capabilities | Platforms |
-| --- | --- | --- |
-| **Pipeline Scanning** | 32 detection plugins with graph-based analysis, taint tracking, and gate detection | GitHub Actions, GitLab CI, Azure DevOps, Jenkins, Bitbucket, JFrog |
-| **Attack Validation** | 24 attack plugins that confirm exploitability | GitHub Actions, GitLab CI, Azure DevOps, Jenkins |
-| **Secret Scanning** | Full git history scanning with live credential validation | All Git platforms |
-| **Repository Monitoring** | Enumeration, public exposure detection, dependency confusion scanning | GitHub, GitLab, Azure DevOps, Bitbucket |
-| **AI CI/CD Risks** | Token exfiltration, code injection, MCP abuse, supply chain poisoning detection | GitHub Actions |
-| **Internal CI/CD** | Agent-based scanning for self-hosted GitLab, Jenkins, Azure DevOps | Via Guard agents |
+CategoryCapabilitiesPlatforms
+
+**Pipeline Scanning**
+
+32 detection plugins with graph-based analysis, taint tracking, and gate detection
+
+GitHub Actions, GitLab CI, Azure DevOps, Jenkins, Bitbucket, JFrog
+
+**Attack Validation**
+
+24 attack plugins that confirm exploitability
+
+GitHub Actions, GitLab CI, Azure DevOps, Jenkins
+
+**Secret Scanning**
+
+Full git history scanning with live credential validation
+
+All Git platforms
+
+**Repository Monitoring**
+
+Enumeration, public exposure detection, dependency confusion scanning
+
+GitHub, GitLab, Azure DevOps, Bitbucket
+
+**AI CI/CD Risks**
+
+Token exfiltration, code injection, MCP abuse, supply chain poisoning detection
+
+GitHub Actions
+
+**Internal CI/CD**
+
+Agent-based scanning for self-hosted GitLab, Jenkins, Azure DevOps
+
+Via Guard agents
 
 The CI/CD attack surface is where software supply chain risk lives. Every workflow that runs on a pull request, every action that's referenced by tag, every secret that's available to a pipeline step — these are the decisions that determine whether an attacker who submits a pull request gets a build log or gets your production credentials.
 

@@ -1,6 +1,7 @@
 ---
 title: "Wiz"
 description: "Wiz"
+featurebaseId: "33776864407707"
 ---
 
 ## Overview
@@ -10,4 +11,115 @@ The Wiz integration in PGP enables continuous monitoring of your cloud environme
 ## Features
 
 -   Real-time vulnerability monitoring for internet-exposed virtual machines
--   Detailed vulnerability information including CVSS scores, vendor severity, and remediat
+-   Detailed vulnerability information including CVSS scores, vendor severity, and remediation guidance
+-   Asset tracking with cloud provider and subscription mapping
+-   Continuous monitoring for new security findings
+-   Automatic mapping of vulnerabilities to affected assets
+-   Operating system and IP address tracking for virtual machines
+
+## Prerequisites
+
+Before configuring the Wiz integration, you will need:
+
+-   A Wiz account with administrative access
+-   Wiz Active Scanner license, which is a part of the Wiz Advanced License
+-   Client ID and Client Secret for API access 
+-   Your Wiz API endpoint URL
+
+## Creating a Service Account in Wiz
+
+### 1\. Access Service Account Settings
+
+1.  Sign in to Wiz
+2.  Navigate to Settings > Access Management > Service Accounts 
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b7a-751f-a1c1-f6a5f766feaf/b64u-MDE5YjgwMDEtM2I1Mi03YmZjLTk5YjQtYWJhZjYzYWRlYjk0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=97d2913b8e8a2bad89d0fcb93c5a6be31d8649e2dab20de446a25a6cf601f59c)
+
+### 2\. Create New Service Account
+
+Click "Add Service Account" 
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b2d-744e-a948-3a72685548b5/b64u-MDE5YjgwMDEtM2IwNC03ZWQ0LThmYmQtMWY2ODVkNDI0MGEw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=37a4db0ef7c05c300f1fe4c7b37d9c4e8da27c0991f2a4ce67488db2b3828826)
+
+### 3\. Configure Service Account
+
+On the New Service Account page, configure the following:
+
+-   Name
+-   Select "Custom Integration (GraphQL)" 
+-   Description (optional)
+-   Projects (optional)
+-   Expiration date (optional)
+-   API Scopes
+    -   Select "All - Read all entities \[read:all\]"
+-   Click "Add Service Account"
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3c1d-77ae-a3be-6182efe3b34c/b64u-MDE5YjgwMDEtM2JjYS03MjcyLTg2N2ItZTNjMzliMjUyOGNi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=932d9431007be282b613cd303cf5d5c9b3bf641e224e57ada6f7db2fc0120483)
+
+### 4\. Save Credentials
+
+After creation, you'll see your credentials with the message: "The following keys are your OAuth credentials. They will only be shown once, so copy them now and keep them safe!"
+
+Make sure to copy and securely store both the Client ID and Client Secret.
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3ea7-75b0-8e0b-e14905181a8b/b64u-MDE5YjgwMDEtM2U1OS03MWY1LWE3ZTYtYWIwYWMwNzgzYzMy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6c2dfd7d405337c93ccd63d6a7ebfed158074339c0d306e078e7736a934f4f1a)
+
+## Configure PGP Integration
+
+### 1\. Access Integrations
+
+1.  Log in to PGP
+2.  Navigate to Integrations
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3e69-7e3b-9a40-8f2de1971623/b64u-MDE5YjgwMDEtM2U0MS03MTkwLTk2MGQtNGFlZWYzMDNkZTg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6498cb08d09b420092e62c56a4e1c4abd16dedf633fc1a3469cd75aae91aa20d)
+
+### 2\. Add Integration
+
+1.  Click "Add Integration" 
+2.  Under "Cloud Security Posture Management" find the Wiz integration
+3.  Click Connect
+
+### 3\. Configure Integration
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3f27-7360-8ea4-abcf35891fd3/b64u-MDE5YjgwMDEtM2YwNS03MTFlLTlmYWMtM2NjMWY3NTNhOWZm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d74cb413e4b0a37930aaf68cb0d4a51fe73eebd99d119d011214888bdd434d7f)
+
+#### To obtain the Wiz API URL
+
+1.  Click your initials at the upper right corner of http://Wiz.io
+2.  Select **Tenant Info**
+3.  Under **Tenant Info** you can find your API Endpoint URL
+
+Then configure the integration with:
+
+1.  Add API endpoint URL from Tenant Info
+2.  Add Client ID from Service Account
+3.  Add Client Secret from Service Account
+
+This completes the integration setup.
+
+## Data Collection
+
+Once configured, the Wiz integration will collect:
+
+### Assets
+
+-   Virtual machine details
+-   Operating system information
+-   IP addresses
+-   Cloud provider metadata
+-   Subscription information
+
+### Vulnerabilities
+
+-   CVE details
+-   CVSS scores
+-   Vendor severity ratings
+-   Vulnerability descriptions
+-   Remediation guidance
+-   Affected versions
+-   Fix versions
+-   Related documentation links
+
+Once configured, PGP will import data daily based on your selected import settings.
+
+For assistance with integration setup or optimization, contact our support team at [support@praetorian.com](mailto:support@praetorian.com).

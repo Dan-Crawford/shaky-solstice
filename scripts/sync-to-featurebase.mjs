@@ -41,17 +41,75 @@ function serializeFrontmatter(data, body) {
   return `---\n${lines.join('\n')}\n---\n${body}`;
 }
 
-// --- Category resolution ---
+// --- Collection resolution ---
 
-function resolveCategory(filePath) {
-  // docs/integrations/cloud/aws.md → "Integrations"
+// Cached collection map: folder slug → collection ID
+let collectionMap = null;
+
+async function fetchCollectionMap() {
+  if (collectionMap) return collectionMap;
+
+  const result = await apiRequest('GET', 'collections?limit=100');
+  const collections = result.data || [];
+
+  // Build map: slugified-name → id
+  // Also build parentId map to reconstruct folder paths
+  collectionMap = new Map();
+  const byId = new Map();
+  for (const c of collections) {
+    byId.set(c.id, c);
+  }
+
+  for (const c of collections) {
+    // Build the full folder path for this collection
+    // e.g., Integrations > SIEM → integrations/security-information-and-event-management-(siem)
+    const pathParts = [];
+    let current = c;
+    while (current) {
+      const slug = current.name
+        .toLowerCase()
+        .replace(/\s+/g, '-');
+      pathParts.unshift(slug);
+      current = current.parentId ? byId.get(current.parentId) : null;
+    }
+    const folderPath = pathParts.join('/');
+    collectionMap.set(folderPath, c.id);
+
+    // Also store just the leaf name for simpler matching
+    const leafSlug = c.name.toLowerCase().replace(/\s+/g, '-');
+    if (!collectionMap.has(leafSlug)) {
+      collectionMap.set(leafSlug, c.id);
+    }
+  }
+
+  console.log(`  Loaded ${collections.length} collections from Featurebase`);
+  return collectionMap;
+}
+
+function resolveCollectionId(filePath, collectionMap) {
+  // docs/integrations/security-information-and-event-management-(SIEM)/panther.md
+  // → try full path match, then leaf folder match
   const rel = path.relative(DOCS_DIR, filePath);
-  const topLevel = rel.split(path.sep)[0];
-  // Title-case and replace hyphens
-  return topLevel
-    .split('-')
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+  const parts = rel.split(path.sep);
+  // Remove the filename, keep only directory parts
+  const dirParts = parts.slice(0, -1);
+  if (dirParts.length === 0) return null;
+
+  // Try matching from the deepest subfolder up
+  // First: full path e.g., "integrations/security-information-and-event-management-(siem)"
+  const fullPath = dirParts.join('/').toLowerCase();
+  if (collectionMap.has(fullPath)) return collectionMap.get(fullPath);
+
+  // Second: leaf folder e.g., "security-information-and-event-management-(siem)"
+  const leaf = dirParts[dirParts.length - 1].toLowerCase();
+  if (collectionMap.has(leaf)) return collectionMap.get(leaf);
+
+  // Third: try without parenthetical suffixes
+  // "security-information-and-event-management-(siem)" → "security-information-and-event-management"
+  const leafClean = leaf.replace(/\s*\([^)]*\)\s*/g, '').replace(/-+$/, '');
+  if (collectionMap.has(leafClean)) return collectionMap.get(leafClean);
+
+  return null;
 }
 
 // --- Featurebase API ---
@@ -99,9 +157,10 @@ async function apiRequest(method, endpoint, body, retries = MAX_RETRIES) {
   }
 }
 
-async function createArticle(title, htmlBody, description, isDraft) {
+async function createArticle(title, htmlBody, description, isDraft, parentId) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
+  if (parentId) payload.parentId = parentId;
   // Articles are created as drafts by default — no need to set state
   return apiRequest('POST', 'articles', payload);
 }
@@ -157,8 +216,15 @@ async function processFile(filePath) {
     }
   }
 
+  // Resolve collection from folder structure
+  const collections = await fetchCollectionMap();
+  const parentId = resolveCollectionId(filePath, collections);
+  if (parentId) {
+    console.log(`  Collection: ${filePath} → ${parentId}`);
+  }
+
   // Create new article (or re-create after stale ID)
-  const result = await createArticle(data.title, htmlBody, description, isDraft);
+  const result = await createArticle(data.title, htmlBody, description, isDraft, parentId);
   const newId = result.id;
   console.log(`  Created: ${filePath} → ${newId}`);
 

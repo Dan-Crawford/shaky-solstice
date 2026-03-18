@@ -1,7 +1,6 @@
 ---
 title: "Azure DevOps Integration"
 description: "Azure DevOps Integration"
-featurebaseId: "6028500"
 ---
 
 ## What is Azure DevOps?

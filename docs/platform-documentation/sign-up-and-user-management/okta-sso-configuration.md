@@ -1,7 +1,6 @@
 ---
 title: "Okta SSO Configuration"
 description: "Okta SSO Configuration"
-featurebaseId: "27430843438619"
 ---
 
 ## Praetorian Guard Platform Single Sign-On (SSO) with Okta

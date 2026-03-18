@@ -1,7 +1,6 @@
 ---
 title: "AI Operational Guardrails"
 description: "AI Operational Guardrails"
-featurebaseId: "6739009"
 ---
 
 ## Overview

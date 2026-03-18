@@ -1,7 +1,6 @@
 ---
 title: "Google Chat"
 description: "Google Chat"
-featurebaseId: "32102633422875"
 ---
 
 PGP integrates with workplace messaging services to send push notifications for specified alerts. This guide will walk you through setting up a Google Chat webhook integration with PGP.

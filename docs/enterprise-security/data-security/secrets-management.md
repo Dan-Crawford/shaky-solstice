@@ -1,7 +1,6 @@
 ---
 title: "Secrets Management"
 description: "Secrets Management"
-featurebaseId: "32729327657627"
 ---
 
 # At Praetorian, we prioritize the security of your sensitive information.

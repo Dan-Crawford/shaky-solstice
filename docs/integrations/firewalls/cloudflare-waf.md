@@ -1,7 +1,6 @@
 ---
 title: "Cloudflare WAF"
 description: "Cloudflare WAF"
-featurebaseId: "1488526"
 ---
 
 ## Overview

@@ -1,7 +1,6 @@
 ---
 title: "Guard Platform API Technical User Guide"
 description: "Guard Platform API Technical User Guide"
-featurebaseId: "0563325"
 ---
 
 ## PGP API Technical User Guide

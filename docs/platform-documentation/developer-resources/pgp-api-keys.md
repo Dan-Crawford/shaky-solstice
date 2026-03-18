@@ -1,7 +1,6 @@
 ---
 title: "PGP API Keys"
 description: "PGP API Keys"
-featurebaseId: "38396478804379"
 ---
 
 ## Creating API Keys in PGP

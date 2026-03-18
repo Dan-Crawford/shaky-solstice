@@ -1,7 +1,6 @@
 ---
 title: "Exposure Notifications"
 description: "Exposure Notifications"
-featurebaseId: "34401748825243"
 ---
 
 ## Overview

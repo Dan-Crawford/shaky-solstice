@@ -1,7 +1,6 @@
 ---
 title: "AI Output Accuracy and Grounding"
 description: "AI Output Accuracy and Grounding"
-featurebaseId: "4624739"
 ---
 
 ## Overview

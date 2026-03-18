@@ -1,7 +1,6 @@
 ---
 title: "Seeds"
 description: "Seeds"
-featurebaseId: "31502511811611"
 ---
 
 ## Overview

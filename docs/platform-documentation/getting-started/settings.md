@@ -1,7 +1,6 @@
 ---
 title: "Settings"
 description: "Settings"
-featurebaseId: "31688624061083"
 ---
 
 ## Organization Details

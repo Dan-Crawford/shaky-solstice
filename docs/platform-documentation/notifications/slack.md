@@ -1,7 +1,6 @@
 ---
 title: "Slack"
 description: "Slack"
-featurebaseId: "25815125222171"
 ---
 
 PGP integrates with workplace messaging services to send push notifications for specified alerts. This guide will walk you through setting up a Slack webhook integration with PGP.

@@ -1,7 +1,6 @@
 ---
 title: "Agent Installation and Deployment Guide"
 description: "Agent Installation and Deployment Guide"
-featurebaseId: "33312229744155"
 ---
 
 This guide walks you through the process of installing and deploying the PGP agent (Aegis), tailored for use in assumed breach and internal penetration testing scenarios.

@@ -99,9 +99,8 @@ async function apiRequest(method, endpoint, body, retries = MAX_RETRIES) {
   }
 }
 
-async function createArticle(title, htmlBody, slug, description) {
+async function createArticle(title, htmlBody, description) {
   const payload = { title, body: htmlBody };
-  if (slug) payload.slug = slug;
   if (description) payload.description = description;
   return apiRequest('POST', 'articles', payload);
 }
@@ -133,7 +132,6 @@ async function processFile(filePath) {
   }
 
   const htmlBody = await marked(body);
-  const slug = path.basename(filePath, '.md');
   const description = data.description || '';
 
   if (data.featurebaseId) {
@@ -143,7 +141,7 @@ async function processFile(filePath) {
     return { action: 'updated' };
   } else {
     // Create new article
-    const result = await createArticle(data.title, htmlBody, slug, description);
+    const result = await createArticle(data.title, htmlBody, description);
     const newId = result.id;
     console.log(`  Created: ${filePath} → ${newId}`);
 

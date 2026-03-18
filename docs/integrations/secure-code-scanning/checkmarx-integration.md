@@ -1,7 +1,6 @@
 ---
 title: "Checkmarx Integration"
 description: "Checkmarx Integration"
-featurebaseId: "1410781"
 ---
 
 ### Overview

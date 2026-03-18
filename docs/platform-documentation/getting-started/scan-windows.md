@@ -1,7 +1,6 @@
 ---
 title: "Scan Windows"
 description: "Scan Windows"
-featurebaseId: "34153675332123"
 ---
 
 ## Overview

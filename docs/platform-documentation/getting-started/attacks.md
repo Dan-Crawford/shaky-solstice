@@ -1,7 +1,6 @@
 ---
 title: "Attacks"
 description: "Attacks"
-featurebaseId: "34120518311835"
 ---
 
 ## Attack Page Documentation

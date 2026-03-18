@@ -1,7 +1,6 @@
 ---
 title: "Assets"
 description: "Assets"
-featurebaseId: "31508035893147"
 ---
 
 ## Overview

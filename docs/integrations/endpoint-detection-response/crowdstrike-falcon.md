@@ -1,7 +1,6 @@
 ---
 title: "CrowdStrike Falcon"
 description: "CrowdStrike Falcon"
-featurebaseId: "8161080"
 ---
 
 ### Overview

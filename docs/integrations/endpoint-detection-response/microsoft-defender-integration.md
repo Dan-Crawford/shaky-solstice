@@ -1,7 +1,6 @@
 ---
 title: "Microsoft Defender Integration"
 description: "Microsoft Defender Integration"
-featurebaseId: "40039125090331"
 ---
 
 ## **Overview**

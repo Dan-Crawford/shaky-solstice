@@ -135,23 +135,32 @@ async function processFile(filePath) {
   const description = data.description || '';
 
   if (data.featurebaseId) {
-    // Update existing article
-    await updateArticle(data.featurebaseId, data.title, htmlBody, description);
-    console.log(`  Updated: ${filePath} (${data.featurebaseId})`);
-    return { action: 'updated' };
-  } else {
-    // Create new article
-    const result = await createArticle(data.title, htmlBody, description);
-    const newId = result.id;
-    console.log(`  Created: ${filePath} → ${newId}`);
-
-    // Write ID back to frontmatter
-    data.featurebaseId = newId;
-    const newContent = serializeFrontmatter(data, body);
-    await fs.writeFile(filePath, newContent, 'utf-8');
-
-    return { action: 'created', id: newId, filePath };
+    // Update existing article — fall back to create if 404 (stale ID)
+    try {
+      await updateArticle(data.featurebaseId, data.title, htmlBody, description);
+      console.log(`  Updated: ${filePath} (${data.featurebaseId})`);
+      return { action: 'updated' };
+    } catch (err) {
+      if (err.message.includes('404')) {
+        console.log(`  Stale ID ${data.featurebaseId} for ${filePath} — creating new article`);
+        // Fall through to create
+      } else {
+        throw err;
+      }
+    }
   }
+
+  // Create new article (or re-create after stale ID)
+  const result = await createArticle(data.title, htmlBody, description);
+  const newId = result.id;
+  console.log(`  Created: ${filePath} → ${newId}`);
+
+  // Write ID back to frontmatter
+  data.featurebaseId = newId;
+  const newContent = serializeFrontmatter(data, body);
+  await fs.writeFile(filePath, newContent, 'utf-8');
+
+  return { action: 'created', id: newId, filePath };
 }
 
 async function processDeletedFile(filePath) {

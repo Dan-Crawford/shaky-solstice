@@ -1,7 +1,7 @@
 ---
 title: "Panther"
 description: "Connect the Praetorian Guard Platform with Panther's cloud-native SIEM for consolidated threat detection."
-featurebaseId: "7310828"
+featurebaseId: "9350850"
 ---
 
 ## Overview

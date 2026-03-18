@@ -1,7 +1,7 @@
 ---
 title: "Julius: LLM Service Fingerprinting"
 description: "Julius: LLM Service Fingerprinting"
-featurebaseId: "1575720"
+featurebaseId: "6134460"
 ---
 
 ![Introducing Julius: Open Source LLM Service Fingerprinting](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174a9429121a9ad6de83/019cf336-5373-73dc-b093-9167e8218cf2/b64u-MzduYzhnNWczaS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=44dd588b5851d106dae4d4dcd7365a98860ad69198c20b7f970653090954bcf0)

@@ -1,7 +1,7 @@
 ---
 title: "Vulnerabilities"
 description: "Vulnerabilities"
-featurebaseId: "31566812305691"
+featurebaseId: "7614897"
 ---
 
 ## Vulnerabilities in PGP

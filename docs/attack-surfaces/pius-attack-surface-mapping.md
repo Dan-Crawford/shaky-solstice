@@ -1,7 +1,7 @@
 ---
 title: "Pius: Attack Surface Mapping"
 description: "!Introducing Pius: Open-Source Attack Surface Mapping"
-featurebaseId: "7681218"
+featurebaseId: "7133110"
 ---
 
 ![Introducing Pius: Open-Source Attack Surface Mapping](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174f052a093db795d398/019cf33b-8708-7deb-bc71-beac7ecc192e/b64u-MDBsNmlocWc0OC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260318T020000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=747f16b31b62f4cc5a1d0706c1578f3ae77280f75218b20f3d6a3cc88057945e)

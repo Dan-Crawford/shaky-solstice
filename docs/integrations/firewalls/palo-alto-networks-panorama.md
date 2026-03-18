@@ -1,7 +1,7 @@
 ---
 title: "Palo Alto Networks Panorama"
 description: "Palo Alto Networks Panorama"
-featurebaseId: "1742976"
+featurebaseId: "2883622"
 ---
 
 ## Overview

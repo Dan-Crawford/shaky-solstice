@@ -1,7 +1,7 @@
 ---
 title: "Internal Attack Surface"
-description: "Here's the uncomfortable truth about enterprise security: your perimeter will be breached. It's not a matter of if — it's a matter of when and how bad it gets a"
-featurebaseId: "7719978"
+description: "Why It Matters and What Guard Does"
+featurebaseId: "0828398"
 ---
 
 ## The Assume Breach Reality

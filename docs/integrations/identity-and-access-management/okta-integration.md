@@ -1,7 +1,7 @@
 ---
 title: "Okta Integration"
 description: "Okta Integration"
-featurebaseId: "9928093"
+featurebaseId: "40227495850779"
 ---
 
 The Okta integration in Praetorian Guard Platform (PGP) connects with Okta to provide comprehensive visibility and risk management for Single Sign-On (SSO) applications, enabling automated detection of SSO coverage gaps and potential MFA exposures.
@@ -99,12 +99,12 @@ Note: This document describes the integration with Okta that allows PGP to disco
     -   Find **Okta** under **Single Sign-On**, click **Connect**.
         
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810f3a21178a432e2b3d6/019b8002-353a-7aa2-964e-4a3bfe652171/b64u-MDE5YjgwMDItMzQwNy03MzdkLTlhZjAtOTJmODkxNWFmOGEx.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9d37497d4bc5e93456bb94395aab91a2b388073578ddbf9f6c96fadc5acdd0a4)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810f3a21178a432e2b3d6/019b8002-353a-7aa2-964e-4a3bfe652171/b64u-MDE5YjgwMDItMzQwNy03MzdkLTlhZjAtOTJmODkxNWFmOGEx.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a31a395294f5034e41dec0d2056ac5a356dd9f82308373e92c81ed72bba49c0f)
 
 -   Enter: Okta URL, Client ID, Private Key and click connect
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810f3a21178a432e2b3d6/019b8002-35f7-7d99-a719-c95e3f018a10/b64u-MDE5YjgwMDItMzU5ZC03ZGI0LWI5M2MtOTRlODUwNzQzYjg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=605f0e9298b293bd6f4a8626a5467dc8dacea645feaf9055ec54d80573351b55)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810f3a21178a432e2b3d6/019b8002-35f7-7d99-a719-c95e3f018a10/b64u-MDE5YjgwMDItMzU5ZC03ZGI0LWI5M2MtOTRlODUwNzQzYjg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6fe353a3960cee46e0ee231cce8a34f6ca2656858e8d6725ff10fbdf4c8ac45b)
 
 -   PGP validates credentials and permissions, then fetches and inventories Okta applications.
     

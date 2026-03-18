@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure Integration - Overview (Deep Dive)"
 description: "Microsoft Azure Integration - Overview (Deep Dive)"
-featurebaseId: "8873346"
+featurebaseId: "39513267985051"
 ---
 
 ## Overview
@@ -48,7 +48,7 @@ The provided diagrams illustrate two integration scenarios.
 
 ### Tenant-Level Integration
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f9aa21178a432dfe4b8/019b7ffc-f22b-774e-adc1-5ff1ef2f1926/b64u-MDE5YjdmZmMtZWMyNi03MjU3LThmNzEtY2RjMDY4NTA2MzQz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=738ab558d8f659bb2bde4e8378071dd4c95d5bd88fe5f607f839d2cec9d71290)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f9aa21178a432dfe4b8/019b7ffc-f22b-774e-adc1-5ff1ef2f1926/b64u-MDE5YjdmZmMtZWMyNi03MjU3LThmNzEtY2RjMDY4NTA2MzQz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=82c48415a135e0d192116d456aa63c0437782e7d8167363af070beb18928688a)
 
 1.  **PGP AWS Environment** (left side): Shows PGP's internal components including Cognito Identity Provider (IdP) and Access Broker
 2.  **Customer Azure Tenant Integration** (right side): Shows how PGP connects to your entire Azure tenant
@@ -60,7 +60,7 @@ The provided diagrams illustrate two integration scenarios.
 
 ### Subscription-Level Integration
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f9aa21178a432dfe4b8/019b7ffc-f220-71ef-ba86-21ce1d816385/b64u-MDE5YjdmZmMtZWJmMi03YjBkLTljMzktMjQ1Y2ZkODJmZjM0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=02bc671c265c317505f4c4b25e109fda0f60d1ac76675e83b35599d178ff88e4)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f9aa21178a432dfe4b8/019b7ffc-f220-71ef-ba86-21ce1d816385/b64u-MDE5YjdmZmMtZWJmMi03YjBkLTljMzktMjQ1Y2ZkODJmZjM0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b3c80eb80c89f55ab42d61f06481eba78667fc537daaffe9cf9f117e3015a1df)
 
 1.  Similar AWS environment setup on the left
 2.  **Customer Azure Subscription Integration** (right side): Shows integration limited to a specific subscription within your tenant

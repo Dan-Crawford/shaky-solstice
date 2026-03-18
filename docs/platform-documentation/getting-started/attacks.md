@@ -1,7 +1,7 @@
 ---
 title: "Attacks"
 description: "Attacks"
-featurebaseId: "9028214"
+featurebaseId: "34120518311835"
 ---
 
 ## Attack Page Documentation
@@ -19,7 +19,7 @@ The Attack page consists of two main sections accessible via tabs:
 
 The Attack Paths view displays interactive diagrams showing how attackers might move through your systems. Each path consists of assets (represented as circles) and techniques (represented as rounded rectangles) connected by lines.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-2eeb-7048-b55b-cc3d016274ac/b64u-MDE5YjdmZjUtMmVjNy03ZDU0LTg5ZjAtZmIzNGY5OTFhYmM5.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=007aa60140e189fcd661c2a97797f4d8288a6922936c87d3818506096237c291)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-2eeb-7048-b55b-cc3d016274ac/b64u-MDE5YjdmZjUtMmVjNy03ZDU0LTg5ZjAtZmIzNGY5OTFhYmM5.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e90c4822e1faed793da015dff742d7c6a2618214a3fc82e1a9f787471a77682e)
 
 ### Key Components
 
@@ -39,7 +39,7 @@ Each technique in the attack path is color-coded to indicate its defense status:
 -   Responded (Purple)
 -   Prevented (Green)
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-2fd2-728c-9d8a-81523e336c09/b64u-MDE5YjdmZjUtMmZjOS03Zjk0LTg2MGEtNGE1OGQwMjhlZTc0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=2e6211787929b22d3d4172bbe4286849a0ec99de79fb9c1fa52e65120ee4e4ae)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-2fd2-728c-9d8a-81523e336c09/b64u-MDE5YjdmZjUtMmZjOS03Zjk0LTg2MGEtNGE1OGQwMjhlZTc0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=bd74b364b3fc66486bb6b3ac99b6ae4e2b773ba6b0292767ebd41f8d56921d72)
 
 ### Working with Attack Paths
 
@@ -73,7 +73,7 @@ The MITRE Attacks view provides a comprehensive overview of all MITRE ATT&CK® t
 -   Techniques Grid: Shows techniques for the selected tactic
 -   Defense Levels: Color-coded indicators showing implementation status
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-333e-796a-ba37-f233a595049b/b64u-MDE5YjdmZjUtMzBmYS03Yjg2LTllM2QtZjYxNGM3MDJjODcz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4f220783049bc975c2d4f164e2c17300395d2e6c0a58e75437af3456a47149ef)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d9ea21178a432dbfa73/019b7ff5-333e-796a-ba37-f233a595049b/b64u-MDE5YjdmZjUtMzBmYS03Yjg2LTllM2QtZjYxNGM3MDJjODcz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b7b02a3d8045fed3475704e8029a8add869d5342634b35422aaafdbd52964bf1)
 
 ### Using the MITRE View
 

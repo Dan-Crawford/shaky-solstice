@@ -1,7 +1,7 @@
 ---
 title: "Cloud Attack Surface"
-description: "92% of enterprises now operate multi-cloud environments. The average organization uses two or more IaaS providers and 85+ SaaS applications. Cloud spending has"
-featurebaseId: "9636440"
+description: "Why It Matters and What Guard Does"
+featurebaseId: "2386115"
 ---
 
 ## Your Cloud Is Bigger Than You Think

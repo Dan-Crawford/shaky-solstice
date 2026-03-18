@@ -1,10 +1,10 @@
 ---
 title: "Titus: Secrets Discovery"
 description: "Titus: Secrets Discovery"
-featurebaseId: "6118990"
+featurebaseId: "1254834"
 ---
 
-![Titus — Automated Secret Scanning Now Built Into Guard (And It's Open Source)](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c3768ef67737ebab9/019cf33a-4932-7fba-90e1-90fa0c3d3215/b64u-Y3ozaWRzdTFmeS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e7d1b372d606266d7424b213af67ca83129e09c0b24572248996f35b6b2951d9)
+![Titus — Automated Secret Scanning Now Built Into Guard (And It's Open Source)](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c3768ef67737ebab9/019cf33a-4932-7fba-90e1-90fa0c3d3215/b64u-Y3ozaWRzdTFmeS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=049e88d696c9183689eb64a089193647215bdf68e65b5d9f737189f428c34d58)
 
 Your environments just got a powerful new line of defense. **Titus**, Praetorian's purpose-built secret scanner, is now running natively inside the Praetorian Guard platform — and we've open-sourced the entire thing at [github.com/praetorian-inc/titus](https://github.com/praetorian-inc/titus).
 

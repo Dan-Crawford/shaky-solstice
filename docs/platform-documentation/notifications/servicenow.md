@@ -1,7 +1,7 @@
 ---
 title: "ServiceNow"
 description: "ServiceNow"
-featurebaseId: "9156978"
+featurebaseId: "28130580809499"
 ---
 
 Utilize PGP's continuous monitoring capabilities to identify and address potential security vulnerabilities and feed that critical data into ServiceNow's incident and problem management workflows.
@@ -24,27 +24,27 @@ Learn more about [ServiceNow Scripted REST API here](https://developer.serviceno
 
 In the **Scripted REST APIs** page, click **New** to create a new API endpoint:
 
-![Screenshot 2024-10-21 at 3.27.29 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4ab3-7129-9747-59b6ac3f7783/b64u-MDE5YjgwMDUtNDlhNy03NmQyLTk0OWUtYzM2NjQzOTE4OTg2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=754d6131da9e60184e1bc59e8a28d995b608648fcf1bc30f0801c03540569104)
+![Screenshot 2024-10-21 at 3.27.29 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4ab3-7129-9747-59b6ac3f7783/b64u-MDE5YjgwMDUtNDlhNy03NmQyLTk0OWUtYzM2NjQzOTE4OTg2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b4ede0ca36634f65306883e31eb7ae5a0c0b786e34f48ea6950ef8dc43981ded)
 
 Enter "Praetorian PGP Webhook" in the **Name** field; and enter "praetorian\_PGP\_webhook" in the **API ID** field. Click **Submit** afterwards:
 
-![Screenshot 2024-10-21 at 7.36.47 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4a68-79fe-946a-830e9e6bf406/b64u-MDE5YjgwMDUtNDkzYi03MmRjLWI4MTUtODUzNDRiY2EzZDgw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3fe808acaf90c793969c0001ad7a63a3e79b446dae0c763a48af0838675db82d)
+![Screenshot 2024-10-21 at 7.36.47 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4a68-79fe-946a-830e9e6bf406/b64u-MDE5YjgwMDUtNDkzYi03MmRjLWI4MTUtODUzNDRiY2EzZDgw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0b30c639a6fc18965f4224d063e137e5614ba23f3fb59e4b48de9607fbe6fe1d)
 
 After submitting, a **base API path** will be generated for you. This base path, together with the hostname of your ServiceNow instance, is the **Scripted REST API URL** when configuring the ServiceNow integration in PGP:
 
-![Screenshot 2024-10-21 at 7.38.55 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-49ba-7c31-9bab-f07e0a7de401/b64u-MDE5YjgwMDUtNDhmMi03ZDk3LWFhOGMtMzExYTkzMzU1NjBm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=2fba15580d837402e246812c228880da4f76f28aae0a68130b32bfbd07bdba49)
+![Screenshot 2024-10-21 at 7.38.55 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-49ba-7c31-9bab-f07e0a7de401/b64u-MDE5YjgwMDUtNDhmMi03ZDk3LWFhOGMtMzExYTkzMzU1NjBm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=cc6634ad0da2f1aacfed5bf8025a8eb234f081cbf39ba7451e7302675f8d3690)
 
 Further, create a **resource:**
 
-![Screenshot 2024-10-21 at 7.32.25 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4dee-754e-877a-8f405c61c43c/b64u-MDE5YjgwMDUtNGQ1Ny03MTFhLWIxMmMtNDJhM2Y4MzUzNjM2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=f876bb70874122ca96c03a744f3437f309ff81ab731430949a370b981d57f395)
+![Screenshot 2024-10-21 at 7.32.25 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-4dee-754e-877a-8f405c61c43c/b64u-MDE5YjgwMDUtNGQ1Ny03MTFhLWIxMmMtNDJhM2Y4MzUzNjM2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b16e603b1e16a53bbe26d98c1618af6e036bd0e4efd796f1887454b8806a5c82)
 
 Enter "Notification" in the **Name** field. And "/notification" in the **Relative path** field. Choose `POST` for **HTTP method**.
 
-![Screenshot 2024-10-21 at 8.35.54 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-51dc-7279-93c6-ecb0ad5b6272/b64u-MDE5YjgwMDUtNGZhOS03NzliLWIzMjAtNTlhODNlZmIwYjhk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=385e4f454ba4a54070a0c53cacd2d137c824c7c08f2d0fdb630ff6968c5c3281)
+![Screenshot 2024-10-21 at 8.35.54 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-51dc-7279-93c6-ecb0ad5b6272/b64u-MDE5YjgwMDUtNGZhOS03NzliLWIzMjAtNTlhODNlZmIwYjhk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=cd949a84d83e3c6b69ed5777f2765dc873fa36d7d26288991332ea29e9c60520)
 
 Make sure to enable **Requires authentication.** PGP uses the HTTP Basic Authentication method to authenticate to ServiceNow:
 
-![Screenshot 2024-10-21 at 8.38.40 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-51df-717e-9b6a-87958ce79273/b64u-MDE5YjgwMDUtNTAwOC03MTA2LThlNDYtNWMzYjFjNGNiNDNk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=89dd31b709d6b8f4fcaa5ad3759b7b1851ef614ac23ebb29a3f92ccd4b8b9f7d)
+![Screenshot 2024-10-21 at 8.38.40 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-51df-717e-9b6a-87958ce79273/b64u-MDE5YjgwMDUtNTAwOC03MTA2LThlNDYtNWMzYjFjNGNiNDNk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=37e3a49a361aa2aee3e76ceea6a14978584331eba17412336c4177bf27f8cd0b)
 
 At this point, you have everything you need to configure the ServiceNow integration in PGP.
 
@@ -54,11 +54,11 @@ Log in to ServiceNow with administrator privileges.
 
 For quick navigation, within ServiceNow, at the top right, go to **All**, type **Users** and then navigate to **User Administration → Users**.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5463-7323-a909-7207ff836a4e/b64u-MDE5YjgwMDUtNTQzZS03MTgyLWIxMzgtMWU5NjBkOWE0ZThi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4b8f63a41392f607b9010279d5ad3824d423aed7078ae7c0ef29bc288c5458e4)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5463-7323-a909-7207ff836a4e/b64u-MDE5YjgwMDUtNTQzZS03MTgyLWIxMzgtMWU5NjBkOWE0ZThi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7989aacb4c4e6c09a02ce838bc22e3222d0dfadb93d90a755abb0551816c91fc)
 
 At the top right, click **New**.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-54b1-7d66-ae25-6b245c90098e/b64u-MDE5YjgwMDUtNTQ5YS03MGQyLWFlMjUtZGMxY2ZjYWY1NDE0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d039e355ab1793b35fc00d93c8c48b19838870a0a2795aa511a06e6ef7efa4ef)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-54b1-7d66-ae25-6b245c90098e/b64u-MDE5YjgwMDUtNTQ5YS03MGQyLWFlMjUtZGMxY2ZjYWY1NDE0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9e8881fba26be80e721a391851259ca2c13d449bc336ac8fc418cf732d8efb31)
 
 After configuring the service account to your needs, click submit. To set the service account password, you first need to save the record and then click Set Password.
 
@@ -96,11 +96,11 @@ All together this might look something like this:
 
 Setting up ServiceNow notifications in PGP is straightforward. Begin by navigating to Settings and locating the Notifications section. Here you'll find an "Add Notifications" button that opens a selection of available notification workflows, including ServiceNow alongside other options like Slack, Jira, and Microsoft Teams.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5548-70fc-9c65-62598f6ddbcb/b64u-MDE5YjgwMDUtNTRmMC03ZmIwLTg2YTAtN2U1MGQzNjk0ODFi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e60a097513db4411c4cf5970d9bfdea8361464c032c5d2c13b943f7e04c4fc0c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5548-70fc-9c65-62598f6ddbcb/b64u-MDE5YjgwMDUtNTRmMC03ZmIwLTg2YTAtN2U1MGQzNjk0ODFi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ac1632cf9b5f24d7d1e63d7bac4f0807d65b52a75e8147f471203b97fd3f8cc3)
 
 Click "Connect" on the ServiceNow card to open the configuration dialog. You'll need to provide three key pieces of information: your Scripted REST API URL, Basic Auth Token, and your preferred minimum vulnerability severity threshold (ranging from info to critical). This severity setting lets you control which alerts flow through to your ServiceNow instance based on your organization's needs.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5759-7765-9347-9a39f06d7435/b64u-MDE5YjgwMDUtNTczMi03MzQxLWE4MTgtYTQ3OTZiODkwMGZk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6608356e9d87734308177367223ebe2374a97036925bcbb6f4f7f8546a2d8b3c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-5759-7765-9347-9a39f06d7435/b64u-MDE5YjgwMDUtNTczMi03MzQxLWE4MTgtYTQ3OTZiODkwMGZk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=605bbb9f96a2c0efd16e1ddebdba3234e47e102b91142c302f62be707fe5317a)
 
 **Scripted REST API URL:** This is hostname + Base API path + Relative path. It usually reads like this: _https://your-company.service-now.com/api/snc/praetorian\_PGP\_webhook/notification_.
 
@@ -110,7 +110,7 @@ Click "Connect" on the ServiceNow card to open the configuration dialog. You'll 
 
 Once you set up PGP with ServiceNow, add a handler for the Webhook `POST` request in your ServiceNow instance. ServiceNow supports Javascript in their Scripted REST APIs.
 
-![Screenshot 2024-10-21 at 8.39.59 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-594c-7bb0-ac0c-13917c3dfa80/b64u-MDE5YjgwMDUtNTg4Ni03Yzk5LTk1OTctN2U4ZWJmM2IwNjU3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=62685ca72c08cfe9dfbafb02f077676553265214ac84261d69f1d64013b16dae)
+![Screenshot 2024-10-21 at 8.39.59 PM.png](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811c0a21178a432e437d6/019b8005-594c-7bb0-ac0c-13917c3dfa80/b64u-MDE5YjgwMDUtNTg4Ni03Yzk5LTk1OTctN2U4ZWJmM2IwNjU3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d8034e325c58147c554136efb5e310dc1fb5a5fd37cc74e9d5ef32ad94f145f8)
 
 Your handler should expect to receive a vulnerability payload that reads like the following JSON:
 

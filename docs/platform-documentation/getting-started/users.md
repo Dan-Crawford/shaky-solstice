@@ -1,12 +1,12 @@
 ---
 title: "Users"
 description: "Users"
-featurebaseId: "4811307"
+featurebaseId: "31679852529819"
 ---
 
 The Users page serves as a central hub for managing user access and collaboration within your account. This page is a comprehensive representation of all users who have access to your account, and all of the accounts to which you have access.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580daba21178a432dc1ab6/019b7ff5-645a-73cb-bf89-1b6c88cd271d/b64u-MDE5YjdmZjUtNjJlNy03NmViLWEwYzEtMTkzNTU1ZDE4ODBm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b69a59fc205c27d13af1af1723d7164e244c38a3fb0afe21713a3df9d619a5f8)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580daba21178a432dc1ab6/019b7ff5-645a-73cb-bf89-1b6c88cd271d/b64u-MDE5YjdmZjUtNjJlNy03NmViLWEwYzEtMTkzNTU1ZDE4ODBm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e9acfb26987082807d0422b5e551edc113de8c3eaf409eff5a9a1afffb4bab9d)
 
 ## Authorized Users
 

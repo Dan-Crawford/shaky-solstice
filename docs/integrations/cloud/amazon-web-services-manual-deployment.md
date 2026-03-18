@@ -1,7 +1,7 @@
 ---
 title: "Amazon Web Services - Manual Deployment"
 description: "Amazon Web Services - Manual Deployment"
-featurebaseId: "9571526"
+featurebaseId: "37956239205531"
 ---
 
 This guide walks you through manually integrating your AWS environment with Praetorian Guard Platform (PGP) to enable comprehensive security monitoring and vulnerability assessment across your cloud infrastructure. While we recommend using our Infrastructure as Code (IaC) integration for automated deployment and easier maintenance, the manual deployment process gives you full control over the integration setup while ensuring secure, read-only access to your AWS resources.
@@ -42,13 +42,13 @@ For individual account integration, you'll need to provide:
 -   **Deployment Type**: Manual
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f15a21178a432deedad/019b7ffa-ed2d-7190-bc0a-2fea3bbca00f/b64u-MDE5YjdmZmEtZWNiZC03OWViLTk0ZjAtNDc3OWNhN2FlZDhm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8272937d81fb464e2fb683d540bb5dad4d0fa6538e72d224f624ab968583ca94)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f15a21178a432deedad/019b7ffa-ed2d-7190-bc0a-2fea3bbca00f/b64u-MDE5YjdmZmEtZWNiZC03OWViLTk0ZjAtNDc3OWNhN2FlZDhm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=913a35f07cf4ec375f8e24ea3b12d534d023955731e62bb06e226a8907330487)
 
 ### **Step 2 - Create Cloud Resources**
 
 The system generates a unique external ID for this integration when you submit the form with the required account information.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f15a21178a432deedad/019b7ffa-ec72-7d45-addf-7ccb9dd2faea/b64u-MDE5YjdmZmEtZWM0ZS03YzljLThmNWQtMTVhYjNiZjAxZGI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c48d3a237e0199d3308c464d4b6389b281bdc1ca730338bf374aa60ffb3dc742)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f15a21178a432deedad/019b7ffa-ec72-7d45-addf-7ccb9dd2faea/b64u-MDE5YjdmZmEtZWM0ZS03YzljLThmNWQtMTVhYjNiZjAxZGI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3c8393743de5c4054f40e63fafc3141af20f50d384e33ebb19bd934daa62ec1e)
 
 Copy this external ID as you will user it in AWS later.
 

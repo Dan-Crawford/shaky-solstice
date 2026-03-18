@@ -1,7 +1,7 @@
 ---
 title: "AWS Integration"
 description: "AWS Integration"
-featurebaseId: "0865543"
+featurebaseId: "1098231"
 ---
 
 ## Overview
@@ -360,7 +360,7 @@ The integration has **read-only access** to the following AWS resources:
 
 ### Scan Execution
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/696ee0a9f0623ebed68fe956/019bd938-3255-76cd-83b1-f16db734641c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=2b983f37d6c8f5d839611822af6979dd28845368b889dfe18aa83844c4e5b988)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/696ee0a9f0623ebed68fe956/019bd938-3255-76cd-83b1-f16db734641c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6f8e81a9e9a2cf68d85963e882fa7833772bb9eb6210b0d180f9ff1582e28daa)
 
 ### Continuous Monitoring
 

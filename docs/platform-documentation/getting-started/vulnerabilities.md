@@ -1,7 +1,7 @@
 ---
 title: "Vulnerabilities"
 description: "Vulnerabilities"
-featurebaseId: "0330966"
+featurebaseId: "31566812305691"
 ---
 
 ## Vulnerabilities in PGP
@@ -75,7 +75,7 @@ Welcome to the vulnerabilities page - your central hub for tracking and managing
 
 At the heart of the page is an interactive table displaying all identified vulnerabilities. Each entry provides essential information including severity (ranging from info to critical), current status (pending triage, open, remediated, accepted, or rejected), the specific vulnerability name, affected asset, and the most recent confirmation date. For our managed service customers, you can rest assured that each listed vulnerability has undergone thorough review by our expert engineers.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6f46-7b73-9004-e3a028e8f063/b64u-MDE5YjdmZjQtNmMwNC03MzMyLTk0YzEtMzUxZDY2MGI1M2Vl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b7d89b9f749abbe22d867db7168c51fd0d8720a6ace35124984cd7e8be7c4074)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6f46-7b73-9004-e3a028e8f063/b64u-MDE5YjdmZjQtNmMwNC03MzMyLTk0YzEtMzUxZDY2MGI1M2Vl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=79aa82d040e49a13b77094f9a5b8e479b21135067fa59cbeb66c52e1d3acdfa6)
 
 The table offers flexible filtering options to help you focus on what matters most. You can filter vulnerabilities by severity level, status, or both. When analyzing your security posture, you can select multiple severity levels to get aggregate counts of vulnerabilities matching your criteria.
 
@@ -87,25 +87,25 @@ Each entry expands to reveal detailed information across several tabs:
 
 This is your starting point for understanding the vulnerability. Here you'll find fundamental information about the risk, its potential impact on your systems, and guidance for remediation.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6dc2-7e04-aa42-40084d2841b7/b64u-MDE5YjdmZjQtNmJkNC03Y2M0LTg4YWMtNmRhNjhhNGU2MzI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c8a413b2981dc97cefcfaf0efa3b99ecb551bda6ad511aabf10563a2ee24d453)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6dc2-7e04-aa42-40084d2841b7/b64u-MDE5YjdmZjQtNmJkNC03Y2M0LTg4YWMtNmRhNjhhNGU2MzI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=da467347707e0dda7e58b0c10915a71235d69fa9dd1fb6b36e5fc08c692eddf0)
 
 ### Assets Impacted Tab
 
 Get visibility into the scope of the vulnerability. This tab is particularly useful for domain-level risks where multiple IP addresses might be affected.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6b76-7d59-ac14-daf2106c0802/b64u-MDE5YjdmZjQtNjkzNy03ZDJkLWJmOGYtYTVhZjI2YTY3Zjg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=911a7b599030ef11433ae5d5b419d413df8fd56af27d961e7b1fc244fe6f36d7)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-6b76-7d59-ac14-daf2106c0802/b64u-MDE5YjdmZjQtNjkzNy03ZDJkLWJmOGYtYTVhZjI2YTY3Zjg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0ef5a39ccb38b5780173474760cf98e5cf98bce75abd737436f28bab8c4a6b55)
 
 ### Evidence Tab
 
 Access technical data supporting the vulnerability finding. The below fields offer rich information about the vulnerability. Each vulnerability shows only the fields pertinent to its specific type and discovery method, so some sections may appear blank when they don't apply to that particular finding.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-7435-7e8a-80ee-7d25c1ed240b/b64u-MDE5YjdmZjQtNzJlMi03MzRmLTg1MTgtYThkYmE0NzdjOTE2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=735111f94c811f1f89f672621eb34f9a6cd2b5d14a3b1d87289b6be771fde176)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-7435-7e8a-80ee-7d25c1ed240b/b64u-MDE5YjdmZjQtNzJlMi03MzRmLTg1MTgtYThkYmE0NzdjOTE2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5d1a63581b1642ec7526342203dc7b2d544166df8d063d3c3e581c6bcfd6c996)
 
 ### History Tab
 
 Track the lifecycle of the vulnerability through a chronological log of actions. See status changes, who made them, and when they occurred.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-72ea-7d00-9479-ab60a4cb1ed9/b64u-MDE5YjdmZjQtNzIyYi03NDdkLTkwOWYtZTE2MjFhYzc3ZTFk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=599730281fd0ae9fc6be90e7ca83046fe8ea532609823a2847515141b95aa848)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d6da21178a432db8e79/019b7ff4-72ea-7d00-9479-ab60a4cb1ed9/b64u-MDE5YjdmZjQtNzIyYi03NDdkLTkwOWYtZTE2MjFhYzc3ZTFk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6df0c3a236d3f2ffb7d9f87243c9d959cd31b83c738440cbd857a7014f8a1475)
 
 ### Notes Tab
 

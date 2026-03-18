@@ -1,7 +1,7 @@
 ---
 title: "Settings"
 description: "Settings"
-featurebaseId: "2037480"
+featurebaseId: "31688624061083"
 ---
 
 ## Organization Details
@@ -10,7 +10,7 @@ The Organization Details section allows you to manage your organization's visual
 
 The Organization Details section allows you to manage your organization's visual identity and basic information.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2081-7477-98d1-d1ec442623c9/b64u-MDE5YjdmZjYtMWVmOS03MDg5LTkxNGYtMGY1ODkwOWNjZDI4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6e1ef5b1b0c9e24144351716ff2a1a3e4727ba42dd7e36bea42b222ee3a14525)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2081-7477-98d1-d1ec442623c9/b64u-MDE5YjdmZjYtMWVmOS03MDg5LTkxNGYtMGY1ODkwOWNjZDI4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d7b449f08c1f856dff40a3314d77e8c61c751a1db8558df3c9bbd8a314095dbf)
 
 You can personalize your account by uploading your organization's logo, which will be displayed across the platform and in communications. Simply click the upload area or drag and drop your image file into it. If you need to remove an existing logo, you can do so using the Remove button, reverting to the default avatar.
 
@@ -20,13 +20,13 @@ Your organization's name is a key identifier that appears throughout the platfor
 
 Managing notifications effectively is crucial for staying informed about your system's security status. The notification system allows you to receive alerts through various external integration channels. To begin receiving notifications, click "Add Push Notification" and select your preferred notification channel. The system will guide you through the integration process for your chosen platform.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2077-7a2c-b979-d86e60763186/b64u-MDE5YjdmZjYtMWYwMi03OGQyLWE5NWItN2E3OGQ4MTQ5Y2U5.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8b20ced53357277ebbce2392686b42e0e2d442dd5e241adf2ef5db4e038936b9)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2077-7a2c-b979-d86e60763186/b64u-MDE5YjdmZjYtMWYwMi03OGQyLWE5NWItN2E3OGQ4MTQ5Y2U5.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=75885b7ee2d7d38fdf631d865baf4dbb1e257243b499a8b0bf8795e099d1a168)
 
 ## Exposure Alerts
 
 Exposure Alerts are a critical security feature that monitors and notifies you about externally exposed ports and services. These alerts are categorized as "exposure" vulnerabilities with corresponding severity levels and can be tracked through the vulnerabilities page. You can establish your exposure monitoring preferences through the "Add Alerts" option.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-20be-75e1-87b1-8ac37fa0fc33/b64u-MDE5YjdmZjYtMWYyYy03MDhhLThjYmEtMGQyM2JjNGY2NWI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ef9f23562188a3ec32c8348278a023cebd1ca515fc250a7292b2a2e32ce93426)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-20be-75e1-87b1-8ac37fa0fc33/b64u-MDE5YjdmZjYtMWYyYy03MDhhLThjYmEtMGQyM2JjNGY2NWI2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b10fe081f5c8b6184237354e72866eb6def98474cd4016d2543dc27c49abb308)
 
 ## Single Sign-On (SSO)
 
@@ -44,7 +44,7 @@ To ensure our security assessments run smoothly, we provide specific whitelistin
 
 Customize your application experience through our theme settings. The platform offers three display modes: system, which aligns with your device preferences; dark mode for reduced eye strain in low-light conditions; and light mode for traditional visibility.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2622-7b0e-b7fc-b7653994d034/b64u-MDE5YjdmZjYtMjUzYS03ZjY2LWIxODktODIwNjdiMzk4M2Vl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8e0cd45dd359e9d578c25f764906f57699b1672b2e1d2f9cfa9e6c2b6c0a45d0)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ddca21178a432dc796d/019b7ff6-2622-7b0e-b7fc-b7653994d034/b64u-MDE5YjdmZjYtMjUzYS03ZjY2LWIxODktODIwNjdiMzk4M2Vl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=de5c50b3a391ac175cf38d0a673cf71b2efb742ad14537610c0e1b74e97c5195)
 
 ## Account Management
 

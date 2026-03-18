@@ -1,7 +1,7 @@
 ---
 title: "Palo Alto Networks Panorama"
-description: "Palo Alto Networks Panorama"
-featurebaseId: "8089987"
+description: "Integrate with Panorama"
+featurebaseId: "1742976"
 ---
 
 ## Overview
@@ -130,12 +130,12 @@ Alternatively, the predefined **Superuser (Read Only)** role works but grants br
 1.  In PGP, navigate to **Integrations** and locate **Palo Alto Networks Panorama** under the **Firewall** category.
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b32ade13126e4dc0bfcc55/019cf1d0-f0a3-7dc8-85b6-6d1561ed7ae4/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMDUuMTbigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=be39b50f5e34103ef035ebc5906fce272e87d50d5cd906ca4afc2df835b16919)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b32ade13126e4dc0bfcc55/019cf1d0-f0a3-7dc8-85b6-6d1561ed7ae4/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMDUuMTbigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1a9ae9dcbdcc6908c3e7454e9aae3b07d399ed10debddf64a4647f292ef3691e)
 
 2.  Click Integrate on Palo Alto Network Panorama Card
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b32ade13126e4dc0bfcc55/019cf1cd-c814-7868-8568-9abd2f8f761d/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMDEuNTTigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=878c9de17019dd11c43e0132ecc2f0780e067549b6c0858570e433b8bf288e60)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b32ade13126e4dc0bfcc55/019cf1cd-c814-7868-8568-9abd2f8f761d/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMDEuNTTigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=06e2be4b0065d4313ff1b5b633d2d35b0451a86f349bf267b954d8618459ec30)
 
 2.  Enter values for the following fields and click connect.
     

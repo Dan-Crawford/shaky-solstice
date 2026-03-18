@@ -1,7 +1,7 @@
 ---
 title: "Guard Platform Webhook"
 description: "Guard Platform Webhook"
-featurebaseId: "3168097"
+featurebaseId: "25815155351835"
 ---
 
 The Praetorian Guard Platform (PGP) provides webhook integrations that allow you to send or receive data between your PGP instance and external applications. This enables you to connect tools and systems that don't yet have an official PGP integration.
@@ -12,7 +12,7 @@ The Praetorian Guard Platform (PGP) provides webhook integrations that allow you
 
 Each PGP instance supports one active webhook. In Settings, under the Notifications Settings section, find the "Webhook URL" section.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb024-2b28-7873-b4d1-2178c7dfe21c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=eb37f66034290589ce194376212169b75422bd2a29d9edafc049b9a48c3219e7)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb024-2b28-7873-b4d1-2178c7dfe21c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=283f43da7eadb92fa3d1db9c97470cde5c757a4b9aa4e44b5ad3f0627dd27566)
 
 Click the "Generate URL" button to create your unique PGP Webhook URL.
 
@@ -64,7 +64,7 @@ The PGP platform provides an outgoing webhook integration that sends security no
 
 In Settings, under the Notifications Settings section, find the Outbound Webhooks setup:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb02a-15a7-700c-b421-c057c8562c4c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7ade2280306b1dd10443a45abb136e5126f3bb773ae554579c03d6c92eb66d1e)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb02a-15a7-700c-b421-c057c8562c4c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d12c52bd40cb6bd7721b4930ddcaf7b6b39ab07b159f03d85d55f8825a7dcbae)
 
 **Required Fields:**\- Webhook Name: A friendly identifier for the integration (e.g., "SecOps SQS Queue")- Webhook URL: The target endpoint that will receive POST requests- Severity Threshold: Minimum risk severity level (Medium, High, Critical by default)
 

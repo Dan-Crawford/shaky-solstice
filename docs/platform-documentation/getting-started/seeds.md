@@ -1,7 +1,7 @@
 ---
 title: "Seeds"
 description: "Seeds"
-featurebaseId: "2515854"
+featurebaseId: "31502511811611"
 ---
 
 ## Overview
@@ -23,7 +23,7 @@ You can add the following types of seeds:
 
 ## Seeds Management Interface
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-660d-75a8-9e08-95e641d46b82/b64u-MDE5YjdmZjMtNjU0MS03MzgxLTk4MGEtNTA1MWRiZDFhYTJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8ee47182526b91a7499df14f9e5c39b44d8427a12adfef5218de82fafd134fc6)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-660d-75a8-9e08-95e641d46b82/b64u-MDE5YjdmZjMtNjU0MS03MzgxLTk4MGEtNTA1MWRiZDFhYTJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5b19c51163266689283706653ac1c8d1d75afb33f7c5200fd4781f627b7527ce)
 
 ### Main Table Columns
 
@@ -45,13 +45,13 @@ You can add seeds to PGP either individually or in bulk.
 3.  For single seeds: Enter your seed information in the input field
 4.  For bulk import: Upload a file containing a newline-separated list of seeds
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-647a-7d8b-82cc-5723a09c9044/b64u-MDE5YjdmZjMtNjQ0ZS03MWI2LWJlNDktMTQ2ODc1YmNhODll.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c242086f0c17281a973c1ca7bcb7523b6d6dafb5906620651333f96796d6a42c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-647a-7d8b-82cc-5723a09c9044/b64u-MDE5YjdmZjMtNjQ0ZS03MWI2LWJlNDktMTQ2ODc1YmNhODll.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d0dad996050cd022249840262a61348847bf707abc8f7d3513122c3cda9e3459)
 
 _Note: Seeds you manually add are automatically approved. However, seeds discovered by PGP require approval to verify organizational ownership._
 
 ### Filtering and Search
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-64b0-73bd-b5fe-b8af418bc07a/b64u-MDE5YjdmZjMtNjQ4My03MDJmLTg4OTgtMzhmZmM0ZmZhNTk2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=085675f858167752a20c9e505b6ebc1b2e4bcc0963ce7882e55e2cf80589cf07)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-64b0-73bd-b5fe-b8af418bc07a/b64u-MDE5YjdmZjMtNjQ4My03MDJmLTg4OTgtMzhmZmM0ZmZhNTk2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=bf5b943b834e2e1e05a5cf1215571640deb57da2ea5a2d389b0779cd78ef385a)
 
 ### Available Filters
 
@@ -76,11 +76,11 @@ At the top of the individual seed view, you'll find key information about the se
 -   First detection
 -   Most recent detection
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-6870-7b10-9006-e6b944e779ab/b64u-MDE5YjdmZjMtNjg1Mi03YTRmLTk0MzYtMjMxZjUyOTUzODk0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=640049ec3c5195212ea13984f3742d88c0f291b9dc7d0adce69691bae456344c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-6870-7b10-9006-e6b944e779ab/b64u-MDE5YjdmZjMtNjg1Mi03YTRmLTk0MzYtMjMxZjUyOTUzODk0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ded95b2fe36fc2db8bd8b9296541b9c5191788893d842da5a6c024eb3fb1021f)
 
 ## Detailed Information Tabs
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-6898-772e-894a-a73677aa4a51/b64u-MDE5YjdmZjMtNjg1Ny03MDdmLWJlZTUtMzU4MTBjYjQ0OGU1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=81db9e4f896dcc904edd1bc4c2c71fe07bb9a1121ac16799ce311abb6fcdad44)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d29a21178a432db0497/019b7ff3-6898-772e-894a-a73677aa4a51/b64u-MDE5YjdmZjMtNjg1Ny03MDdmLWJlZTUtMzU4MTBjYjQ0OGU1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=81a0606e340a9174ce15cdfc9832c6ea3be27ebf0655c7d77a9fa4f7794d24ba)
 
 ### Domain Details
 

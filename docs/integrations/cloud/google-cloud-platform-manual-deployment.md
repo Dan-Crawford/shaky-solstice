@@ -1,7 +1,7 @@
 ---
 title: "Google Cloud Platform - Manual Deployment"
 description: "Google Cloud Platform - Manual Deployment"
-featurebaseId: "1261544"
+featurebaseId: "37956553886107"
 ---
 
 This section covers the manual deployment process for integrating Google Cloud Platform with the Praetorian Guard Platform (PGP). While this method provides complete control over each step, we recommend using the Terraform/IaC approach for better consistency and maintainability. Manual deployment requires creating several GCP resources through the Google Cloud Console, with separate processes for organization-level and project-level integrations.
@@ -87,7 +87,7 @@ _Note: the specific values that reference “chariot”, the previous applicatio
         
 6.  The "Assign Roles" pane should look like shown below:
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6d1c-714e-9caf-dd75fd112665/b64u-MDE5YjdmZmMtNmNhNi03ODMxLWIwNWYtYzJiN2ZjZjU4YThl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=901495db17a1d6260ccdba50927e46bf5686610bbc91a2b0d356bd8a78119853)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6d1c-714e-9caf-dd75fd112665/b64u-MDE5YjdmZmMtNmNhNi03ODMxLWIwNWYtYzJiN2ZjZjU4YThl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a75cd13dc087fb94c009febd34c14f7d4384bdece2be0f7e3970c9bcf02fcb0d)
 
 ### **Step 5: Create Workload Identity Pool**
 
@@ -106,7 +106,7 @@ _Note: the specific values that reference “chariot”, the previous applicatio
 4.  Click "Continue"
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6c35-7cc5-9b92-8185caf5bde5/b64u-MDE5YjdmZmMtNmJhYi03MmZhLTg1OGYtMzU5ODUxZmY0MGI4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=cbd3e2ff5e683d8c4515d27db08bf5a028257e043b81d9be6a14a9383b2a3faa)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6c35-7cc5-9b92-8185caf5bde5/b64u-MDE5YjdmZmMtNmJhYi03MmZhLTg1OGYtMzU5ODUxZmY0MGI4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4704c8c5154f6d098fda2b5ba636c6a3561620861ed0d7c7cfdebb2e74d3f07c)
 
 ### **Step 6: Create Workload Identity Provider**
 
@@ -126,14 +126,14 @@ _Note: the specific values that reference “chariot”, the previous applicatio
         
 4.  At this stage, your provider should look like the following screenshot
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6d61-7ff3-9f9c-adb5d99041da/b64u-MDE5YjdmZmMtNmNjZS03NmZhLTk1OWEtMDRmZTk0MTExZjIz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0ec75f464c20b4a419ad3a189075db4f68fd2ad452320e16d216f24aef5ebc8e)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-6d61-7ff3-9f9c-adb5d99041da/b64u-MDE5YjdmZmMtNmNjZS03NmZhLTk1OWEtMDRmZTk0MTExZjIz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=61ccd9e8ac136ba110d460a3082cc6688be7ef7e5fef1b2a965745a84e585299)
 5.  For the next step, configure attribute mapping:
     
     -   **google.subject**: assertion.sub
         
 6.  Set attribute condition: google.subject=="YOUR-UNIQUE-USERNAME" (this is the Subject value PGP provided you in Step 1)
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-7259-70cb-b3e8-827cc33e66c3/b64u-MDE5YjdmZmMtNzFlZC03MTQ5LTk3YjMtMDUxNTAwYzAyZTIx.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1acb05b03f85c785c4f7d3bbc2f77945dbbb6d2c2bda0a48804a3c564b379082)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-7259-70cb-b3e8-827cc33e66c3/b64u-MDE5YjdmZmMtNzFlZC03MTQ5LTk3YjMtMDUxNTAwYzAyZTIx.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=2088a23517a07d317b3311772a6e660d3d37d36721d5d6dacee58be05bd0a6f0)
 7.  Make sure that the condition is set appropriately, as this is a requirement to prevent confused deputy attacks
     
 8.  Click "Save"
@@ -157,7 +157,7 @@ _Note: the specific values that reference “chariot”, the previous applicatio
     
 8.  Assign role: "Workload Identity User"
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-720e-72ab-9806-e379658af9ef/b64u-MDE5YjdmZmMtNzFkNC03YTg1LWJkY2YtOGM1ODM2ZmFhNmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b25f776e25813815262af35e6bb8128aa3e7cc16a15faf2f3c8dcbd58a9d99e1)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f79a21178a432dfa8d9/019b7ffc-720e-72ab-9806-e379658af9ef/b64u-MDE5YjdmZmMtNzFkNC03YTg1LWJkY2YtOGM1ODM2ZmFhNmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4d59d398cb27f8a77bbb47a201b5adb71bda598534d1887fafe5039e5c249e7d)
 9.  Click "Save"
     
 

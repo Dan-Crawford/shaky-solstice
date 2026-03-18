@@ -1,7 +1,7 @@
 ---
 title: "Threat Intel"
 description: "Threat Intel"
-featurebaseId: "0472632"
+featurebaseId: "34117068401179"
 ---
 
 ## Threat Intelligence
@@ -38,7 +38,7 @@ The threat intelligence interface is organized into three main sections:
     -   Detailed breakdown of scoring components
     -   Visual representation of severity levels
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dcb0-70fe-97da-1c9381e9542b/b64u-MDE5YjdmZjQtZGM1Zi03NmQwLWJkODgtMjY1ZjMyOTczN2Q3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4b1321383e94d6444af354bbaca68e2315e7171b338f5246a663f498025c44)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dcb0-70fe-97da-1c9381e9542b/b64u-MDE5YjdmZjQtZGM1Zi03NmQwLWJkODgtMjY1ZjMyOTczN2Q3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=68ca09d5f526ba9e9b5e48ba03fbfae78d70e37fc0916db56618134527304adf)
 
 ### 2\. Exploitation Activities Tab
 
@@ -56,7 +56,7 @@ The threat intelligence interface is organized into three main sections:
     -   Botnet activity metrics
     -   Ransomware family tracking
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-d936-7f16-aef8-7b12918f0eb6/b64u-MDE5YjdmZjQtZDhjMi03ZDVlLTliMjAtY2YzMWJiMTY4MzIw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b64dc484ed6dd75e8d6f1dddce5391784c53b97a1b524a2aa7d2b4948278519e)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-d936-7f16-aef8-7b12918f0eb6/b64u-MDE5YjdmZjQtZDhjMi03ZDVlLTliMjAtY2YzMWJiMTY4MzIw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4484b8ff477a17bd200afaea37aef673d953808c6913f2ecd5df186efffaa217)
 
 ### 3\. MITRE Tab
 
@@ -69,7 +69,7 @@ The threat intelligence interface is organized into three main sections:
     -   Detailed weakness descriptions
     -   Source attribution and references
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-d957-7158-ac67-91bfeee04212/b64u-MDE5YjdmZjQtZDkwNy03NjA2LWIzNjMtMTk1MjM3YjZlMTM2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0297cd111692db3c4b03a8a2bc4c1b22bcf5f4dce469ee9ac37ca0d4ca071f27)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-d957-7158-ac67-91bfeee04212/b64u-MDE5YjdmZjQtZDkwNy03NjA2LWIzNjMtMTk1MjM3YjZlMTM2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d56fc377be9bf6a8c82583bbfffaa619da972f3636e6af7ae0df057648e297ea)
 
 ## Understanding Risk Metrics
 
@@ -77,12 +77,12 @@ The threat intelligence interface is organized into three main sections:
 
 -   Scores range from 0 to 1
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-de73-743d-b1a8-aad51c577621/b64u-MDE5YjdmZjQtZGU1ZC03ODZlLWE2ODktZmViODQwMjA2MThj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=612f0480375c5dfe488fc374077955bc80c7822a2e5db48b6ad3aa8421ad904f)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-de73-743d-b1a8-aad51c577621/b64u-MDE5YjdmZjQtZGU1ZC03ODZlLWE2ODktZmViODQwMjA2MThj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1d80b48fd7d0588e1399dddaa53c9a363f8fb307d74acf43271e281cee28cb70)
 
 -   Higher scores indicate greater likelihood of exploitation
 -   Percentile ranking shows relative risk compared to other vulnerabilities
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dfeb-7575-8076-3d00b2bfcdae/b64u-MDE5YjdmZjQtZGZjMi03NmE0LWE0NTUtYTczOWQ2OGJlMzk4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b281e02a068d4748af1474c5cdf46af2503d2ee03586243e45a415139d376b04)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dfeb-7575-8076-3d00b2bfcdae/b64u-MDE5YjdmZjQtZGZjMi03NmE0LWE0NTUtYTczOWQ2OGJlMzk4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e0b2b35a93576cf5be4622990ebec544498d23bc2b213981ef50b94bc36f1692)
 
 -   Color-coded indicators:
     -   Critical (≥ 0.9): Red
@@ -96,11 +96,11 @@ The threat intelligence interface is organized into three main sections:
 -   Multiple scoring aspects:
     -   Base Score: Inherent vulnerability characteristics
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dea8-71f7-a671-b0f02b482cf8/b64u-MDE5YjdmZjQtZGU5OS03MGMzLWEyMGUtZmZkNjEyMDIwYmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=e854a81b54d723161b54f7dc4832feb773b6a4dbe863b44ced8ae30f0c5195bf)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-dea8-71f7-a671-b0f02b482cf8/b64u-MDE5YjdmZjQtZGU5OS03MGMzLWEyMGUtZmZkNjEyMDIwYmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=2b45900a78fcec9e15e7a503d643a508099afbed32491ced43a0919d54ccdcc4)
 
 -   Temporal Score: Current exploit status and fixes
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-e3b2-7758-a495-4dbb3f8050bb/b64u-MDE5YjdmZjQtZTM3Yy03ZjVhLTg0NDUtNDUzNjM4NzZlNmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=545e6485ae17609d7aabccbc73be37c08eed6955e17b52fad8add448ef221dd0)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d8aa21178a432dbd188/019b7ff4-e3b2-7758-a495-4dbb3f8050bb/b64u-MDE5YjdmZjQtZTM3Yy03ZjVhLTg0NDUtNDUzNjM4NzZlNmJh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8c13544309f87f104e2ffa00121fd1fee0a9aa8590908dec56a77756cbc4a7c3)
 
 -   Detailed vector strings showing:
     -   Attack complexity

@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Teams"
 description: "Microsoft Teams"
-featurebaseId: "0928059"
+featurebaseId: "28141550592411"
 ---
 
 PGP integrates seamlessly with workplace messaging service Microsoft Teams to send push notifications for specified alerts. Here's a step-by-step guide to set up notifications in Microsoft Teams.
@@ -13,14 +13,14 @@ First, you'll need to decide where in Teams you want to see your PGP alerts. Pic
 3.  Click on the ellipsis (three dots) next to the channel name.
 4.  Choose "Workflows" from the dropdown menu.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-de4b-7b41-8732-20f8d86e7b3c/b64u-MDE5YjgwMDUtZGUyNC03YTRmLWI2NmYtOTQwZmJhM2MwM2E2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=cd58b256882163cfc20178766dd37d60b48edead321b648e3eade015266640f9)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-de4b-7b41-8732-20f8d86e7b3c/b64u-MDE5YjgwMDUtZGUyNC03YTRmLWI2NmYtOTQwZmJhM2MwM2E2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=bb0c139c49ca74ab05180097aa7066150ff8c6193ec7db20013bde7f53f11542)
 
 Now, you'll want to find the right Workflow.
 
 1.  In the Workflows menu, search for "Post to a channel when a webhook request is received."
 2.  Click on the Workflow to select it.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-dfdb-78fa-b008-0aa67989f39f/b64u-MDE5YjgwMDUtZGZhYy03OWU5LTkxMjctMmFiZDZkNGJjN2I3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b0a6156a8baec50c92fbc1abdede9a61859152a9cd73edf95ba779ed6c9c4f6d)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-dfdb-78fa-b008-0aa67989f39f/b64u-MDE5YjgwMDUtZGZhYy03OWU5LTkxMjctMmFiZDZkNGJjN2I3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ca8043411c4e375ce68c6e7e440c628e71d7782881e49f4b81952300a84ba182)
 
 Once you've identified the right workflow, you can give it a name.
 
@@ -28,21 +28,21 @@ Once you've identified the right workflow, you can give it a name.
 2.  Wait for Teams to confirm the connection is valid.
 3.  Click the "Next" button.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-df47-79a1-b196-9db6aeaa6598/b64u-MDE5YjgwMDUtZGVmZC03M2Q3LWExNWEtOWIxODcwNzczNGU0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9ac841b331ded00f0752a146270cab431ee70fb27893873668a2892752164213)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-df47-79a1-b196-9db6aeaa6598/b64u-MDE5YjgwMDUtZGVmZC03M2Q3LWExNWEtOWIxODcwNzczNGU0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=50fb947612221e098dacf5033173f1ef1171164028d718e49a72a41ca67ea969)
 
 Next, you can check your work and make sure what you have entered is correct.
 
 1.  Ensure the correct channel is selected.
 2.  Click the "Add Workflow" button.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e362-776e-8450-0b5766f4029e/b64u-MDE5YjgwMDUtZTMwNC03YmRlLWExYjUtZDM4ZDBjYjAwYjRk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7960b0bde8d4dbe702d5236ea4291b8480a57e67a7dd2d71f39095c6fbbcbbf0)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e362-776e-8450-0b5766f4029e/b64u-MDE5YjgwMDUtZTMwNC03YmRlLWExYjUtZDM4ZDBjYjAwYjRk.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=08bdb43a821aac5c7607ab11cfb8f4c703e982823cf899d1da1a18246f62f07a)
 
 With your Workflow created, you'll be presented with a URL that PGP will use to send alerts. 
 
 1.  Copy the webhook URL provided by Teams.
 2.  Click the "Done" button to close the window.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e391-7090-91e5-237cf32814a7/b64u-MDE5YjgwMDUtZTMzMS03ZTFhLTgzZWYtNmFiMDNkMWIzYjU4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=674bba3f39d141ee0c2f3701239c6c83ea5f96d4b6ea74e3d076d3aaa3a114d4)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e391-7090-91e5-237cf32814a7/b64u-MDE5YjgwMDUtZTMzMS03ZTFhLTgzZWYtNmFiMDNkMWIzYjU4.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=accc25f357f8f9af3ace0ee646c8b7dc08b81c20dc02cd89c7a426803a8aa11e)
 
 ## Configuring Notifications in PGP
 
@@ -56,7 +56,7 @@ With Teams is set up to receive alerts, you can set up PGP to send them where th
 6.  Select the minimum severity of vulnerabilities you want to be alerted about.
 7.  Click the "Connect" button to complete the integration.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e2ce-75db-a6e1-40fc4d28c3de/b64u-MDE5YjgwMDUtZTJhZi03OWY3LWFmNjYtYzY2NTc4ODQwZTJm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7b20a7977262d40d34c83b9b694a84545c378729c8985b0c0a0b0a18131aa0ac)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695811e4a21178a432e47e29/019b8005-e2ce-75db-a6e1-40fc4d28c3de/b64u-MDE5YjgwMDUtZTJhZi03OWY3LWFmNjYtYzY2NTc4ODQwZTJm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=df262b65df6dce46d14f6fc234ea9156defcc416d48da2bc3cfd17ccdcb91b4e)
 
 By following these steps, you can ensure that critical alerts from PGP are seamlessly delivered to your chosen Microsoft Teams channel, keeping your team informed and ready to act.
 

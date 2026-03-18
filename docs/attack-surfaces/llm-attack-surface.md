@@ -1,7 +1,7 @@
 ---
 title: "LLM Attack Surface"
-description: "Every enterprise is racing to deploy AI. Gartner projects that over 80% of enterprises will have deployed generative AI applications by 2026, up from just 5% in"
-featurebaseId: "1987011"
+description: "Why It Matters and What Guard Does"
+featurebaseId: "3299939"
 ---
 
 ## The AI Explosion and Its Security Blind Spot

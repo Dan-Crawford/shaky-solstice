@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure - IaC Deployment (Recommended)"
 description: "Microsoft Azure - IaC Deployment (Recommended)"
-featurebaseId: "9929701"
+featurebaseId: "37956598833563"
 ---
 
 This guide walks you through connecting your Azure environment to Praeotian Guard Platform (PGP) for comprehensive security monitoring and management using Infrastructure as Code (IaC) deployment methods. The integration uses Azure's federated identity credentials and role-based access control to provide PGP with the necessary permissions to assess your Azure resources while maintaining security best practices.
@@ -34,7 +34,7 @@ Before starting the integration, ensure you have:
 3.  Choose your integration scope and provide the required information
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-553b-75e5-b08d-c77243a480f9/b64u-MDE5YjdmZmQtNTRlMy03NDI3LWJmMWMtMzM1MWY4YWYyYWM0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=dfb040f14003bc47d3a765b18613864c621c0119d457ac34b5ab58f50a38a3e8)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-553b-75e5-b08d-c77243a480f9/b64u-MDE5YjdmZmQtNTRlMy03NDI3LWJmMWMtMzM1MWY4YWYyYWM0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8e146ed223e7be274d0a27bd336e04c552574b946423a6db7ab5d3721c854ee0)
 
 #### Tenant-Level Integration (Recommended)
 
@@ -69,7 +69,7 @@ After providing your tenant information, PGP will generate the appropriate deplo
 3.  On submission, the next step will ask for an "Application ID", which you will get after completing the infrastructure deployment
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5577-7167-b249-5ccfc538197a/b64u-MDE5YjdmZmQtNTUzNy03NzA5LWE4ZTItMWE3ODFhNTJiODkz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5075ae6060527cd6a28de1d330d2f65a3a5f2dc3e487a0fd2553f54fab7bd727)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5577-7167-b249-5ccfc538197a/b64u-MDE5YjdmZmQtNTUzNy03NzA5LWE4ZTItMWE3ODFhNTJiODkz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ea4991aaa069134ff00b0f8d408c7b819ac7553b11f8237feeeb2274577f0f3f)
 
 ### Step 3: Deploy the Template
 
@@ -90,7 +90,7 @@ Ensure that the credentials you signed in with possess the necessary administrat
 
 If you're integrating at the tenant level, ensure you have access to manage the tenant root management group. To be able to consent to the new application at the tenant root level, you need to grant yourself User Access Administrator, even as a Global Administrator. See the following screenshot to identify where to enable that access:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5625-7d94-b7ed-5c610f99d949/b64u-MDE5YjdmZmQtNTVhNi03OWY4LWI1MjQtZmM2NmJmYzM3MjVl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=bd0726938c053568d09ecb3832515e543e60845d771e204b5d80aae959043234)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5625-7d94-b7ed-5c610f99d949/b64u-MDE5YjdmZmQtNTVhNi03OWY4LWI1MjQtZmM2NmJmYzM3MjVl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b51dcc43336bb243085d2799a35e111eb801cc16cff55ff90dfc05a91c3b0227)
 
 If you're integrating a single subscription, set CLI to use that subscription:
 
@@ -118,7 +118,7 @@ terraform apply
 
 Ensure there are no errors during deployment, then observe the output at the end of the execution output. The deployment will produce an Application ID, which you need to provide back to PGP.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5963-7ddc-a5b5-a8e5b4410fb5/b64u-MDE5YjdmZmQtNTkyZS03YjFmLTljMmMtYWIyODJkODMxNmE1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=51d6905fb7a61ec0331087a539e6919b3e4ca4c6fd1d1f7cd9a33ccac7753fda)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5963-7ddc-a5b5-a8e5b4410fb5/b64u-MDE5YjdmZmQtNTkyZS03YjFmLTljMmMtYWIyODJkODMxNmE1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=00f7b39880f633d1b93761366aa09b71b8d6f0f5da1f486c72a05e8a539d18b4)
 
 Under the hood, the Terraform template performs a number of actions. More specifically, for the tenant-level integration, the template will:
 

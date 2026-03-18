@@ -1,7 +1,7 @@
 ---
 title: "CLI Basics"
-description: "CLI Basics"
-featurebaseId: "7635675"
+description: "Discover the utility of the Praetorian CLI"
+featurebaseId: "0384262"
 ---
 
 ## Take the First Steps in the Praetorian CLI

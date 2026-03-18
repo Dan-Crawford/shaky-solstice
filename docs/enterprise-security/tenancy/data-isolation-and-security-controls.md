@@ -1,7 +1,7 @@
 ---
 title: "Data Isolation and Security Controls"
 description: "Data Isolation and Security Controls"
-featurebaseId: "9955470"
+featurebaseId: "32729718962715"
 ---
 
 ### **Logical Isolation**

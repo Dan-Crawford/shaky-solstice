@@ -1,7 +1,7 @@
 ---
 title: "Wiz"
 description: "Wiz"
-featurebaseId: "6431842"
+featurebaseId: "33776864407707"
 ---
 
 ## Overview
@@ -33,13 +33,13 @@ Before configuring the Wiz integration, you will need:
 1.  Sign in to Wiz
 2.  Navigate to Settings > Access Management > Service Accounts 
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b7a-751f-a1c1-f6a5f766feaf/b64u-MDE5YjgwMDEtM2I1Mi03YmZjLTk5YjQtYWJhZjYzYWRlYjk0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=97d2913b8e8a2bad89d0fcb93c5a6be31d8649e2dab20de446a25a6cf601f59c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b7a-751f-a1c1-f6a5f766feaf/b64u-MDE5YjgwMDEtM2I1Mi03YmZjLTk5YjQtYWJhZjYzYWRlYjk0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9feee79ec1b23ef9636b0aa0a8f7a2a0ef32a390e916867e7c752406fdd9170c)
 
 ### 2\. Create New Service Account
 
 Click "Add Service Account" 
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b2d-744e-a948-3a72685548b5/b64u-MDE5YjgwMDEtM2IwNC03ZWQ0LThmYmQtMWY2ODVkNDI0MGEw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=37a4db0ef7c05c300f1fe4c7b37d9c4e8da27c0991f2a4ce67488db2b3828826)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3b2d-744e-a948-3a72685548b5/b64u-MDE5YjgwMDEtM2IwNC03ZWQ0LThmYmQtMWY2ODVkNDI0MGEw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=dfb4903aa347ad97677b9b0ca21a7cd4d2721d760fcdfadec7a4386502b38217)
 
 ### 3\. Configure Service Account
 
@@ -54,7 +54,7 @@ On the New Service Account page, configure the following:
     -   Select "All - Read all entities \[read:all\]"
 -   Click "Add Service Account"
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3c1d-77ae-a3be-6182efe3b34c/b64u-MDE5YjgwMDEtM2JjYS03MjcyLTg2N2ItZTNjMzliMjUyOGNi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=932d9431007be282b613cd303cf5d5c9b3bf641e224e57ada6f7db2fc0120483)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3c1d-77ae-a3be-6182efe3b34c/b64u-MDE5YjgwMDEtM2JjYS03MjcyLTg2N2ItZTNjMzliMjUyOGNi.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7ef889f12a1f31b119ee56319a22a0cad91246a827af0b6f7b7fef455ec5ce01)
 
 ### 4\. Save Credentials
 
@@ -62,7 +62,7 @@ After creation, you'll see your credentials with the message: "The following key
 
 Make sure to copy and securely store both the Client ID and Client Secret.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3ea7-75b0-8e0b-e14905181a8b/b64u-MDE5YjgwMDEtM2U1OS03MWY1LWE3ZTYtYWIwYWMwNzgzYzMy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6c2dfd7d405337c93ccd63d6a7ebfed158074339c0d306e078e7736a934f4f1a)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3ea7-75b0-8e0b-e14905181a8b/b64u-MDE5YjgwMDEtM2U1OS03MWY1LWE3ZTYtYWIwYWMwNzgzYzMy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9473950bcd74b14aee312658bf665ae1e691c452ac865538837aa12b3a7d34e0)
 
 ## Configure PGP Integration
 
@@ -71,7 +71,7 @@ Make sure to copy and securely store both the Client ID and Client Secret.
 1.  Log in to PGP
 2.  Navigate to Integrations
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3e69-7e3b-9a40-8f2de1971623/b64u-MDE5YjgwMDEtM2U0MS03MTkwLTk2MGQtNGFlZWYzMDNkZTg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=6498cb08d09b420092e62c56a4e1c4abd16dedf633fc1a3469cd75aae91aa20d)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3e69-7e3b-9a40-8f2de1971623/b64u-MDE5YjgwMDEtM2U0MS03MTkwLTk2MGQtNGFlZWYzMDNkZTg1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8dbeeccbb6d78ede72f4830e30a5bf25d6891087f42caf1a6e86f912656e405d)
 
 ### 2\. Add Integration
 
@@ -81,7 +81,7 @@ Make sure to copy and securely store both the Client ID and Client Secret.
 
 ### 3\. Configure Integration
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3f27-7360-8ea4-abcf35891fd3/b64u-MDE5YjgwMDEtM2YwNS03MTFlLTlmYWMtM2NjMWY3NTNhOWZm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d74cb413e4b0a37930aaf68cb0d4a51fe73eebd99d119d011214888bdd434d7f)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/695810b4a21178a432e234a7/019b8001-3f27-7360-8ea4-abcf35891fd3/b64u-MDE5YjgwMDEtM2YwNS03MTFlLTlmYWMtM2NjMWY3NTNhOWZm.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=68cf00cdd18ca955edf42a6d0fe07cceedc438a67387841c2a7d119c6888a5ec)
 
 #### To obtain the Wiz API URL
 

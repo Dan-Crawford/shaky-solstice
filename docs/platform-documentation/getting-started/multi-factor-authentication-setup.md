@@ -1,7 +1,7 @@
 ---
 title: "Multi-Factor Authentication Setup"
 description: "Multi-Factor Authentication Setup"
-featurebaseId: "3040827"
+featurebaseId: "38331205315099"
 ---
 
 ### **Multi-Factor Authentication (MFA) Setup in PGP**

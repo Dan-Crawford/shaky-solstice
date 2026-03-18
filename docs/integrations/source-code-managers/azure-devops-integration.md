@@ -1,7 +1,7 @@
 ---
 title: "Azure DevOps Integration"
-description: "Azure DevOps Integration"
-featurebaseId: "0214443"
+description: "Connect your Azure DevOps organization to PGP for automated repository discovery, secret scanning, and security finding management."
+featurebaseId: "6028500"
 ---
 
 ## What is Azure DevOps?

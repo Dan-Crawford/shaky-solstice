@@ -1,7 +1,7 @@
 ---
 title: "Google Cloud Platform Integration - Overview (Deep Dive)"
 description: "Google Cloud Platform Integration - Overview (Deep Dive)"
-featurebaseId: "0386772"
+featurebaseId: "39513219549851"
 ---
 
 ## Overview
@@ -87,7 +87,7 @@ The provided diagrams illustrate two integration scenarios.
 
 ### Organization-Level Integration
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f35a21178a432df1fa2/019b7ffb-67f1-7b17-b0fe-26ce3358c4ba/b64u-MDE5YjdmZmItNjMzNC03MmY1LTkzNTEtNTNhN2UzOTA1M2E1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=50a121546c24c8b84353734700eea774ce162af4eacd5c31afd9f147c3d44b5c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f35a21178a432df1fa2/019b7ffb-67f1-7b17-b0fe-26ce3358c4ba/b64u-MDE5YjdmZmItNjMzNC03MmY1LTkzNTEtNTNhN2UzOTA1M2E1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=105affe4caad59a0d03efdb344ca1738f30fe012f7ebf5f9951a9a66684e31c7)
 
 1.  **PGP AWS Environment** (left side): Shows PGP's internal components including Cognito Identity Provider (IdP) and Access Broker
 2.  **Customer GCP Organization Integration** (right side): Shows how PGP connects to your entire GCP organization
@@ -95,7 +95,7 @@ The provided diagrams illustrate two integration scenarios.
 
 ### Project-Level Integration
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f35a21178a432df1fa2/019b7ffb-65b3-76d6-bfbd-2167dd98fbd9/b64u-MDE5YjdmZmItNjA0ZS03MzE0LWJhNzMtYjZjZWQ5MzRhOGIy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=fe4d393f91a4f67275b6ecdeaaf3aec654806b91b83ef92205b7260c1dc449f6)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580f35a21178a432df1fa2/019b7ffb-65b3-76d6-bfbd-2167dd98fbd9/b64u-MDE5YjdmZmItNjA0ZS03MzE0LWJhNzMtYjZjZWQ5MzRhOGIy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=40c9d5ee979fd026927811a6132a330d3e924cd126c0d761fbac1dfe44e51007)
 
 1.  Similar AWS environment setup on the left
 2.  **Customer GCP Project Integration** (right side): Shows integration limited to a specific project within your organization

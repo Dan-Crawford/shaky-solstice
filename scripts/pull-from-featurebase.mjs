@@ -93,24 +93,19 @@ async function apiRequest(method, endpoint, params = {}) {
 async function fetchAllArticles() {
   const articles = [];
   const limit = 100;
-  const MAX_PAGES = 20; // Safety cap — we have ~100 articles, not thousands
+  const MAX_PAGES = 20;
   let seenIds = new Set();
 
-  // Try cursor-based pagination first, fall back to page-based
+  // Use state=all to fetch both live and draft articles (default is "live" only)
   let cursor = undefined;
   for (let page = 1; page <= MAX_PAGES; page++) {
-    const params = { limit };
-    if (cursor) {
-      params.cursor = cursor;
-    } else if (page > 1) {
-      params.page = page;
-    }
+    const params = { limit, state: 'all' };
+    if (cursor) params.cursor = cursor;
 
     console.log(`  Fetching page ${page}...`);
     const result = await apiRequest('GET', 'articles', params);
-    const batch = result.data || result.results || [];
+    const batch = result.data || [];
 
-    // Deduplicate — if API ignores page param, we'll see same articles
     let newCount = 0;
     for (const article of batch) {
       if (!seenIds.has(article.id)) {
@@ -122,17 +117,11 @@ async function fetchAllArticles() {
 
     console.log(`  Got ${batch.length} articles (${newCount} new, ${articles.length} total)`);
 
-    // Stop conditions
-    if (batch.length === 0) break;
-    if (newCount === 0) break; // All duplicates — API is looping
-    if (batch.length < limit) break;
+    if (batch.length === 0 || newCount === 0) break;
 
-    // Use cursor if available
-    cursor = result.nextCursor || result.cursor || undefined;
-    if (!cursor && batch.length === limit) {
-      // No cursor returned, try page-based
-      continue;
-    }
+    // Use cursor-based pagination only — nextCursor is null when no more results
+    cursor = result.nextCursor || undefined;
+    if (!cursor) break;
   }
 
   return articles;
@@ -156,7 +145,14 @@ async function walkDocs(dir) {
 async function main() {
   console.log('Fetching articles from Featurebase...');
   const articleList = await fetchAllArticles();
-  console.log(`Found ${articleList.length} articles in Featurebase\n`);
+  const publishedCount = articleList.filter(a => a.isPublished === true).length;
+  const draftCount = articleList.filter(a => a.isPublished !== true).length;
+  console.log(`Found ${articleList.length} articles in Featurebase (${publishedCount} published, ${draftCount} draft-only)\n`);
+
+  // Debug: log first few articles' state/isPublished for verification
+  for (const a of articleList.slice(0, 5)) {
+    console.log(`  Sample: "${a.title}" state=${a.state} isPublished=${a.isPublished}`);
+  }
 
   // Build local file index by title
   const localFiles = await walkDocs(DOCS_DIR);
@@ -210,23 +206,27 @@ async function main() {
   console.log(`Unmatched (created as new): ${unmatchedArticles.length}`);
 
   async function processArticle(articleSummary, filePath, existingData) {
-    // Determine draft state
-    const isDraft = articleSummary.isPublished === false ||
-      articleSummary.state === 'draft' ||
-      (!articleSummary.isPublished && articleSummary.state !== 'published');
+    // Determine draft state — isPublished is the authoritative field.
+    // An article can have state="draft" but isPublished=true (live article with pending edits).
+    // We only mark as draft if it has NEVER been published.
+    const isDraft = articleSummary.isPublished !== true;
 
     // Use body from list response, fetch individually as fallback
     let htmlBody = articleSummary.body || '';
     if (!htmlBody || htmlBody.length < 20) {
-      try {
-        const full = await apiRequest('GET', `articles/${articleSummary.id}`);
-        htmlBody = full.body || '';
-        // Also check draft state from full response
-        if (full.isPublished === false || full.state === 'draft') {
-          // Confirm draft
+      // Try fetching full article — draft-only articles need state=draft
+      // For published articles, try live first, then draft if 404
+      const statesToTry = isDraft ? ['draft'] : ['live', 'draft'];
+      for (const state of statesToTry) {
+        try {
+          const full = await apiRequest('GET', `articles/${articleSummary.id}`, { state });
+          htmlBody = full.body || '';
+          if (htmlBody) break;
+        } catch (err) {
+          if (state === statesToTry[statesToTry.length - 1]) {
+            console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
+          }
         }
-      } catch (err) {
-        console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
       }
     }
 

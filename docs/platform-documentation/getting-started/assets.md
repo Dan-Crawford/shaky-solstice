@@ -1,14 +1,14 @@
 ---
 title: "Assets"
 description: "Assets"
-featurebaseId: "1637339"
+featurebaseId: "31508035893147"
 ---
 
 ## Overview
 
 The Assets page provides a comprehensive view of your organization's attack surface by displaying all discovered digital assets. Assets are automatically discovered through seed domains, third-party service integrations, and PGP asset discovery capabilities. 
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f6a7-7355-ab25-ebd25935173d/b64u-MDE5YjdmZjMtZjVjYS03YTE3LWI5YjYtOGJhYTE2OTFhN2E1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=00106d54a8de557686edbf9da1857c6f957def3f55b6b7a76843ee66d30d0c9c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f6a7-7355-ab25-ebd25935173d/b64u-MDE5YjdmZjMtZjVjYS03YTE3LWI5YjYtOGJhYTE2OTFhN2E1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=33007bb52534e37771f6f3d297e4c3853a69170f49333b027a0f9e0ea058c255)
 
 ## Asset Discovery
 
@@ -39,7 +39,7 @@ Filter your assets using various criteria:
 
 When you click on an asset, a detailed information drawer opens, providing comprehensive insights through multiple specialized tabs. The Overview tab, which appears by default, gives you immediate access to critical asset information.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f5b0-78cc-8d61-d81d5525b8a7/b64u-MDE5YjdmZjMtZjU1MC03YmUyLWE1OGUtNWE3YTE4MzQ4Yjkw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ac920d23b2a8d3d74f96f6a26db954d0f22ff39a2611a3cd2d15d43ee3d72c31)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f5b0-78cc-8d61-d81d5525b8a7/b64u-MDE5YjdmZjMtZjU1MC03YmUyLWE1OGUtNWE3YTE4MzQ4Yjkw.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4a87cf8298c3b42c2190cce229b842e8faacd99c66711db1a2cb3f4f252b86ff)
 
 ### Overview Tab
 
@@ -73,7 +73,7 @@ The Overview tab serves as your command center for the asset, presenting key sec
 
 The Vulnerabilities tab provides a comprehensive view of all identified security issues affecting this asset. Here you can monitor current vulnerabilities, track their severity levels, and follow their remediation status.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f3d0-72b8-9b91-b0b851302202/b64u-MDE5YjdmZjMtZjNiMC03NTBjLWEyNzQtYjhkZDQzOTk5MTli.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3083fb3833b120adae429b1911848737968ff6a3196ac2274b1746d2a18c202f)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f3d0-72b8-9b91-b0b851302202/b64u-MDE5YjdmZjMtZjNiMC03NTBjLWEyNzQtYjhkZDQzOTk5MTli.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=7d1a25b8d5aa2cc5583003e1076f844fd2524ee5049fd40730fefff785118aab)
 
 -   List of identified vulnerabilities
 -   Severity ratings
@@ -87,7 +87,7 @@ The Domain tab provides detailed insights into the asset's domain history and WH
 
 The Technologies tab offers a detailed view of the technical fingerprint of your asset, showing what services and technologies are actively running. Here you can see a non-exhaustive example of open ports discovered during scans, along with the specific technologies and services detected on those ports. Each technology entry includes a timestamp of when it was last observed, helping you track changes in the asset's configuration over time. This information is crucial for understanding your asset's exposure and maintaining an accurate inventory of running services. Whether it's web servers, databases, or other network services, this tab provides visibility into the technical stack powering your asset.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f859-7d8d-9088-f38f39a6d32f/b64u-MDE5YjdmZjMtZjgzYy03MzRkLTk5M2ItZmE5YmNhNmQ4M2Rh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=dfe2b241aa19e05b7408041a7198e105a169ac30c2b44932618dd386c09e8e4c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580d4da21178a432db53e4/019b7ff3-f859-7d8d-9088-f38f39a6d32f/b64u-MDE5YjdmZjMtZjgzYy03MzRkLTk5M2ItZmE5YmNhNmQ4M2Rh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a8e017f4624050b48fcaf3195b09b116e0f3ff5f2977576bf9dafb220ad99130)
 
 ### Cloud Tab
 

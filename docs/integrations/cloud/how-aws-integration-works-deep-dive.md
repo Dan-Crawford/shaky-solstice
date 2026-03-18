@@ -1,7 +1,7 @@
 ---
 title: "How AWS Integration Works (Deep Dive)"
 description: "How AWS Integration Works (Deep Dive)"
-featurebaseId: "8551518"
+featurebaseId: "39508437793947"
 ---
 
 The Praetorian Guard Platform (PGP) enables secure, scalable assessment of AWS environments through cross-account trust relationships that maintain strict security boundaries. The integration supports both organization-wide and individual account setups, using AWS IAM roles, temporary credentials, and External ID validation to ensure secure, auditable access for resource discovery and configuration assessment.
@@ -12,10 +12,10 @@ PGP offers two integration paths:
 
 -   **Organization-Level Integration**: A trust relationship is established within all accounts of the AWS Organization (including the management account). This integration step automatically propagates the deployment to all member accounts, allowing centralized management with per-account visibility.
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ee0a21178a432de833a/019b7ffa-1c29-77c3-96e0-9975aa0ba673/b64u-MDE5YjdmZmEtMTUzOS03NmU2LWI3MGItN2E0N2RkZTllMWNh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5650efcc8817b7f875e88bdf4daf22c64a85a4176bbed44a3006bb3cff7cb2c2)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ee0a21178a432de833a/019b7ffa-1c29-77c3-96e0-9975aa0ba673/b64u-MDE5YjdmZmEtMTUzOS03NmU2LWI3MGItN2E0N2RkZTllMWNh.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3fc59c4603d4a94942e8cc797e343e2e0f7a3b1d98938b2b4156d849e01e0ded)
 -   **Individual Account Integration**: Customers can integrate on a per-account basis, maintaining independent trust relationships and tighter control over permissions.
     
-    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ee0a21178a432de833a/019b7ffa-1a8f-74e7-974b-e43a1bc8b04c/b64u-MDE5YjdmZmEtMTRlMS03OGUyLWFmYjgtZmMxYTg1ZjQ5ZDVl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=df1639ac7ee9d567d0c8f7cd2eab3bd8eea008a5549e81ec8fbe82264f0df141)
+    ![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580ee0a21178a432de833a/019b7ffa-1a8f-74e7-974b-e43a1bc8b04c/b64u-MDE5YjdmZmEtMTRlMS03OGUyLWFmYjgtZmMxYTg1ZjQ5ZDVl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=dc11ceba921e389845b81d9fe4a03e2c7b8d149cd61a5d7e6ec72fbad2c66e63)
 
 Both models follow the same access pattern via the **PGP Access Broker**, an isolated intermediary system that securely mediates between PGP’s core platform and customer AWS environments. This broker handles temporary credential issuance, provides a single audit point, and ensures a clear trust boundary between PGP and customer operations.
 

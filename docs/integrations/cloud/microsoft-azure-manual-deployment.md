@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure - Manual Deployment"
 description: "Microsoft Azure - Manual Deployment"
-featurebaseId: "1040240"
+featurebaseId: "37956568460187"
 ---
 
 This section covers the manual deployment process for integrating Azure with Praetorian Guard Platform (PGP). While this method provides complete control over each step, we recommend using the Terraform/IaC approach for better consistency and maintainability. Manual deployment requires creating several Azure resources through the Azure Portal, with the process being similar for both tenant-level and subscription-level integrations.
@@ -32,7 +32,7 @@ Before starting the integration, ensure you have:
 3.  Choose your integration scope and provide the required information
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f583-7dc1-8d3e-ae3cb4547092/b64u-MDE5YjdmZmQtZjU0Yi03NGIzLWIwYmQtMzI3Yjk1ZmZiOGVj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ee1df67438e4ec8785872dd0a27b17cda44e586d81af5eca04fc2729126c5a16)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f583-7dc1-8d3e-ae3cb4547092/b64u-MDE5YjdmZmQtZjU0Yi03NGIzLWIwYmQtMzI3Yjk1ZmZiOGVj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1f494558071f4dc6330d9534d4bab50593ae4e40e8efcdbbb58fde773b284ae6)
 
 #### Tenant-Level Integration (Recommended)
 
@@ -62,7 +62,7 @@ PGP will provide you with a unique Subject value. This will be used in a future 
 
 **NOTE:** This value is unique per integration attempt. This means an unlikely failure invalidates that value and any new attempt requires the use of the new subject value (which PGP will generate and provide as shown below).
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f452-7cef-8e9d-c243137f1c3e/b64u-MDE5YjdmZmQtZjQzNi03OTJmLThjOWMtZDVmNWZmYTNlZWNj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=fa3d836f6590dfbff4429498ff648b613d71cb584881f7db658eb148891b167c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f452-7cef-8e9d-c243137f1c3e/b64u-MDE5YjdmZmQtZjQzNi03OTJmLThjOWMtZDVmNWZmYTNlZWNj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=af24faa75006191ffeb0b41959a1b353ba526edeaf7919f4c947269f9dc5e7a8)
 
 ## **Manual Deployment Instructions**
 
@@ -85,7 +85,7 @@ PGP will provide you with a unique Subject value. This will be used in a future 
 5.  Click "Register"
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f56c-76e9-a385-9bd3d33c3240/b64u-MDE5YjdmZmQtZjUxMC03ZmM2LTgwMDItOWM1MGM5ZmVlYzU2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c041bc1c6ed90df8444f9e0919dbfe3691df93dfa1d126f37ca9017cfbb77c3c)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f56c-76e9-a385-9bd3d33c3240/b64u-MDE5YjdmZmQtZjUxMC03ZmM2LTgwMDItOWM1MGM5ZmVlYzU2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0da122206350eb155f13b759d348faafda281e6e980d1aa590cf8dd36ce68524)
 
 ##### **Step 2: Configure API Permissions**
 
@@ -121,7 +121,7 @@ PGP will provide you with a unique Subject value. This will be used in a future 
 3.  Verify all permissions show "Granted for \[Your Organization\]" status
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fb99-7fb0-b757-88b431ce64e0/b64u-MDE5YjdmZmQtZmFlNi03M2NlLTgzYzUtMDZiNjM3OGZkZjIy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5e1c7882bf0fdec3946e33c33edd672baded4ebf99bf601ae535f6e9ea380e13)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fb99-7fb0-b757-88b431ce64e0/b64u-MDE5YjdmZmQtZmFlNi03M2NlLTgzYzUtMDZiNjM3OGZkZjIy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a4866aaeb4d0503007483048d50746e2f27b1471817b21fd75fd109a0093fea9)
 
 ##### **Step 4: Create Federated Identity Credential**
 
@@ -148,7 +148,7 @@ PGP will provide you with a unique Subject value. This will be used in a future 
 6.  Click "Add"
     
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fac1-7894-aeca-b880d7cf72d5/b64u-MDE5YjdmZmQtZjlkMS03YzQyLWE4YWItZTQ5Y2Y4OGMzZjQ2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=579c044476b76117137238793a937089d1f824dbc015a1f31e84a452639c875e)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fac1-7894-aeca-b880d7cf72d5/b64u-MDE5YjdmZmQtZjlkMS03YzQyLWE4YWItZTQ5Y2Y4OGMzZjQ2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5a8ba903fe58991d287bf618339f14d134197b999b66b6e7d0d9d16041bcb0a5)
 
 ##### **Step 5: Assign the Reader Role**
 
@@ -177,7 +177,7 @@ The role assignment process differs based on your integration scope:
 10.  Click "Select" > "Review + assign" > "Assign"
      
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fadd-73bf-834e-6b25fe65b475/b64u-MDE5YjdmZmQtZmEwYy03NTM1LTlhMWUtODc4NmM5OGFjMzc0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=863dbbb115a1e61f0da823eb0cb0667f3fa55c92a98780ede5bd93f7ec612193)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fadd-73bf-834e-6b25fe65b475/b64u-MDE5YjdmZmQtZmEwYy03NTM1LTlhMWUtODc4NmM5OGFjMzc0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3a11c0322bc368dcf54586f0da45dfa7da91e4c5bdfb473923e1ca3dac499a46)
 
 **For Subscription-Level Integration:**
 

@@ -149,11 +149,6 @@ async function main() {
   const draftCount = articleList.filter(a => a.isPublished !== true).length;
   console.log(`Found ${articleList.length} articles in Featurebase (${publishedCount} published, ${draftCount} draft-only)\n`);
 
-  // Debug: log first few articles' state/isPublished for verification
-  for (const a of articleList.slice(0, 5)) {
-    console.log(`  Sample: "${a.title}" state=${a.state} isPublished=${a.isPublished}`);
-  }
-
   // Build local file index by title
   const localFiles = await walkDocs(DOCS_DIR);
   const titleToFile = new Map();

@@ -87,6 +87,14 @@ npm run sync:full                        # Sync all docs
 
 Requires `FEATUREBASE_API_KEY` environment variable.
 
+## Required Secrets
+
+| Secret | Purpose |
+|--------|---------|
+| `FEATUREBASE_API_KEY` | Sync docs to Featurebase help center |
+| `ANTHROPIC_API_KEY` | Claude Code CLI for proactive doc generation from Chariot PRs |
+| `GITHUB_TOKEN` | Auto-provided; needs chariot read access |
+
 ## CI/CD
 
 - **On merge to main:** Changed docs are automatically synced to Featurebase

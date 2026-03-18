@@ -1,7 +1,7 @@
 ---
 title: "Akamai DNS"
-featurebaseId: "6835686"
-draft: true
+featurebaseId: "1754831"
+draft: "true"
 ---
 
 ## Overview

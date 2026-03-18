@@ -1,7 +1,7 @@
 ---
 title: "AWS WAF"
-featurebaseId: "0383996"
-draft: true
+featurebaseId: "0022362"
+draft: "true"
 ---
 
 ## Overview

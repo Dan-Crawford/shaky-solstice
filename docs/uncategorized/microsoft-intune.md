@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Intune"
-featurebaseId: "9385591"
-draft: true
+featurebaseId: "0722059"
+draft: "true"
 ---
 
 ## Overview

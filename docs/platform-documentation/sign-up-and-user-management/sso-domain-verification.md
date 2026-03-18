@@ -1,7 +1,7 @@
 ---
 title: "SSO Domain Verification"
 description: "SSO Domain Verification"
-featurebaseId: "33698362366875"
+featurebaseId: "6072639"
 ---
 
 ## Domain Verification

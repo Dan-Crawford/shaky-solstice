@@ -1,7 +1,7 @@
 ---
 title: "ExtraHop RevealX 360"
-featurebaseId: "9985647"
-draft: true
+featurebaseId: "5045945"
+draft: "true"
 ---
 
 ## Overview

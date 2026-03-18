@@ -1,7 +1,7 @@
 ---
 title: "Palo Alto Cortex Cloud"
-featurebaseId: "8239668"
-draft: true
+featurebaseId: "8608809"
+draft: "true"
 ---
 
 ## Overview

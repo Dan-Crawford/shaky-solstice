@@ -1,7 +1,7 @@
 ---
 title: "Fastly CDN"
-featurebaseId: "8495898"
-draft: true
+featurebaseId: "7865653"
+draft: "true"
 ---
 
 ## Overview

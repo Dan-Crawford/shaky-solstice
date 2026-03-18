@@ -1,7 +1,7 @@
 ---
 title: "Akamai WAF"
-featurebaseId: "7749768"
-draft: true
+featurebaseId: "9758105"
+draft: "true"
 ---
 
 ## Overview

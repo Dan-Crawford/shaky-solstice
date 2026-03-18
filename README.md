@@ -1,49 +1,84 @@
-# Starlight Starter Kit: Basics
+# Guard Documentation
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Markdown source of truth for the [Praetorian Guard](https://guard.praetorian.com) help center. Changes merged to `main` are automatically synced to Featurebase.
 
-```
-npm create astro@latest -- --template starlight
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## Structure
 
 ```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+docs/
+├── attack-surfaces/          # Attack surface documentation
+├── capabilities/             # Security capability descriptions
+├── enterprise-security/      # Compliance, data security, tenancy
+├── integrations/             # Third-party integration guides
+│   ├── cloud/
+│   ├── firewalls/
+│   └── ...
+└── platform-documentation/   # Getting started, notifications, etc.
+    ├── getting-started/
+    ├── notifications/
+    └── ...
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Writing Docs
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+Each markdown file has YAML frontmatter:
 
-Static assets, like favicons, can be placed in the `public/` directory.
+```yaml
+---
+title: "Article Title"
+description: "Short description"
+featurebaseId: "12345"  # Added automatically after first sync — don't set manually
+---
 
-## 🧞 Commands
+Your markdown content here.
+```
 
-All commands are run from the root of the project, from a terminal:
+### Adding a New Article
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Create a `.md` file in the appropriate `docs/` subdirectory
+2. Add `title` and `description` frontmatter (do **not** add `featurebaseId`)
+3. Open a PR
+4. After merge, the sync Action creates the article in Featurebase and opens a writeback PR with the new `featurebaseId`
 
-## 👀 Want to learn more?
+### Editing an Existing Article
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+1. Edit the `.md` file
+2. Open a PR
+3. After merge, the sync Action updates the article in Featurebase
+
+### Deleting an Article
+
+1. Delete the `.md` file
+2. Open a PR
+3. After merge, the sync Action archives the article in Featurebase (does not hard-delete)
+
+## Category Mapping
+
+The **top-level folder** under `docs/` determines the Featurebase help center category:
+
+| Folder | Featurebase Category |
+|--------|---------------------|
+| `attack-surfaces/` | Attack Surfaces |
+| `capabilities/` | Capabilities |
+| `enterprise-security/` | Enterprise Security |
+| `integrations/` | Integrations |
+| `platform-documentation/` | Platform Documentation |
+
+## Images
+
+Images are referenced in markdown and stored in the `images/` directory (mirrors `docs/` structure). The image upload pipeline is coming soon — for now, use Featurebase-hosted URLs.
+
+## Local Commands
+
+```bash
+npm install                              # Install dependencies
+npm run sync -- --files docs/path/to.md  # Sync specific file
+npm run sync:full                        # Sync all docs
+```
+
+Requires `FEATUREBASE_API_KEY` environment variable.
+
+## CI/CD
+
+- **On merge to main:** Changed docs are automatically synced to Featurebase
+- **Manual full sync:** Trigger via GitHub Actions → "Sync Docs to Featurebase" → Run workflow → check "full-sync"

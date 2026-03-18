@@ -1,7 +1,7 @@
 ---
 title: "Email Notifications"
-featurebaseId: "0735871"
-draft: true
+featurebaseId: "0393601"
+draft: "true"
 ---
 
 ## Overview

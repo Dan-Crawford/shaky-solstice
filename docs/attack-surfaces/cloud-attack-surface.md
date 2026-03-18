@@ -1,7 +1,7 @@
 ---
 title: "Cloud Attack Surface"
 description: "Why It Matters and What Guard Does"
-featurebaseId: "2386115"
+featurebaseId: "2492878"
 ---
 
 ## Your Cloud Is Bigger Than You Think

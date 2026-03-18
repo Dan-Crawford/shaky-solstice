@@ -1,7 +1,7 @@
 ---
 title: "Rapid7 Nexpose"
-featurebaseId: "6746926"
-draft: true
+featurebaseId: "7220660"
+draft: "true"
 ---
 
 ## Overview

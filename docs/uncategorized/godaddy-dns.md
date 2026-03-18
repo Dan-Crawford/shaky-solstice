@@ -1,7 +1,7 @@
 ---
 title: "GoDaddy DNS"
-featurebaseId: "9737519"
-draft: true
+featurebaseId: "9266832"
+draft: "true"
 ---
 
 ## Overview

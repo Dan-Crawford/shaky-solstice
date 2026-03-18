@@ -1,7 +1,7 @@
 ---
 title: "Palo Alto Networks Panorama"
 description: "Integrate with Panorama"
-featurebaseId: "1742976"
+featurebaseId: "8484616"
 ---
 
 ## Overview

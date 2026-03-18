@@ -1,7 +1,7 @@
 ---
 title: "Palo Alto Panorama Integration - Required Permissions"
-featurebaseId: "5997816"
-draft: true
+featurebaseId: "3818010"
+draft: "true"
 ---
 
 ## Required Permissions

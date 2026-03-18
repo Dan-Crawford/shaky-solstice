@@ -1,7 +1,7 @@
 ---
 title: "Fastly WAF"
-featurebaseId: "7070548"
-draft: true
+featurebaseId: "4458758"
+draft: "true"
 ---
 
 ## Overview

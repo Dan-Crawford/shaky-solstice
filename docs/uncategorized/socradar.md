@@ -1,7 +1,7 @@
 ---
 title: "SOCRadar"
-featurebaseId: "1503242"
-draft: true
+featurebaseId: "6870513"
+draft: "true"
 ---
 
 ## Overview

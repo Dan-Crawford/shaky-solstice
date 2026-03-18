@@ -1,8 +1,8 @@
 ---
 title: "Praetorian AI"
-featurebaseId: "3749952"
+featurebaseId: "3856146"
 description: "Learn about how Praetorian is keeping you safe with AI."
-draft: true
+draft: "true"
 ---
 
 Praetorian’s AI-driven features are designed to enhance the speed, accuracy, and scalability of our Managed Services team—never to replace human oversight. Every AI capability in the Preatorian Guard Platform (PGP) operates **under strict security and privacy controls**.

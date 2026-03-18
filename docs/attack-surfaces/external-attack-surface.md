@@ -1,7 +1,7 @@
 ---
 title: "External Attack Surface"
 description: "Why It Matters and What Guard Does"
-featurebaseId: "4121784"
+featurebaseId: "2031882"
 ---
 
 ## What Is Your External Attack Surface?

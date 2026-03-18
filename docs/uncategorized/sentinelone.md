@@ -1,7 +1,7 @@
 ---
 title: "SentinelOne"
-featurebaseId: "6498346"
-draft: true
+featurebaseId: "6198052"
+draft: "true"
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: "Akamai CDN"
-featurebaseId: "0037847"
-draft: true
+featurebaseId: "6092928"
+draft: "true"
 ---
 
 ## Overview

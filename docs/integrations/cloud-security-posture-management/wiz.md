@@ -1,7 +1,7 @@
 ---
 title: "Wiz"
 description: "Wiz"
-featurebaseId: "8311149"
+featurebaseId: "6431842"
 ---
 
 ## Overview

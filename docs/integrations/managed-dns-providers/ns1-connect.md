@@ -1,7 +1,7 @@
 ---
 title: "NS1 Connect"
 description: "NS1 Connect"
-featurebaseId: "4758958"
+featurebaseId: "4328810"
 ---
 
 NS1 is a leading provider of managed DNS services, helping organizations manage and optimize their domain infrastructure at scale. Integrating PGP with NS1 provides valuable visibility into your DNS infrastructure, enabling you to maintain a comprehensive inventory of your domains, subdomains, and associated IP addresses.

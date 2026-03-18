@@ -6,9 +6,11 @@
   "scripts": {
     "sync": "node scripts/sync-to-featurebase.mjs",
     "sync:full": "node scripts/sync-to-featurebase.mjs --full-sync",
+    "pull": "node scripts/pull-from-featurebase.mjs",
     "migrate": "node scripts/migrate-from-astro.mjs"
   },
   "dependencies": {
-    "marked": "^15.0.0"
+    "marked": "^15.0.0",
+    "turndown": "^7.2.2"
   }
 }

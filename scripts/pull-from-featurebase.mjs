@@ -70,24 +70,50 @@ async function apiRequest(method, endpoint, params = {}) {
 
 async function fetchAllArticles() {
   const articles = [];
-  let page = 1;
   const limit = 100;
+  const MAX_PAGES = 20; // Safety cap — we have ~100 articles, not thousands
+  let seenIds = new Set();
 
-  while (true) {
+  // Try cursor-based pagination first, fall back to page-based
+  let cursor = undefined;
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const params = { limit };
+    if (cursor) {
+      params.cursor = cursor;
+    } else if (page > 1) {
+      params.page = page;
+    }
+
     console.log(`  Fetching page ${page}...`);
-    const result = await apiRequest('GET', 'articles', { limit, page });
+    const result = await apiRequest('GET', 'articles', params);
     const batch = result.data || result.results || [];
-    articles.push(...batch);
 
+    // Deduplicate — if API ignores page param, we'll see same articles
+    let newCount = 0;
+    for (const article of batch) {
+      if (!seenIds.has(article.id)) {
+        seenIds.add(article.id);
+        articles.push(article);
+        newCount++;
+      }
+    }
+
+    console.log(`  Got ${batch.length} articles (${newCount} new, ${articles.length} total)`);
+
+    // Stop conditions
+    if (batch.length === 0) break;
+    if (newCount === 0) break; // All duplicates — API is looping
     if (batch.length < limit) break;
-    page++;
+
+    // Use cursor if available
+    cursor = result.nextCursor || result.cursor || undefined;
+    if (!cursor && batch.length === limit) {
+      // No cursor returned, try page-based
+      continue;
+    }
   }
 
   return articles;
-}
-
-async function fetchArticle(id) {
-  return apiRequest('GET', `articles/${id}`);
 }
 
 // --- Local files ---
@@ -138,16 +164,17 @@ async function main() {
 
     matched++;
 
-    // Fetch full article content
-    let article;
-    try {
-      article = await fetchArticle(articleSummary.id);
-    } catch (err) {
-      console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
-      continue;
+    // Use body from list response (API returns full body in list endpoint)
+    // If body is missing/truncated, fetch individually as fallback
+    let htmlBody = articleSummary.body || '';
+    if (!htmlBody || htmlBody.length < 20) {
+      try {
+        const full = await apiRequest('GET', `articles/${articleSummary.id}`);
+        htmlBody = full.body || '';
+      } catch (err) {
+        console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
+      }
     }
-
-    const htmlBody = article.body || '';
     if (!htmlBody.trim()) {
       console.log(`  Skipping ${local.file}: empty body in Featurebase`);
       continue;

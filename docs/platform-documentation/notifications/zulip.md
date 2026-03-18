@@ -1,7 +1,7 @@
 ---
 title: "Zulip"
 description: "Zulip"
-featurebaseId: "32082929141275"
+featurebaseId: "2454767"
 ---
 
 PGP can send vulnerability information directly to your Zulip workspace through a [Slack-compatible webhook](https://yourorganization.zulipchat.com/integrations/doc/slack_incoming#zulip-slack-incoming-webhook-integration) integration. This guide will walk you through setting up the integration in both Zulip and PGP.

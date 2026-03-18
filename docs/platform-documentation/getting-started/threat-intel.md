@@ -1,7 +1,7 @@
 ---
 title: "Threat Intel"
 description: "Threat Intel"
-featurebaseId: "34117068401179"
+featurebaseId: "6077263"
 ---
 
 ## Threat Intelligence

@@ -1,7 +1,7 @@
 ---
 title: "Nerva: Service Fingerprinting"
 description: "Nerva: Service Fingerprinting"
-featurebaseId: "3679688"
+featurebaseId: "3640715"
 ---
 
 ![Nerva: Next-Generation Service Fingerprinting for Praetorian Guard](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c052a093db795d30d/019cf33a-abd1-796d-9b8c-e56ee1a36fd4/b64u-bXl3Ynd5enAzbC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=163f0f98e02da8065531821051e61d93b5639f7871a5377576b78117edc9bc50)

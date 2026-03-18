@@ -1,7 +1,7 @@
 ---
 title: "External Attack Surface"
 description: "Your external attack surface is everything an attacker can see from the outside — every domain, IP address, cloud resource, web application, and exposed service"
-featurebaseId: "4121784"
+featurebaseId: "7284238"
 ---
 
 ## What Is Your External Attack Surface?

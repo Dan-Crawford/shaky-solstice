@@ -1,7 +1,7 @@
 ---
 title: "Azure SSO Configuration"
 description: "Azure SSO Configuration"
-featurebaseId: "27451961594139"
+featurebaseId: "4668577"
 ---
 
 ## PGP Single Sign-On (SSO) with Azure

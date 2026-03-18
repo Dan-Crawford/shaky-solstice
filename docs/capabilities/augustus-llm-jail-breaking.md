@@ -1,7 +1,7 @@
 ---
 title: "Augustus: LLM Jail Breaking"
 description: "Augustus: LLM Jail Breaking"
-featurebaseId: "7576670"
+featurebaseId: "7058684"
 ---
 
 ![Augustus: Comprehensive AI Security Testing Now Available](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb92c/019cf339-eff8-7f3c-b66d-a6d4c744e8db/b64u-em9ucWNvZ2tnZi5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T040000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=32d69c84a5dec859133f88e42e883a345216682ee283156743671548ff6e32f0)

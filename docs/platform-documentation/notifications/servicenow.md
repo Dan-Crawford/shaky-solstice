@@ -1,7 +1,7 @@
 ---
 title: "ServiceNow"
 description: "ServiceNow"
-featurebaseId: "4216098"
+featurebaseId: "9156978"
 ---
 
 Utilize PGP's continuous monitoring capabilities to identify and address potential security vulnerabilities and feed that critical data into ServiceNow's incident and problem management workflows.

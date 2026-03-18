@@ -1,7 +1,7 @@
 ---
 title: "Keyboard Navigation in PGP"
 description: "Keyboard Navigation in PGP"
-featurebaseId: "0900522"
+featurebaseId: "5607264"
 ---
 
 33333PGP provides extensive keyboard shortcuts to help you navigate efficiently through the platform. This guide covers all available keyboard shortcuts organized by context and function.

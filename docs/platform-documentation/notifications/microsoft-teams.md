@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Teams"
 description: "Microsoft Teams"
-featurebaseId: "4152326"
+featurebaseId: "0928059"
 ---
 
 PGP integrates seamlessly with workplace messaging service Microsoft Teams to send push notifications for specified alerts. Here's a step-by-step guide to set up notifications in Microsoft Teams.

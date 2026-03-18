@@ -1,7 +1,7 @@
 ---
 title: "Okta Integration"
 description: "Okta Integration"
-featurebaseId: "5580132"
+featurebaseId: "9928093"
 ---
 
 The Okta integration in Praetorian Guard Platform (PGP) connects with Okta to provide comprehensive visibility and risk management for Single Sign-On (SSO) applications, enabling automated detection of SSO coverage gaps and potential MFA exposures.

@@ -1,17 +1,14 @@
 {
-  "name": "shaky-solstice",
+  "name": "guard-docs",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "sync": "node scripts/sync-to-featurebase.mjs",
+    "sync:full": "node scripts/sync-to-featurebase.mjs --full-sync",
+    "migrate": "node scripts/migrate-from-astro.mjs"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.1",
-    "astro": "^6.0.1",
-    "sharp": "^0.34.2"
+    "marked": "^15.0.0"
   }
 }

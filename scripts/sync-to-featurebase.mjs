@@ -99,15 +99,20 @@ async function apiRequest(method, endpoint, body, retries = MAX_RETRIES) {
   }
 }
 
-async function createArticle(title, htmlBody, description) {
+async function createArticle(title, htmlBody, description, isDraft) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
+  // Articles are created as drafts by default — no need to set state
   return apiRequest('POST', 'articles', payload);
 }
 
-async function updateArticle(articleId, title, htmlBody, description) {
+async function updateArticle(articleId, title, htmlBody, description, isDraft) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
+  // Try setting publish state — if API rejects, the update still applies for content
+  if (isDraft === false) {
+    payload.isPublished = true;
+  }
   return apiRequest('PUT', `articles/${articleId}`, payload);
 }
 
@@ -133,12 +138,14 @@ async function processFile(filePath) {
 
   const htmlBody = await marked(body);
   const description = data.description || '';
+  const isDraft = data.draft === 'true' || data.draft === true;
 
   if (data.featurebaseId) {
     // Update existing article — fall back to create if 404 (stale ID)
     try {
-      await updateArticle(data.featurebaseId, data.title, htmlBody, description);
-      console.log(`  Updated: ${filePath} (${data.featurebaseId})`);
+      await updateArticle(data.featurebaseId, data.title, htmlBody, description, isDraft);
+      const draftLabel = isDraft ? ' [DRAFT]' : '';
+      console.log(`  Updated: ${filePath} (${data.featurebaseId})${draftLabel}`);
       return { action: 'updated' };
     } catch (err) {
       if (err.message.includes('404')) {
@@ -151,7 +158,7 @@ async function processFile(filePath) {
   }
 
   // Create new article (or re-create after stale ID)
-  const result = await createArticle(data.title, htmlBody, description);
+  const result = await createArticle(data.title, htmlBody, description, isDraft);
   const newId = result.id;
   console.log(`  Created: ${filePath} → ${newId}`);
 

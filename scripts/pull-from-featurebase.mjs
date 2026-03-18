@@ -40,8 +40,30 @@ function parseFrontmatter(content) {
 function serializeFrontmatter(data, body) {
   const lines = Object.entries(data)
     .filter(([, v]) => v !== undefined && v !== '')
-    .map(([k, v]) => `${k}: "${v}"`);
+    .map(([k, v]) => {
+      // Boolean values don't need quotes
+      if (v === 'true' || v === 'false' || v === true || v === false) {
+        return `${k}: ${v}`;
+      }
+      return `${k}: "${v}"`;
+    });
   return `---\n${lines.join('\n')}\n---\n${body}`;
+}
+
+function slugify(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .substring(0, 80);
+}
+
+function resolveCategory(article) {
+  // Use Featurebase category or parentId hierarchy to determine folder
+  // Fall back to 'uncategorized' for drafts with no clear category
+  const category = article.category || article.categoryName || '';
+  if (category) return slugify(category);
+  return 'uncategorized';
 }
 
 // --- API ---
@@ -163,45 +185,72 @@ async function main() {
     }
 
     matched++;
-
-    // Use body from list response (API returns full body in list endpoint)
-    // If body is missing/truncated, fetch individually as fallback
-    let htmlBody = articleSummary.body || '';
-    if (!htmlBody || htmlBody.length < 20) {
-      try {
-        const full = await apiRequest('GET', `articles/${articleSummary.id}`);
-        htmlBody = full.body || '';
-      } catch (err) {
-        console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
-      }
-    }
-    if (!htmlBody.trim()) {
-      console.log(`  Skipping ${local.file}: empty body in Featurebase`);
-      continue;
-    }
-
-    // Convert HTML to markdown
-    const mdBody = turndown.turndown(htmlBody);
-
-    // Update local file
-    const newData = { ...local.data, featurebaseId: articleSummary.id };
-    const newContent = serializeFrontmatter(newData, '\n' + mdBody + '\n');
-    await fs.writeFile(local.file, newContent, 'utf-8');
+    await processArticle(articleSummary, local.file, local.data);
     updated++;
-    console.log(`  Updated: ${local.file} (${articleSummary.id})`);
+  }
+
+  // Create new local files for unmatched Featurebase articles (including drafts)
+  let created = 0;
+  for (const articleSummary of unmatchedArticles) {
+    const category = resolveCategory(articleSummary);
+    const slug = slugify(articleSummary.title);
+    const dirPath = path.join(DOCS_DIR, category);
+    const filePath = path.join(dirPath, `${slug}.md`);
+
+    await fs.mkdir(dirPath, { recursive: true });
+    await processArticle(articleSummary, filePath, {});
+    created++;
   }
 
   console.log('\n--- Pull Summary ---');
   console.log(`Featurebase articles: ${articleList.length}`);
   console.log(`Matched to local files: ${matched}`);
   console.log(`Updated with content: ${updated}`);
-  console.log(`Unmatched (no local file): ${unmatched}`);
+  console.log(`New files created: ${created}`);
+  console.log(`Unmatched (created as new): ${unmatchedArticles.length}`);
 
-  if (unmatchedArticles.length > 0) {
-    console.log('\nUnmatched Featurebase articles (no local file):');
-    for (const a of unmatchedArticles) {
-      console.log(`  [${a.id}] ${a.title}`);
+  async function processArticle(articleSummary, filePath, existingData) {
+    // Determine draft state
+    const isDraft = articleSummary.isPublished === false ||
+      articleSummary.state === 'draft' ||
+      (!articleSummary.isPublished && articleSummary.state !== 'published');
+
+    // Use body from list response, fetch individually as fallback
+    let htmlBody = articleSummary.body || '';
+    if (!htmlBody || htmlBody.length < 20) {
+      try {
+        const full = await apiRequest('GET', `articles/${articleSummary.id}`);
+        htmlBody = full.body || '';
+        // Also check draft state from full response
+        if (full.isPublished === false || full.state === 'draft') {
+          // Confirm draft
+        }
+      } catch (err) {
+        console.warn(`  Warning: could not fetch article ${articleSummary.id}: ${err.message}`);
+      }
     }
+
+    // Convert HTML to markdown (or empty body for stubs)
+    const mdBody = htmlBody.trim() ? turndown.turndown(htmlBody) : '';
+
+    // Build frontmatter
+    const newData = {
+      ...existingData,
+      title: articleSummary.title || existingData.title,
+      description: articleSummary.description || existingData.description || '',
+      featurebaseId: articleSummary.id,
+    };
+    if (isDraft) {
+      newData.draft = true;
+    } else {
+      delete newData.draft;
+    }
+
+    const newContent = serializeFrontmatter(newData, '\n' + mdBody + '\n');
+    await fs.writeFile(filePath, newContent, 'utf-8');
+
+    const draftLabel = isDraft ? ' [DRAFT]' : '';
+    console.log(`  ${existingData.title ? 'Updated' : 'Created'}: ${filePath} (${articleSummary.id})${draftLabel}`);
   }
 }
 

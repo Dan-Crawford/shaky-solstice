@@ -28,10 +28,19 @@ Each markdown file has YAML frontmatter:
 title: "Article Title"
 description: "Short description"
 featurebaseId: "12345"  # Added automatically after first sync — don't set manually
+draft: true             # Optional — marks article as draft in Featurebase
 ---
 
 Your markdown content here.
 ```
+
+### Draft Articles
+
+Articles with `draft: true` in frontmatter are synced to Featurebase but kept unpublished. To publish a draft:
+
+1. Remove the `draft: true` line (or set to `false`)
+2. Open a PR
+3. After merge, the sync Action publishes the article in Featurebase
 
 ### Adding a New Article
 

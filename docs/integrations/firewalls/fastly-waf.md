@@ -1,3 +1,8 @@
+---
+title: "Fastly WAF"
+description: "Fastly WAF"
+---
+
 ## Overview
 
 The Fastly WAF integration connects the Praetorian Guard Platform (PGP) with Fastly's Next-Gen WAF (powered by Signal Sciences) to import WAF configurations and manage scanner allowlisting. In addition to performing the same CDN domain and service discovery as the Fastly CDN integration, the WAF integration enables PGP to allowlist Chariot scanner traffic so that security scans are not blocked by your WAF rules.

@@ -1,3 +1,8 @@
+---
+title: "AWS WAF"
+description: "AWS WAF"
+---
+
 ## Overview
 
 The AWS WAF integration connects the Praetorian Guard Platform (PGP) with your AWS Web Application Firewall, importing WAF rules, web ACLs, IP sets, and rule groups into PGP as assets. AWS WAF configurations define how your web applications are protected at the edge — PGP imports these configurations so you can continuously monitor your WAF posture and ensure that protection rules align with your broader security policy.

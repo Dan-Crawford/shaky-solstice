@@ -1,3 +1,8 @@
+---
+title: "Imperva"
+description: "Imperva"
+---
+
 ## Overview
 
 The Imperva integration connects the Praetorian Guard Platform (PGP) with Imperva Cloud WAF (formerly Incapsula) to import WAF-protected sites, security configurations, and domain data from your Imperva account. By syncing your Imperva environment, PGP provides visibility into which web applications are protected by your WAF, what domains are routed through Imperva, and what security policies are in place.

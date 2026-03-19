@@ -127,3 +127,4 @@ The Invicti integration operates in a strictly read-only mode. It queries the In
 Credentials are handled securely within PGP. The Invicti User ID and API Token are encrypted at rest and used exclusively for API authentication via HTTP Basic auth during sync operations. The credentials are not persisted outside of PGP's encrypted credential store.
 
 PGP does not access or store raw HTTP request/response data from Invicti scans. Only vulnerability metadata (names, severities, descriptions, and classifications) and target URL information are read and processed.
+

@@ -1,7 +1,7 @@
 ---
 title: "Freshservice"
 description: "Freshservice"
-featurebaseId: "4296394"
+featurebaseId: "6014720"
 ---
 
 The Freshservice integration in PGP enables organizations to connect their Freshservice instance for enhanced security visibility and asset management. By integrating Freshservice with PGP, you can synchronize asset data and maintain a comprehensive view of your security posture across your IT service management platform.

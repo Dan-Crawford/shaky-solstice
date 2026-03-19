@@ -1,7 +1,7 @@
 ---
 title: "Network Traffic Attribution"
 description: "Network Traffic Attribution"
-featurebaseId: "0200421"
+featurebaseId: "3144978"
 ---
 
 Praetorian Guard Platform (PGP) performs automated security scanning of your external attack surface. Network traffic originating from PGP is attributed using custom HTTP headers and user-agent strings, allowing your security operations team to identify and allowlist PGP scanning activity.

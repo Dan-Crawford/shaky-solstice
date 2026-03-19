@@ -1,7 +1,7 @@
 ---
 title: "Splunk Cloud Platform"
 description: "Import Splunk Cloud security events and notable alerts into the Praetorian Guard Platform."
-featurebaseId: "7129960"
+featurebaseId: "5988320"
 ---
 
 # Overview

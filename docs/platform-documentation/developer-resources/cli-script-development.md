@@ -1,7 +1,7 @@
 ---
 title: "CLI Script Development"
 description: "CLI Script Development"
-featurebaseId: "7904477"
+featurebaseId: "0567044"
 ---
 
 The Praetorian CLI has a scripting engine for you to easily extend the CLI in just a few steps. The walkthrough below is based on the documentation [here](https://github.com/praetorian-inc/praetorian-cli/blob/main/docs/script-development.md).

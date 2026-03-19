@@ -1,7 +1,7 @@
 ---
 title: "Multi-Tenancy vs. Single-Tenancy: Tailored to Your Needs"
 description: "Multi-Tenancy vs. Single-Tenancy: Tailored to Your Needs"
-featurebaseId: "4927830"
+featurebaseId: "9541820"
 ---
 
 ### **Multi-Tenant Model**

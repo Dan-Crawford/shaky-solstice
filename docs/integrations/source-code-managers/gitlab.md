@@ -1,7 +1,7 @@
 ---
 title: "GitLab"
 description: "GitLab"
-featurebaseId: "2750023"
+featurebaseId: "1896415"
 ---
 
 ## The GitLab Integration in PGP

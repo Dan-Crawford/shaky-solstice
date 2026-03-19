@@ -1,7 +1,7 @@
 ---
 title: "Integrations Page"
 description: "Integrations Page"
-featurebaseId: "5899151"
+featurebaseId: "1502279"
 ---
 
 The integrations page serves as your central hub for connecting external services and tools with The Praetorian Guard Platform (PGP). This documentation will guide you through understanding, navigating, and configuring the various integration options available to you.

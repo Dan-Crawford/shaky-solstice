@@ -1,7 +1,7 @@
 ---
 title: "Trajan: CI/CD Pipeline Attacks"
 description: "Trajan: CI/CD Pipeline Attacks"
-featurebaseId: "0287752"
+featurebaseId: "2868311"
 ---
 
 ![Introducing Trajan: CI/CD Pipeline Security for the Guard Platform](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174d9429121a9ad6dfad/019cf33a-f922-7295-a66b-5046126f899f/b64u-Y3ljM3d6eDZ6ei53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d26222b3c65743b13e822f7e9b4dd4a74138ce903a99b423623e6ac562a02b4c)

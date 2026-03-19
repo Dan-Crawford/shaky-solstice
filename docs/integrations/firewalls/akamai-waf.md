@@ -1,6 +1,7 @@
 ---
 title: "Akamai WAF"
 description: "Akamai WAF"
+featurebaseId: "7972171"
 ---
 
 ## Overview

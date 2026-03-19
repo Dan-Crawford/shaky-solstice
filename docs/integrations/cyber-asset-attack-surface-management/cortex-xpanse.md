@@ -1,7 +1,7 @@
 ---
 title: "Cortex Xpanse"
 description: "Cortex Xpanse"
-featurebaseId: "2252529"
+featurebaseId: "6111016"
 ---
 
 The Xpanse capability is a specialized security integration within PGP that discovers and monitors external assets using the Palo Alto Networks Xpanse API.

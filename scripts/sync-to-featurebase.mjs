@@ -161,10 +161,13 @@ async function createArticle(title, htmlBody, description, isDraft, parentId) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
   if (parentId) payload.parentId = parentId;
-  if (isDraft === false) {
-    payload.isPublished = true;
+  const result = await apiRequest('POST', 'articles', payload);
+
+  // Featurebase creates articles as drafts. Publish via a follow-up update.
+  if (isDraft === false && result?.id) {
+    await apiRequest('PUT', `articles/${result.id}`, { isPublished: true });
   }
-  return apiRequest('POST', 'articles', payload);
+  return result;
 }
 
 async function updateArticle(articleId, title, htmlBody, description, isDraft) {

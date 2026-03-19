@@ -1,7 +1,7 @@
 ---
 title: "Brutus: Modern Credential Attack Testing"
 description: "Brutus: Modern Credential Attack Testing"
-featurebaseId: "7089196"
+featurebaseId: "2510598"
 ---
 
 ![Et Tu, Default Creds? Introducing Brutus for Modern Credential Testing](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb97b/019cf337-2082-75aa-8eb5-602562452bc3/b64u-amtkejJiNDdyMS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=07b8ec3e2545cde9916be65c58723e0e92c7bbb6a6e35091010a41c261c51d37)

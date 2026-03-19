@@ -1,7 +1,7 @@
 ---
 title: "Internal Attack Surface"
 description: "Why It Matters and What Guard Does"
-featurebaseId: "6380549"
+featurebaseId: "7814647"
 ---
 
 ## The Assume Breach Reality

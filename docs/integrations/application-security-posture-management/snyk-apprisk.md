@@ -1,6 +1,7 @@
 ---
 title: "Snyk AppRisk"
 description: "Import application assets, risk scores, and coverage gaps from Snyk AppRisk into the Guard Platform."
+featurebaseId: "7197554"
 ---
 
 ## Overview

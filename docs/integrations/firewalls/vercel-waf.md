@@ -1,7 +1,7 @@
 ---
 title: "Vercel WAF"
 description: "Vercel WAF"
-featurebaseId: "4499072"
+featurebaseId: "9563200"
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: "PingID SSO Configuration"
 description: "PingID SSO Configuration"
-featurebaseId: "6954964"
+featurebaseId: "4153392"
 ---
 
 ## PGP Single Sign-On (SSO) with PingID

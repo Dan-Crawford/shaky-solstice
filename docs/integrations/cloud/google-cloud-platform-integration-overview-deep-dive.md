@@ -1,7 +1,7 @@
 ---
 title: "Google Cloud Platform Integration - Overview (Deep Dive)"
 description: "Google Cloud Platform Integration - Overview (Deep Dive)"
-featurebaseId: "5580241"
+featurebaseId: "6669636"
 ---
 
 ## Overview

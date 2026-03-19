@@ -157,17 +157,11 @@ async function apiRequest(method, endpoint, body, retries = MAX_RETRIES) {
   }
 }
 
-async function createArticle(title, htmlBody, description, isDraft, parentId) {
+async function createArticle(title, htmlBody, description, parentId) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
   if (parentId) payload.parentId = parentId;
-  const result = await apiRequest('POST', 'articles', payload);
-
-  // Featurebase creates articles as drafts. Publish via a follow-up update.
-  if (isDraft === false && result?.id) {
-    await apiRequest('PUT', `articles/${result.id}`, { isPublished: true });
-  }
-  return result;
+  return apiRequest('POST', 'articles', payload);
 }
 
 async function updateArticle(articleId, title, htmlBody, description, isDraft) {
@@ -229,7 +223,7 @@ async function processFile(filePath) {
   }
 
   // Create new article (or re-create after stale ID)
-  const result = await createArticle(data.title, htmlBody, description, isDraft, parentId);
+  const result = await createArticle(data.title, htmlBody, description, parentId);
   const newId = result.id;
   console.log(`  Created: ${filePath} → ${newId}`);
 
@@ -237,6 +231,16 @@ async function processFile(filePath) {
   data.featurebaseId = newId;
   const newContent = serializeFrontmatter(data, body);
   await fs.writeFile(filePath, newContent, 'utf-8');
+
+  // Publish after creation — best-effort, don't block on failure
+  if (!isDraft) {
+    try {
+      await updateArticle(newId, data.title, htmlBody, description, isDraft);
+      console.log(`  Published: ${filePath}`);
+    } catch (err) {
+      console.warn(`  Warning: created but could not publish ${filePath}: ${err.message}`);
+    }
+  }
 
   return { action: 'created', id: newId, filePath };
 }

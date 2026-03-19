@@ -1,3 +1,8 @@
+---
+title: "Invicti"
+description: "Invicti"
+---
+
 ## Overview
 
 The Invicti integration connects the Praetorian Guard Platform (PGP) with Invicti (formerly Netsparker) to import web application scan results, discovered vulnerabilities, and target assets from your Invicti environment. By syncing vulnerability findings from Invicti, PGP consolidates your DAST results alongside other security data sources for unified risk management.

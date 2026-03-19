@@ -345,7 +345,7 @@ async function main() {
     console.log(`\nNew articles requiring ID writeback:`);
     for (const f of newArticles) console.log(`  ${f}`);
     // Write list to a temp file for the workflow to pick up
-    await fs.writeFile('.writeback-files', newArticles.join('\n'), 'utf-8');
+    await fs.writeFile('.writeback-files', newArticles.join('\n') + '\n', 'utf-8');
   }
 
   if (results.errors.length > 0) {

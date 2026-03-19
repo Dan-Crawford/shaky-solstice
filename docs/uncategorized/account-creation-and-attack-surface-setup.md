@@ -13,7 +13,7 @@ This page offers step-by-step instructions to sign up and get started in PGP.
 
 ### Receiving an Invitation
 
-When an existing PGP user invites you to their organization, you will receive a "Welcome to the Praetorian Guard Platform (PGP)!" email from [PGP-noreply@praetorian.com](mailto:PGP-noreply@praetorian.com). This email contains:
+When an existing PGP user invites you to their organization, you will receive a "Welcome to the Praetorian Guard Platform (PGP)!" email from [guard-noreply@praetorian.com](mailto:guard-noreply@praetorian.com). This email contains:
 
 • A personalized signup link for creating your account• Information about the organization that invited you• Instructions for completing your registration
 

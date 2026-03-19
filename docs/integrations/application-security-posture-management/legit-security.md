@@ -1,6 +1,7 @@
 ---
 title: "Legit Security"
 description: "Import software supply chain security findings and CI/CD pipeline risks from Legit Security into the Guard Platform."
+featurebaseId: "1478086"
 ---
 
 ## Overview

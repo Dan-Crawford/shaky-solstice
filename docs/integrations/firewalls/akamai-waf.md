@@ -1,3 +1,8 @@
+---
+title: "Akamai WAF"
+description: "Akamai WAF"
+---
+
 ## Overview
 
 The Akamai WAF integration connects the Praetorian Guard Platform (PGP) with your Akamai Application Security (Kona Site Defender / App & API Protector) configuration, importing WAF security policies, rules, and configuration details into your attack surface. Understanding your WAF posture — which policies are active, what rules are enforced, and which applications are protected — is essential for identifying gaps in your defensive coverage.

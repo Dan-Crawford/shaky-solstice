@@ -161,7 +161,9 @@ async function createArticle(title, htmlBody, description, isDraft, parentId) {
   const payload = { title, body: htmlBody };
   if (description) payload.description = description;
   if (parentId) payload.parentId = parentId;
-  // Articles are created as drafts by default — no need to set state
+  if (isDraft === false) {
+    payload.isPublished = true;
+  }
   return apiRequest('POST', 'articles', payload);
 }
 

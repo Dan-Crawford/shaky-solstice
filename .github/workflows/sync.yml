@@ -1,39 +1,39 @@
-name: Sync Docs to Featurebase
+#name: Sync Docs to Featurebase
 
-on:
-  push:
-    branches: [main]
-    paths: ['docs/**/*.md']
-  workflow_dispatch:
-    inputs:
-      full-sync:
-        description: 'Re-sync all docs (not just changed files)'
-        required: false
-        default: 'false'
-        type: boolean
+#on:
+#  push:
+#    branches: [main]
+#    paths: ['docs/**/*.md']
+#  workflow_dispatch:
+#    inputs:
+#     full-sync:
+#        description: 'Re-sync all docs (not just changed files)'
+#        required: false
+#        default: 'false'
+#       type: boolean
 
-permissions:
-  contents: write
-  pull-requests: write
+#permissions:
+#  contents: write
+#  pull-requests: write
 
-concurrency:
-  group: featurebase-sync
-  cancel-in-progress: false
+#concurrency:
+#  group: featurebase-sync
+#  cancel-in-progress: false
 
-jobs:
-  sync:
-    runs-on: ubuntu-latest
+#jobs:
+#  sync:
+#   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2  # Need HEAD~1 for diff
+#    steps:
+#      - uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 2  # Need HEAD~1 for diff
 
       # Skip if this is a writeback commit
-      - name: Check for skip marker
-        id: check-skip
-        run: |
-          COMMIT_MSG=$(git log -1 --pretty=%B)
+#      - name: Check for skip marker
+#        id: check-skip
+#        run: |
+#          COMMIT_MSG=$(git log -1 --pretty=%B)
           if echo "$COMMIT_MSG" | grep -q '\[skip-sync\]'; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Skipping sync — writeback commit detected"

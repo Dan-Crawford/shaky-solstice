@@ -1,7 +1,7 @@
 ---
 title: "ArmorCode"
 description: "Import consolidated security findings from ArmorCode's application security orchestration platform into the Guard Platform."
-featurebaseId: "9365466"
+featurebaseId: "6955883"
 ---
 
 ## Overview

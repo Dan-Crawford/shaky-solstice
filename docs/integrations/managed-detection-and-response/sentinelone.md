@@ -1,3 +1,9 @@
+---
+title: "SentinelOne"
+description: "SentinelOne"
+featurebaseId: "0923966"
+---
+
 ## Overview
 
 The SentinelOne integration connects the Praetorian Guard Platform (PGP) with SentinelOne's endpoint detection and response (EDR) platform to import managed endpoints, agent status information, and threat detections. By ingesting data from SentinelOne, PGP gains visibility into your endpoint security posture and can correlate endpoint assets with the broader attack surface.
@@ -18,30 +24,31 @@ All operations are strictly read-only. PGP does not modify agent configurations,
 
 Before setting up the SentinelOne integration, ensure you have:
 
-- **A SentinelOne Management Console** with API access enabled
-- **An API Token** with read permissions for agents and threats
-- **The console URL** for your SentinelOne Management Console (e.g., `https://usea1-yourcompany.sentinelone.net`)
+* **A SentinelOne Management Console** with API access enabled
+* **An API Token** with read permissions for agents and threats
+* **The console URL** for your SentinelOne Management Console (e.g., `https://usea1-yourcompany.sentinelone.net`)
 
 ### Creating an API Token
 
-1. Sign in to your SentinelOne Management Console.
-2. Navigate to **Settings** > **Users**.
-3. Select your user account or create a dedicated service account for the integration.
-4. Click **Actions** > **API Token Operations** > **Generate API Token**.
-5. Copy the generated token immediately, as it will not be displayed again.
-6. Ensure the account has at least **Viewer** role permissions to access agent and threat data.
+* Sign in to your SentinelOne Management Console.
+* Navigate to **Settings** > **Users**.
+* Select your user account or create a dedicated service account for the integration.
+* Click **Actions** > **API Token Operations** > **Generate API Token**.
+* Copy the generated token immediately, as it will not be displayed again.
+* Ensure the account has at least **Viewer** role permissions to access agent and threat data.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **SentinelOne** from the list of available integrations.
-3. Enter your SentinelOne console URL and API token in the configuration form.
-4. Save the integration. PGP will validate connectivity to the SentinelOne API by querying the accounts endpoint.
+* In PGP, navigate to the **Integrations** page.
+* Select **SentinelOne** from the list of available integrations.
+* Enter your SentinelOne console URL and API token in the configuration form.
+* Save the integration. PGP will validate connectivity to the SentinelOne API by querying the accounts endpoint.
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | Console URL | The full URL of your SentinelOne Management Console (e.g., `https://usea1-yourcompany.sentinelone.net`) | Yes |
 | API Token | The API token generated from your SentinelOne user account | Yes |
 
@@ -51,8 +58,9 @@ Before setting up the SentinelOne integration, ensure you have:
 
 The integration imports all managed endpoints from SentinelOne as assets into PGP.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Hostname | Agent data | The computer name of the managed endpoint |
 | IP Addresses | Agent data | Internal and external IP addresses reported by the agent |
 | OS Type | Agent data | The operating system type (Windows, macOS, Linux) |
@@ -67,8 +75,9 @@ The integration imports all managed endpoints from SentinelOne as assets into PG
 
 When threat import is enabled, the integration retrieves threat detections from SentinelOne.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Threat Name | Threat data | The name or classification of the detected threat |
 | Threat Status | Threat data | Current status of the threat (active, mitigated, resolved) |
 | Classification | Threat data | SentinelOne's threat classification (malware, ransomware, PUP, etc.) |
@@ -78,8 +87,9 @@ When threat import is enabled, the integration retrieves threat detections from 
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `/web/api/v2.1/accounts` | GET | Validate API credentials and console connectivity |
 | `/web/api/v2.1/agents` | GET | Retrieve the full inventory of managed endpoints and agent details |
 | `/web/api/v2.1/threats` | GET | Retrieve threat detections across all managed endpoints |
@@ -88,14 +98,16 @@ The integration uses pagination via cursor tokens to handle environments with la
 
 ### Required API Permissions
 
+|  |  |
+| --- | --- |
 | Permission | Purpose |
-|------------|---------|
 | Viewer (minimum) | Read access to agents, threats, and account information |
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "Missing required configuration: API Token" | The API token field was left empty | Enter a valid API token in the integration configuration |
 | "Failed to process URL" | The console URL is malformed or missing the protocol | Ensure the URL includes `https://` and matches your SentinelOne console address |
 | "Failed to validate credentials" (401) | The API token is invalid or expired | Generate a new API token in the SentinelOne console and update it in PGP |

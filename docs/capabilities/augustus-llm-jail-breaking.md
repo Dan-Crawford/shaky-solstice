@@ -1,10 +1,10 @@
 ---
 title: "Augustus: LLM Jail Breaking"
 description: "Augustus: LLM Jail Breaking"
-featurebaseId: "6899845"
+featurebaseId: "7576670"
 ---
 
-![Augustus: Comprehensive AI Security Testing Now Available](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb92c/019cf339-eff8-7f3c-b66d-a6d4c744e8db/b64u-em9ucWNvZ2tnZi5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=14133b3c3e96cee1da858bfde7d0a95d8123dd60ae9f005670561ca8de3755a6)
+![Augustus: Comprehensive AI Security Testing Now Available](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb92c/019cf339-eff8-7f3c-b66d-a6d4c744e8db/b64u-em9ucWNvZ2tnZi5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d210a6f25813e9c5176bfcf8eef438898ca052a8a9df59515964b6bd13c1bfee)
 
 **Introducing Augustus**
 

@@ -1,7 +1,7 @@
 ---
 title: "Guard Platform API Technical User Guide"
 description: "Guard Platform API Technical User Guide"
-featurebaseId: "7605735"
+featurebaseId: "0563325"
 ---
 
 ## PGP API Technical User Guide
@@ -12,16 +12,11 @@ This guide provides comprehensive documentation for working with the PGP API pro
 
 The PGP API provides programmatic access to Praetorian's offensive security platform. You can use it to:
 
--   Query and manage assets in your attack surface
-    
--   Retrieve security risks and vulnerabilities
-    
--   Create and manage seeds for discovery
-    
--   Monitor scan jobs and their status
-    
--   Configure integrations and webhooks
-    
+* Query and manage assets in your attack surface
+* Retrieve security risks and vulnerabilities
+* Create and manage seeds for discovery
+* Monitor scan jobs and their status
+* Configure integrations and webhooks
 
 ## Base URL
 
@@ -33,16 +28,11 @@ https://d0qcl2e18h.execute-api.us-east-2.amazonaws.com/PGP/api/v1
 
 ### Getting Your API Keys
 
-1.  Log in to the [PGP Platform](https://PGP.praetorian.com)
-    
-2.  Navigate to **User Profile → API Keys**
-    
-3.  Click **Create API Key**
-    
-4.  Provide a name and expiration date (max 1 year)
-    
-5.  **Important**: Copy your API key secret immediately—it is only displayed once!
-    
+1. Log in to the [PGP Platform](https://PGP.praetorian.com)
+2. Navigate to **User Profile → API Keys**
+3. Click **Create API Key**
+4. Provide a name and expiration date (max 1 year)
+5. **Important**: Copy your API key secret immediately—it is only displayed once!
 
 > **Note for SSO Organizations**: Users in SSO-enabled organizations should also use API Keys for programmatic access.
 
@@ -50,21 +40,12 @@ https://d0qcl2e18h.execute-api.us-east-2.amazonaws.com/PGP/api/v1
 
 When you create an API key, you receive:
 
-Field
-
-Description
-
-`api_key_id`
-
-Unique identifier for your key
-
-`api_key_secret`
-
-Secret value for authentication (displayed only once)
-
-`expires`
-
-Expiration date in ISO 8601 format
+|  |  |
+| --- | --- |
+| Field | Description |
+| `api_key_id` | Unique identifier for your key |
+| `api_key_secret` | Secret value for authentication (displayed only once) |
+| `expires` | Expiration date in ISO 8601 format |
 
 ### Obtaining an Access Token
 
@@ -228,44 +209,22 @@ curl -X POST "https://d0qcl2e18h.execute-api.us-east-2.amazonaws.com/chariot/api
 
 ## Response Codes
 
-CodeDescription
-
-`200`
-
-Success - Request completed successfully
-
-`400`
-
-Bad Request - Invalid input parameters
-
-`401`
-
-Unauthorized - Invalid or expired token
-
-`403`
-
-Forbidden - Insufficient permissions
-
-`404`
-
-Not Found - Resource does not exist
-
-`429`
-
-Too Many Requests - Rate limit exceeded
-
-`502`
-
-Bad Gateway - Internal server error
+|  |
+| --- |
+| CodeDescription |
+| `200` | Success - Request completed successfully |
+| `400` | Bad Request - Invalid input parameters |
+| `401` | Unauthorized - Invalid or expired token |
+| `403` | Forbidden - Insufficient permissions |
+| `404` | Not Found - Resource does not exist |
+| `429` | Too Many Requests - Rate limit exceeded |
+| `502` | Bad Gateway - Internal server error |
 
 ## Rate Limiting
 
--   **Limit**: 5,000 requests per IP address (sliding window)
-    
--   **Response**: HTTP 429 when exceeded
-    
--   **Recommendation**: Implement exponential backoff for retries
-    
+* **Limit**: 5,000 requests per IP address (sliding window)
+* **Response**: HTTP 429 when exceeded
+* **Recommendation**: Implement exponential backoff for retries
 
 ## Pagination
 
@@ -321,21 +280,14 @@ export PRAETORIAN_CLI_API_KEY_ID=your-api-key-idexport PRAETORIAN_CLI_API_KEY_SE
 
 ## Best Practices
 
-1.  **Cache tokens**: Reuse access tokens for their full 1-hour lifetime
-    
-2.  **Handle pagination**: Always check for `offset` in responses
-    
-3.  **Implement retries**: Use exponential backoff for 429 and 502 errors
-    
-4.  **Secure credentials**: Never commit API keys to version control
-    
-5.  **Monitor rate limits**: Stay well below 5,000 requests per window
-    
+1. **Cache tokens**: Reuse access tokens for their full 1-hour lifetime
+2. **Handle pagination**: Always check for `offset` in responses
+3. **Implement retries**: Use exponential backoff for 429 and 502 errors
+4. **Secure credentials**: Never commit API keys to version control
+5. **Monitor rate limits**: Stay well below 5,000 requests per window
 
 ## Support
 
--   **Documentation**: [docs.praetorian.com](https://docs.praetorian.com)
-    
--   **GitHub Issues**: [praetorian-inc/PGP-ui](https://github.com/praetorian-inc/PGP-ui/issues)
-    
--   **Email**: [support@praetorian.com](mailto:support@praetorian.com)
+* **Documentation**: [docs.praetorian.com](https://docs.praetorian.com)
+* **GitHub Issues**: [praetorian-inc/PGP-ui](https://github.com/praetorian-inc/PGP-ui/issues)
+* **Email**: [support@praetorian.com](mailto:support@praetorian.com)

@@ -1,7 +1,7 @@
 ---
 title: "Guard Platform Webhook"
 description: "Guard Platform Webhook"
-featurebaseId: "7671297"
+featurebaseId: "25815155351835"
 ---
 
 The Praetorian Guard Platform (PGP) provides webhook integrations that allow you to send or receive data between your PGP instance and external applications. This enables you to connect tools and systems that don't yet have an official PGP integration.
@@ -12,7 +12,7 @@ The Praetorian Guard Platform (PGP) provides webhook integrations that allow you
 
 Each PGP instance supports one active webhook. In Settings, under the Notifications Settings section, find the "Webhook URL" section.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb024-2b28-7873-b4d1-2178c7dfe21c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=283f43da7eadb92fa3d1db9c97470cde5c757a4b9aa4e44b5ad3f0627dd27566)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb024-2b28-7873-b4d1-2178c7dfe21c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=716a38b7b430249cdd4cc9e11ef5333c74a2bf18488b8225efa69189558034aa)
 
 Click the "Generate URL" button to create your unique PGP Webhook URL.
 
@@ -34,7 +34,7 @@ curl -X PUT "https://<webhook.url>" \
    "dns": "public-facing-api.domain.com",
    "name": "192.168.15.30",
    "finding": "Exposed_Admin_Interface" # must match regex /^\\S+$/}'
-}' 
+}'
 ```
 
 The risk will now appear in your **Vulnerabilities** page.
@@ -50,7 +50,7 @@ curl -X 'PUT' \'https://<webhook.url>' \
    -d '{"dns": "staging.domain.com","name": "10.1.1.5"}'
 ```
 
-This will add a new asset to your **Assets** page. 
+This will add a new asset to your **Assets** page.
 
 **Important Notes About Webhook-Added Assets:**Assets added through the webhook are **ephemeral**. They are scanned **once** by PGP and then retained only for their configured **time-to-live (TTL)**. If an asset is not rediscovered by another integration or re-submitted via the webhook before its TTL expires, it will automatically fall out of the platform.
 
@@ -64,11 +64,11 @@ The PGP platform provides an outgoing webhook integration that sends security no
 
 In Settings, under the Notifications Settings section, find the Outbound Webhooks setup:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb02a-15a7-700c-b421-c057c8562c4c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=d12c52bd40cb6bd7721b4930ddcaf7b6b39ab07b159f03d85d55f8825a7dcbae)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/6958120ba21178a432e4cbf5/019cb02a-15a7-700c-b421-c057c8562c4c/b64u-aW1hZ2UucG5n.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=71ca1bd5a8a624d3fbce3e78022271f8e9af0e5f34e18fd3552acdb40a98c3d4)
 
-**Required Fields:**\- Webhook Name: A friendly identifier for the integration (e.g., "SecOps SQS Queue")- Webhook URL: The target endpoint that will receive POST requests- Severity Threshold: Minimum risk severity level (Medium, High, Critical by default)
+**Required Fields:**- Webhook Name: A friendly identifier for the integration (e.g., "SecOps SQS Queue")- Webhook URL: The target endpoint that will receive POST requests- Severity Threshold: Minimum risk severity level (Medium, High, Critical by default)
 
-**Optional Authentication:**\- Authentication Header Name: Custom header name (e.g., "Authorization", "X-API-Key")- Authentication Header Value: Corresponding header value for authentication
+**Optional Authentication:**- Authentication Header Name: Custom header name (e.g., "Authorization", "X-API-Key")- Authentication Header Value: Corresponding header value for authentication
 
 ### Webhook Payload
 

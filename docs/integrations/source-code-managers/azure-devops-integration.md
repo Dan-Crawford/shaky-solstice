@@ -1,7 +1,7 @@
 ---
 title: "Azure DevOps Integration"
-description: "Connect your Azure DevOps organization to PGP for automated repository discovery, secret scanning, and security finding management."
-featurebaseId: "0860942"
+description: "Azure DevOps Integration"
+featurebaseId: "6028500"
 ---
 
 ## What is Azure DevOps?
@@ -18,12 +18,9 @@ Discovered repositories are cloned and scanned using [Titus](https://github.com/
 
 You can scope the integration at three levels:
 
--   **Organization-wide**: `https://dev.azure.com/{org}` — scans all projects
-    
--   **Single project**: `https://dev.azure.com/{org}/{project}` — scans only that project
-    
--   **Single repo**: `https://dev.azure.com/{org}/{project}/_git/{repo}` — scans one repository
-    
+* **Organization-wide**: `https://dev.azure.com/{org}` — scans all projects
+* **Single project**: `https://dev.azure.com/{org}/{project}` — scans only that project
+* **Single repo**: `https://dev.azure.com/{org}/{project}/_git/{repo}` — scans one repository
 
 ### Work Item Tracking (Optional)
 
@@ -45,19 +42,14 @@ Uses a static PAT for authentication. Simpler to set up, but PATs are long-lived
 
 ### Via Azure Cloud Integration
 
-1.  Ensure you have an existing **Azure cloud integration** configured in PGP.
-    
-2.  Add the service principal to Azure DevOps: go to your Azure DevOps organization, then **Organization Settings > Users**. Add the Application ID (from your Terraform output) and grant **Basic** access.
-    
-3.  In PGP, go to **Integrations > Source Code Managers > Azure DevOps**. Select your Azure Cloud Integration from the dropdown, enter your organization or project URL, and click **Connect**.
-    
+1. Ensure you have an existing **Azure cloud integration** configured in PGP.
+2. Add the service principal to Azure DevOps: go to your Azure DevOps organization, then **Organization Settings > Users**. Add the Application ID (from your Terraform output) and grant **Basic** access.
+3. In PGP, go to **Integrations > Source Code Managers > Azure DevOps**. Select your Azure Cloud Integration from the dropdown, enter your organization or project URL, and click **Connect**.
 
 ### Via PAT
 
-1.  In Azure DevOps, click your **profile icon**, then **Personal access tokens**. Click **\+ New Token** and grant **Code (Read)** and **Project and Team (Read)** scope.
-    
-2.  In PGP, go to **Integrations > Source Code Managers > Azure DevOps** and click **Use a Personal Access Token instead**. Enter your organization URL and PAT, then click **Connect**.
-    
+1. In Azure DevOps, click your **profile icon**, then **Personal access tokens**. Click **+ New Token** and grant **Code (Read)** and **Project and Team (Read)** scope.
+2. In PGP, go to **Integrations > Source Code Managers > Azure DevOps** and click **Use a Personal Access Token instead**. Enter your organization URL and PAT, then click **Connect**.
 
 For full details on PAT management, see [Microsoft's PAT documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
@@ -65,53 +57,30 @@ For full details on PAT management, see [Microsoft's PAT documentation](https://
 
 ### Via Azure Cloud Integration
 
-1.  Ensure the service principal has Azure DevOps access (see repository scanning setup above).
-    
-2.  In PGP, go to **Integrations > IT Service Management > Azure DevOps Work Items**. Select your Azure Cloud Integration, enter your organization URL, and click **Connect**.
-    
-3.  Configure a template by selecting a project, work item type, and optionally enabling auto-create with a severity threshold.
-    
+1. Ensure the service principal has Azure DevOps access (see repository scanning setup above).
+2. In PGP, go to **Integrations > IT Service Management > Azure DevOps Work Items**. Select your Azure Cloud Integration, enter your organization URL, and click **Connect**.
+3. Configure a template by selecting a project, work item type, and optionally enabling auto-create with a severity threshold.
 
 ### Via PAT
 
-1.  Create a PAT with **Work Items (Read and Write)** scope in addition to Code and Project scopes.
-    
-2.  In PGP, go to **Integrations > IT Service Management > Azure DevOps Work Items** and click **Use a Personal Access Token instead**. Enter your organization URL and PAT, then click **Connect**.
-    
-3.  Configure a template (same as above).
-    
+1. Create a PAT with **Work Items (Read and Write)** scope in addition to Code and Project scopes.
+2. In PGP, go to **Integrations > IT Service Management > Azure DevOps Work Items** and click **Use a Personal Access Token instead**. Enter your organization URL and PAT, then click **Connect**.
+3. Configure a template (same as above).
 
 ## Best Practices
 
--   **Prefer the Azure Cloud Integration** over PAT for automatic credential rotation and stronger security.
-    
--   **Use project-scoped URLs** if you only need to monitor specific projects.
-    
--   **Use a service account** for PATs so the integration is not disrupted by personnel changes.
-    
--   **Set short PAT expiration** and rotate regularly if using PAT authentication.
-    
+* **Prefer the Azure Cloud Integration** over PAT for automatic credential rotation and stronger security.
+* **Use project-scoped URLs** if you only need to monitor specific projects.
+* **Use a service account** for PATs so the integration is not disrupted by personnel changes.
+* **Set short PAT expiration** and rotate regularly if using PAT authentication.
 
 ## Troubleshooting
 
-IssueSolution
-
-Azure DevOps token not available
-
-For Entra ID: verify the service principal has Azure DevOps API permissions. For PAT: the token may have expired, generate a new one.
-
-No projects found in organization
-
-Check user permissions in Organization Settings > Users. The service principal or PAT user needs access to at least one project.
-
-Invalid Azure DevOps URL
-
-URL must use `https://dev.azure.com/`. Legacy `visualstudio.com` URLs are not supported.
-
-Work items not being created
-
-Ensure the PAT has Work Items: Read and Write scope, or the service principal has appropriate permissions.
-
-Rate limiting errors
-
-PGP respects Azure DevOps rate limits with automatic retry and backoff. If persistent, check your organization rate limit policies.
+|  |
+| --- |
+| IssueSolution |
+| Azure DevOps token not available | For Entra ID: verify the service principal has Azure DevOps API permissions. For PAT: the token may have expired, generate a new one. |
+| No projects found in organization | Check user permissions in Organization Settings > Users. The service principal or PAT user needs access to at least one project. |
+| Invalid Azure DevOps URL | URL must use `https://dev.azure.com/`. Legacy `visualstudio.com` URLs are not supported. |
+| Work items not being created | Ensure the PAT has Work Items: Read and Write scope, or the service principal has appropriate permissions. |
+| Rate limiting errors | PGP respects Azure DevOps rate limits with automatic retry and backoff. If persistent, check your organization rate limit policies. |

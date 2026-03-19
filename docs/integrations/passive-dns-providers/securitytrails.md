@@ -1,3 +1,9 @@
+---
+title: "SecurityTrails"
+description: "SecurityTrails"
+featurebaseId: "4133909"
+---
+
 ## Overview
 
 The SecurityTrails integration connects the Praetorian Guard Platform (PGP) with SecurityTrails to enrich your attack surface with historical DNS data, WHOIS records, and comprehensive subdomain information. SecurityTrails maintains one of the largest databases of historical internet records, and this integration brings that intelligence directly into PGP for continuous asset discovery and attack surface mapping.
@@ -18,28 +24,29 @@ All operations are strictly read-only. PGP does not modify, create, or delete an
 
 Before setting up the SecurityTrails integration, ensure you have:
 
-- **A SecurityTrails account** with API access enabled
-- **A SecurityTrails API key** with sufficient query quota for your domain count
-- **Seed domains** already configured in PGP that you want to enrich with SecurityTrails data
+* **A SecurityTrails account** with API access enabled
+* **A SecurityTrails API key** with sufficient query quota for your domain count
+* **Seed domains** already configured in PGP that you want to enrich with SecurityTrails data
 
 ### Creating an API Key
 
-1. Sign in to the [SecurityTrails Portal](https://securitytrails.com/).
-2. Navigate to your account settings or the **API** section.
-3. Copy your existing API key or generate a new one.
-4. Ensure your plan includes sufficient monthly API query credits for the number of domains you plan to monitor.
+* Sign in to the [SecurityTrails Portal](https://securitytrails.com/).
+* Navigate to your account settings or the **API** section.
+* Copy your existing API key or generate a new one.
+* Ensure your plan includes sufficient monthly API query credits for the number of domains you plan to monitor.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **SecurityTrails** from the list of available integrations.
-3. Enter your SecurityTrails API key in the configuration form.
-4. Save the integration. PGP will validate connectivity to the SecurityTrails API automatically.
+* In PGP, navigate to the **Integrations** page.
+* Select **SecurityTrails** from the list of available integrations.
+* Enter your SecurityTrails API key in the configuration form.
+* Save the integration. PGP will validate connectivity to the SecurityTrails API automatically.
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | API Key | Your SecurityTrails API key | Yes |
 
 ## What Data Is Synced
@@ -48,8 +55,9 @@ Before setting up the SecurityTrails integration, ensure you have:
 
 The integration discovers subdomains associated with your seed domains and imports them as new seeds into PGP for further scanning and analysis.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Subdomain | Subdomain listing API | Fully qualified subdomain names discovered under your seed domains |
 | First Seen | Historical records | Timestamp when the subdomain was first observed by SecurityTrails |
 
@@ -57,8 +65,9 @@ The integration discovers subdomains associated with your seed domains and impor
 
 Historical and current DNS records are imported to map your domain infrastructure.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Record Type | DNS history API | The DNS record type (A, AAAA, MX, NS, CNAME, TXT, SOA) |
 | Record Value | DNS history API | The resolved value (IP address, mail server, nameserver, etc.) |
 | IP Address | A/AAAA records | IP addresses that the domain currently or previously resolved to |
@@ -69,8 +78,9 @@ Historical and current DNS records are imported to map your domain infrastructur
 
 Domain registration information is imported to help attribute assets to your organization.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Registrant | WHOIS API | The registered owner of the domain |
 | Registrar | WHOIS API | The domain registrar |
 | Registration Date | WHOIS API | When the domain was originally registered |
@@ -79,8 +89,9 @@ Domain registration information is imported to help attribute assets to your org
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `/v1/domain/{domain}/subdomains` | GET | Enumerate subdomains for a given domain |
 | `/v1/history/{domain}/dns/{type}` | GET | Retrieve historical DNS records by record type |
 | `/v1/domain/{domain}/whois` | GET | Retrieve current WHOIS registration data |
@@ -90,14 +101,16 @@ The integration uses pagination where supported and respects SecurityTrails API 
 
 ### Required API Permissions
 
+|  |  |
+| --- | --- |
 | Permission | Purpose |
-|------------|---------|
 | API Access | Read access to subdomain, DNS history, and WHOIS endpoints |
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "Invalid API key" or 401 error | The API key is incorrect or has been revoked | Verify your API key in the SecurityTrails portal and update it in PGP |
 | "Rate limit exceeded" or 429 error | Too many API requests in a short period | Reduce the number of seed domains or upgrade your SecurityTrails plan for higher rate limits |
 | No subdomains discovered | The domain has no subdomains in SecurityTrails database, or the domain is not in your seed list | Verify the domain exists in SecurityTrails by searching manually, and confirm it is added as a seed in PGP |

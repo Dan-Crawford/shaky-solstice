@@ -1,7 +1,7 @@
 ---
 title: "Responsible AI Principles"
 description: "Responsible AI Principles"
-featurebaseId: "9327898"
+featurebaseId: "9353323"
 ---
 
 ## Overview
@@ -12,36 +12,36 @@ Praetorian is committed to responsible AI use in security operations. Our AI cap
 
 AI augments your security team's capabilities — it does not replace human judgment. Critical security decisions require explicit human authorization:
 
--   Initiating active security scans against your infrastructure
--   Executing offensive security capabilities
--   Modifying risk status or asset classifications
--   Any action that could affect your production environment
+* Initiating active security scans against your infrastructure
+* Executing offensive security capabilities
+* Modifying risk status or asset classifications
+* Any action that could affect your production environment
 
 The AI assistant is designed to inform, analyze, and recommend — while humans retain authority over consequential decisions.
 
 ## Transparency
 
--   **Clear Identity**: The AI assistant identifies itself and its capabilities. It does not impersonate human analysts or obscure that responses are AI-generated.
--   **Capability Boundaries**: The assistant communicates what it can and cannot do, including when questions fall outside its knowledge or capabilities.
--   **Source Visibility**: AI-generated insights reference the platform data they are derived from, allowing you to verify conclusions against source information.
+* **Clear Identity**: The AI assistant identifies itself and its capabilities. It does not impersonate human analysts or obscure that responses are AI-generated.
+* **Capability Boundaries**: The assistant communicates what it can and cannot do, including when questions fall outside its knowledge or capabilities.
+* **Source Visibility**: AI-generated insights reference the platform data they are derived from, allowing you to verify conclusions against source information.
 
 ## Minimal Privilege
 
 AI operations follow the principle of least privilege:
 
--   Each AI agent only has access to the specific tools required for its designated task
--   Sub-agents inherit restricted permission sets from their parent — they cannot escalate their own privileges
--   Data access is scoped to your tenant partition with no ability to access other organizations' data
--   Security scanning capabilities are gated behind explicit authorization checks
+* Each AI agent only has access to the specific tools required for its designated task
+* Sub-agents inherit restricted permission sets from their parent — they cannot escalate their own privileges
+* Data access is scoped to your tenant partition with no ability to access other organizations' data
+* Security scanning capabilities are gated behind explicit authorization checks
 
 ## Continuous Improvement
 
 We regularly evaluate AI behavior against safety benchmarks and update guardrails as the threat landscape evolves. Our approach includes:
 
--   Regular review of AI operational patterns and edge cases
--   Updates to content safety controls as new risk categories emerge
--   Refinement of grounding and accuracy techniques based on real-world performance
--   Alignment with evolving industry standards including NIST AI Risk Management Framework and OWASP LLM Top 10
+* Regular review of AI operational patterns and edge cases
+* Updates to content safety controls as new risk categories emerge
+* Refinement of grounding and accuracy techniques based on real-world performance
+* Alignment with evolving industry standards including NIST AI Risk Management Framework and OWASP LLM Top 10
 
 ## Frequently Asked Questions
 

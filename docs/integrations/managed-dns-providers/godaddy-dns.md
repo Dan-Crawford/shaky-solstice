@@ -1,3 +1,9 @@
+---
+title: "GoDaddy DNS"
+description: "GoDaddy DNS"
+featurebaseId: "3340642"
+---
+
 ## Overview
 
 The GoDaddy DNS integration connects the Praetorian Guard Platform (PGP) with GoDaddy's managed DNS service to discover DNS zones and records across your domains. By importing DNS data, PGP identifies all hostnames, subdomains, and related infrastructure that form part of your external attack surface.
@@ -23,24 +29,24 @@ Before setting up the GoDaddy DNS integration, ensure you have:
 
 ### Creating API Credentials
 
-1. Sign in to the [GoDaddy Developer Portal](https://developer.godaddy.com/).
-2. Navigate to **API Keys**.
-3. Click **Create New API Key**.
-4. Set the environment to **Production** (not OTE/Testing).
-5. Copy both the **Key** and **Secret**. The secret is only shown once at creation time.
-6. Note: GoDaddy API keys provide read-only access to DNS data by default. No additional permission scoping is needed for this integration.
+- Sign in to the [GoDaddy Developer Portal](https://developer.godaddy.com/).
+- Navigate to **API Keys**.
+- Click **Create New API Key**.
+- Set the environment to **Production** (not OTE/Testing).
+- Copy both the **Key** and **Secret**. The secret is only shown once at creation time.
+- Note: GoDaddy API keys provide read-only access to DNS data by default. No additional permission scoping is needed for this integration.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **GoDaddy DNS** from the list of available integrations.
-3. Enter your GoDaddy API key and secret.
-4. Save the integration. PGP will validate connectivity by making a test request to the GoDaddy API.
+- In PGP, navigate to the **Integrations** page.
+- Select **GoDaddy DNS** from the list of available integrations.
+- Enter your GoDaddy API key and secret.
+- Save the integration. PGP will validate connectivity by making a test request to the GoDaddy API.
 
 ### Field Reference
 
 | Field | Description | Required |
-|-------|-------------|----------|
+| --- | --- | --- |
 | API Key | Your GoDaddy production API key | Yes |
 | API Secret | Your GoDaddy production API secret | Yes |
 
@@ -51,7 +57,7 @@ Before setting up the GoDaddy DNS integration, ensure you have:
 The integration discovers all DNS zones managed in your GoDaddy account.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Domain Name | GoDaddy zone list | The root domain name for each DNS zone |
 | Zone Status | GoDaddy zone metadata | Whether the zone is active and serving DNS |
 
@@ -60,7 +66,7 @@ The integration discovers all DNS zones managed in your GoDaddy account.
 For each zone, individual DNS records are retrieved and processed.
 
 | Record Type | Imported As | Description |
-|-------------|-------------|-------------|
+| --- | --- | --- |
 | A | Asset (IP address) + Seed (hostname) | Maps a hostname to an IPv4 address |
 | AAAA | Asset (IP address) + Seed (hostname) | Maps a hostname to an IPv6 address |
 | CNAME | Seed (target hostname) | Alias pointing to another hostname, triggers further discovery |
@@ -73,15 +79,15 @@ For each zone, individual DNS records are retrieved and processed.
 
 Imported DNS data feeds into PGP's attack surface discovery pipeline:
 
-1. **Root domains** are added as seeds for subdomain enumeration.
-2. **A/AAAA records** create direct IP address assets for vulnerability scanning.
-3. **CNAME targets** become seeds that trigger recursive DNS resolution.
-4. **MX records** reveal mail infrastructure for further analysis.
+- **Root domains** are added as seeds for subdomain enumeration.
+- **A/AAAA records** create direct IP address assets for vulnerability scanning.
+- **CNAME targets** become seeds that trigger recursive DNS resolution.
+- **MX records** reveal mail infrastructure for further analysis.
 
 ## API Endpoints Used
 
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
+| --- | --- | --- |
 | `https://api.godaddy.com/v1/domains` | GET | List all domains in the account |
 | `https://api.godaddy.com/v1/domains/{domain}/records` | GET | Retrieve all DNS records for a specific domain |
 
@@ -90,7 +96,7 @@ Authentication is performed via the `Authorization` header using the format `sso
 ## Troubleshooting
 
 | Issue | Cause | Fix |
-|-------|-------|-----|
+| --- | --- | --- |
 | Authentication failure (401) | The API key or secret is invalid | Verify your API key and secret in the GoDaddy Developer Portal. Ensure you are using production credentials, not OTE/testing |
 | Authentication failure (403) | The API key lacks production access | Generate a new API key with the environment set to **Production** |
 | No domains found | The GoDaddy account has no domains, or the API key is associated with a different account | Verify that domains are present in your GoDaddy account and that the API key belongs to the correct account |

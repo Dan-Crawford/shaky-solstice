@@ -1,3 +1,9 @@
+---
+title: "Avalor (Zscaler)"
+description: "Avalor (Zscaler)"
+featurebaseId: "4573264"
+---
+
 ## Overview
 
 The Avalor (Zscaler) integration connects the Praetorian Guard Platform (PGP) with Avalor's security data fabric, now part of Zscaler. Avalor aggregates and normalizes security data across your entire stack — vulnerability scanners, endpoint tools, cloud platforms, and identity systems — and produces unified risk analytics and posture scores. By importing this consolidated data into PGP, you gain a single view of your security posture enriched with Avalor's cross-source risk correlation, without needing to configure each underlying tool individually.
@@ -9,9 +15,7 @@ This integration is designed for organizations that use Avalor as their central 
 When connected, PGP performs a **read-only** import from the Avalor API:
 
 - **Assets**: Avalor's unified asset inventory — servers, endpoints, cloud resources, applications, and identities — is imported into PGP as assets. Each asset includes normalized metadata aggregated from the underlying security tools feeding into Avalor.
-
 - **Risk Scores and Posture Data**: Risk analytics produced by Avalor, including composite risk scores, coverage gaps, and posture assessments, are imported as risk metadata attached to the corresponding PGP assets.
-
 - **Security Findings**: Vulnerability and misconfiguration findings that Avalor has correlated across multiple data sources are imported into PGP, providing deduplicated and enriched risk context.
 
 Data flows **one direction only** — from Avalor into PGP. The integration never writes back to Avalor or modifies any data in the Avalor platform.
@@ -20,27 +24,21 @@ Data flows **one direction only** — from Avalor into PGP. The integration neve
 
 Before setting up the integration, you need Avalor API credentials:
 
-1. Log in to the [Avalor platform](https://app.avalor.io) (or your Zscaler-provisioned Avalor instance)
-
-2. Navigate to **Settings > API Access**
-
-3. Click **Generate API Key**
-
-4. Record the following values:
-   - **API Key**: The generated key for authenticating API requests
-   - **Avalor Instance URL**: Your Avalor tenant URL (e.g., `https://your-org.avalor.io`)
-
-5. Ensure the API key has **read-only** permissions to asset and risk data
+- Log in to the [Avalor platform](https://app.avalor.io) (or your Zscaler-provisioned Avalor instance)
+- Navigate to **Settings > API Access**
+- Click **Generate API Key**
+- Record the following values:
+- **API Key**: The generated key for authenticating API requests
+- **Avalor Instance URL**: Your Avalor tenant URL (e.g., `https://your-org.avalor.io`)
+- Ensure the API key has **read-only** permissions to asset and risk data
 
 The API key must have sufficient scope to read assets, findings, and risk scores from your Avalor tenant.
 
 ## Setup
 
-1. Go to **Integrations, then Security Analytics, then Avalor (Zscaler)** in the Guard Platform
-
-2. Enter your Avalor API credentials in the setup form
-
-3. Click **Connect** — PGP will validate your credentials by attempting to fetch asset data before saving
+- Go to **Integrations, then Security Analytics, then Avalor (Zscaler)** in the Guard Platform
+- Enter your Avalor API credentials in the setup form
+- Click **Connect** — PGP will validate your credentials by attempting to fetch asset data before saving
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -106,9 +104,6 @@ All requests are authenticated using the API key passed in the request header ov
 ## Security and Data Handling
 
 - **Read-only access**: The integration only reads data from Avalor. It never creates, modifies, or deletes assets, findings, or configurations in the Avalor platform.
-
 - **Credential handling**: Your API key is stored as an encrypted credential within PGP and is never exposed in logs or the UI after initial entry.
-
 - **Authentication**: The API key is transmitted over HTTPS in request headers for every API call.
-
 - **Data filtering**: Imported assets and findings pass through PGP standard filtering rules, allowing you to control which data is included in your attack surface.

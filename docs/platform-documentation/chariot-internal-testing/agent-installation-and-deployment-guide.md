@@ -1,7 +1,7 @@
 ---
 title: "Agent Installation and Deployment Guide"
 description: "Agent Installation and Deployment Guide"
-featurebaseId: "8434994"
+featurebaseId: "33312229744155"
 ---
 
 This guide walks you through the process of installing and deploying the PGP agent (Aegis), tailored for use in assumed breach and internal penetration testing scenarios.
@@ -18,20 +18,14 @@ The Aegis agent operates independently of local infrastructure, communicating di
 
 Before starting, ensure the following:
 
--   **Download Aegis Agent:** Obtain the latest binary from the official Aegis agent from the Praetorian support team.
-    
--   **Admin Rights:** Ensure you have administrative privileges to install and configure Aegis on all target endpoints.
-    
--   **Hardware Virtualization Support:** The agent should be installed on a system that supports hardware virtualization. This can be enabled via BIOS settings or within a virtualization platform such as vSphere. While Aegis will function without this, enabling hardware virtualization allows for enhanced capabilities and improved performance.
-    
--   **Note for VMware Environments:** If the Aegis agent is deployed within a virtual machine hosted on VMware platforms such as ESXi or vSphere, ensure that **port security features are disabled or appropriately configured** on the virtual switch.
-    
-    -   **Enable Promiscuous Mode (Windows Agent):** For Windows hosts enable Promiscuous Mode on the virtual switch (vSwitch) port group that the parent ESXi VM (your Host Virtual Machine) is connected to on the physical ESXi host. This allows the physical vSwitch to see traffic from the MAC address of any nested VMs introduced by Aegis.
-        
-    -   **Enable Forged Transmits:** You also need to enable Forged Transmits on the same virtual switch port group on the physical ESXi host. This allows traffic originating from the nested Virtual Machines (which have different MAC addresses to that of the parent Virtual Machine) to leave the physical vSwitch.
-        
-    -   **Alternatively, Enable MAC Learning (Windows Agent):** If your physical ESXi host is running vSphere 7.0 or later, you can enable MAC Learning on the relevant port group instead of enabling both Promiscuous Mode and Forged Transmits. MAC Learning allows the vSwitch to learn and permit traffic from the specific MAC address of any of the nested Virtual Machines introduced to the system by Aegis, without the broader allowances of promiscuous mode.
-        
+* **Download Aegis Agent:** Obtain the latest binary from the official Aegis agent from the Praetorian support team.
+* **Admin Rights:** Ensure you have administrative privileges to install and configure Aegis on all target endpoints.
+* **Hardware Virtualization Support:** The agent should be installed on a system that supports hardware virtualization. This can be enabled via BIOS settings or within a virtualization platform such as vSphere. While Aegis will function without this, enabling hardware virtualization allows for enhanced capabilities and improved performance.
+* **Note for VMware Environments:** If the Aegis agent is deployed within a virtual machine hosted on VMware platforms such as ESXi or vSphere, ensure that **port security features are disabled or appropriately configured** on the virtual switch.
+
+  + **Enable Promiscuous Mode (Windows Agent):** For Windows hosts enable Promiscuous Mode on the virtual switch (vSwitch) port group that the parent ESXi VM (your Host Virtual Machine) is connected to on the physical ESXi host. This allows the physical vSwitch to see traffic from the MAC address of any nested VMs introduced by Aegis.
+  + **Enable Forged Transmits:** You also need to enable Forged Transmits on the same virtual switch port group on the physical ESXi host. This allows traffic originating from the nested Virtual Machines (which have different MAC addresses to that of the parent Virtual Machine) to leave the physical vSwitch.
+  + **Alternatively, Enable MAC Learning (Windows Agent):** If your physical ESXi host is running vSphere 7.0 or later, you can enable MAC Learning on the relevant port group instead of enabling both Promiscuous Mode and Forged Transmits. MAC Learning allows the vSwitch to learn and permit traffic from the specific MAC address of any of the nested Virtual Machines introduced to the system by Aegis, without the broader allowances of promiscuous mode.
 
 #### **Anti-Virus / EDR Considerations**
 
@@ -89,56 +83,22 @@ Linux: /var/log/Aegis
 
 **Notes for CrowdStrike Users:**
 
--   Setting the agent host to monitor mode is the best way to ensure smooth operation.
-    
--   If using exclusions, the type of exclusion used for our requested whitelisting paths matters. In CrowdStrike, the type of exclusion necessary for the agent to function properly is called a sensor exclusion.
-    
+* Setting the agent host to monitor mode is the best way to ensure smooth operation.
+* If using exclusions, the type of exclusion used for our requested whitelisting paths matters. In CrowdStrike, the type of exclusion necessary for the agent to function properly is called a sensor exclusion.
 
 #### **Network Requirements / Firewall Rules**
 
 The Aegis agent requires outbound internet access to communicate with our infrastructure and integrated VPN connectivity. The environment must allow endpoints to establish and maintain connections to the following services for Aegis to function correctly:
 
-Hostname / IP Address
-
-Port
-
-Protocol
-
-agent.chariot.praetorian.com
-
-443
-
-TCP
-
-region1.v2.argotunnel.com
-
-7844
-
-TCP
-
-region2.v2.argotunnel.com
-
-7844
-
-UDP
-
-api.cloudflare.com
-
-443
-
-TCP
-
-1.1.1.1
-
-853
-
-TCP
-
-1.1.1.1
-
-53
-
-UDP
+|  |  |  |
+| --- | --- | --- |
+| Hostname / IP Address | Port | Protocol |
+| agent.chariot.praetorian.com | 443 | TCP |
+| region1.v2.argotunnel.com | 7844 | TCP |
+| region2.v2.argotunnel.com | 7844 | UDP |
+| api.cloudflare.com | 443 | TCP |
+| 1.1.1.1 | 853 | TCP |
+| 1.1.1.1 | 53 | UDP |
 
 ### **Step 2: Operating System Requirements**
 
@@ -148,18 +108,15 @@ An OVA is a single-file package that contains a preconfigured virtual machine. I
 
 #### **Prerequisites**
 
--   Supported hypervisor that can import OVA: VMware vSphere ESXi, VMware Workstation or Fusion, or Oracle VirtualBox.
-    
--   Minimum 16GB RAM
-    
--   150GB free disk space
-    
+* Supported hypervisor that can import OVA: VMware vSphere ESXi, VMware Workstation or Fusion, or Oracle VirtualBox.
+* Minimum 16GB RAM
+* 150GB free disk space
 
 #### Installation
 
 Open your virtualization platform and choose Import or Deploy OVF/OVA.
 
-Select the \`.ova\` file.
+Select the `.ova` file.
 
 Review and adjust VM settings such as name, CPUs, memory, disk, and networking.
 
@@ -169,16 +126,11 @@ Complete the import and power on the VM.
 
 #### **Prerequisites**
 
--   Windows 8 / Windows Server 2012 or later
-    
--   The Aegis installer must be executed with local administrator privileges
-    
--   Minimum 16GB RAM
-    
--   150GB free disk space
-    
--   Domain Joined System
-    
+* Windows 8 / Windows Server 2012 or later
+* The Aegis installer must be executed with local administrator privileges
+* Minimum 16GB RAM
+* 150GB free disk space
+* Domain Joined System
 
 #### Installation
 
@@ -214,14 +166,10 @@ Alternatively, use **Add or Remove Programs** in Windows settings to uninstall A
 
 #### **Prerequisites**
 
--   Supported distributions: Ubuntu 20.04+, RHEL 8+
-    
--   Root or sudo privileges
-    
--   Minimum 6GB RAM
-    
--   20GB Disk Space
-    
+* Supported distributions: Ubuntu 20.04+, RHEL 8+
+* Root or sudo privileges
+* Minimum 6GB RAM
+* 20GB Disk Space
 
 **Download the Installation Package** Obtain the latest `aegis.rpm` or aegis.deb package from the Praetorian support team.
 

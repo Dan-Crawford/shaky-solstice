@@ -1,10 +1,10 @@
 ---
 title: "Pius: Attack Surface Mapping"
 description: "Pius: Attack Surface Mapping"
-featurebaseId: "8173304"
+featurebaseId: "1548162"
 ---
 
-![Introducing Pius: Open-Source Attack Surface Mapping](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174f052a093db795d398/019cf33b-8708-7deb-bc71-beac7ecc192e/b64u-MDBsNmlocWc0OC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=4f83dd7d6ae6355ba38736413483bde465f6257bc6d83b9bc5b92b08a1e7da2a)
+![Introducing Pius: Open-Source Attack Surface Mapping](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174f052a093db795d398/019cf33b-8708-7deb-bc71-beac7ecc192e/b64u-MDBsNmlocWc0OC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a0224a2a156269f3702fa6dcfae9402321c9522e51a6622dec720e5d41333f56)
 
 ## Map Your Complete External Attack Surface with Pius
 

@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure - Manual Deployment"
 description: "Microsoft Azure - Manual Deployment"
-featurebaseId: "8521765"
+featurebaseId: "37956568460187"
 ---
 
 This section covers the manual deployment process for integrating Azure with Praetorian Guard Platform (PGP). While this method provides complete control over each step, we recommend using the Terraform/IaC approach for better consistency and maintainability. Manual deployment requires creating several Azure resources through the Azure Portal, with the process being similar for both tenant-level and subscription-level integrations.
@@ -14,34 +14,26 @@ Manual deployment requires creating several Azure resources through the Azure po
 
 Before starting the integration, ensure you have:
 
--   Azure portal access with **Global Administrator** permissions to create app registrations and assign roles
-    
--   **User Access Administrator** permissions are required for tenant-level integration role assignments at tenant root
-    
--   **Subscription Owner** or **User Access Administrator** permissions for subscription-level integration
-    
+* Azure portal access with **Global Administrator** permissions to create app registrations and assign roles
+* **User Access Administrator** permissions are required for tenant-level integration role assignments at tenant root
+* **Subscription Owner** or **User Access Administrator** permissions for subscription-level integration
 
 ## **Integration Process**
 
 ### Step 1: Initiate Integration Setup
 
-1.  Navigate to the Integrations section in your PGP dashboard
-    
-2.  Click "Add Integration" and select "Azure"
-    
-3.  Choose your integration scope and provide the required information
-    
+1. Navigate to the Integrations section in your PGP dashboard
+2. Click "Add Integration" and select "Azure"
+3. Choose your integration scope and provide the required information
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f583-7dc1-8d3e-ae3cb4547092/b64u-MDE5YjdmZmQtZjU0Yi03NGIzLWIwYmQtMzI3Yjk1ZmZiOGVj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1f494558071f4dc6330d9534d4bab50593ae4e40e8efcdbbb58fde773b284ae6)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f583-7dc1-8d3e-ae3cb4547092/b64u-MDE5YjdmZmQtZjU0Yi03NGIzLWIwYmQtMzI3Yjk1ZmZiOGVj.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=437a0918df3c581f926e9777b8bcfcaa2195f5bbf3255955f4ecf156d39054c9)
 
 #### Tenant-Level Integration (Recommended)
 
 For tenant-level integration, you'll need to provide:
 
--   **Tenant ID**: Your Azure AD tenant ID (GUID format)
-    
--   **Deployment Type**: Choose Manual
-    
+* **Tenant ID**: Your Azure AD tenant ID (GUID format)
+* **Deployment Type**: Choose Manual
 
 **TIP**: To get your Tenant ID, navigate to Azure Active Directory (or Microsoft Entra ID) in the Azure Portal. The tenant ID is displayed in the Overview section, or you can find it in the URL when viewing your directory.
 
@@ -49,12 +41,9 @@ For tenant-level integration, you'll need to provide:
 
 For subscription-level integration, you'll need to provide:
 
--   **Tenant ID**: Your Azure AD tenant ID (GUID format)
-    
--   **Subscription ID**: The specific Azure subscription ID you want to integrate
-    
--   **Deployment Type**: Choose Manual
-    
+* **Tenant ID**: Your Azure AD tenant ID (GUID format)
+* **Subscription ID**: The specific Azure subscription ID you want to integrate
+* **Deployment Type**: Choose Manual
 
 ### Step 2: Record Your Unique Subject
 
@@ -62,93 +51,63 @@ PGP will provide you with a unique Subject value. This will be used in a future 
 
 **NOTE:** This value is unique per integration attempt. This means an unlikely failure invalidates that value and any new attempt requires the use of the new subject value (which PGP will generate and provide as shown below).
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f452-7cef-8e9d-c243137f1c3e/b64u-MDE5YjdmZmQtZjQzNi03OTJmLThjOWMtZDVmNWZmYTNlZWNj.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=af24faa75006191ffeb0b41959a1b353ba526edeaf7919f4c947269f9dc5e7a8)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f452-7cef-8e9d-c243137f1c3e/b64u-MDE5YjdmZmQtZjQzNi03OTJmLThjOWMtZDVmNWZmYTNlZWNj.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=060cc62263a49858b748d62045f572424f1a15bdeab80dbfe02a2f5c843927c9)
 
 ## **Manual Deployment Instructions**
 
 ##### **Step 1: Create App Registration**
 
-1.  Sign in to the [Azure Portal](https://portal.azure.com/)
-    
-2.  Navigate to "Azure Active Directory" (or "Microsoft Entra ID")
-    
-3.  Go to "App registrations" > "New registration"
-    
-4.  Set application details:
-    
-    -   **Name**: Praetorian PGP Integration
-        
-    -   **Supported account types**: "Accounts in this organizational directory only"
-        
-    -   **Redirect URI**: Leave blank
-        
-5.  Click "Register"
-    
+1. Sign in to the [Azure Portal](https://portal.azure.com/)
+2. Navigate to "Azure Active Directory" (or "Microsoft Entra ID")
+3. Go to "App registrations" > "New registration"
+4. Set application details:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f56c-76e9-a385-9bd3d33c3240/b64u-MDE5YjdmZmQtZjUxMC03ZmM2LTgwMDItOWM1MGM5ZmVlYzU2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0da122206350eb155f13b759d348faafda281e6e980d1aa590cf8dd36ce68524)
+   * **Name**: Praetorian PGP Integration
+   * **Supported account types**: "Accounts in this organizational directory only"
+   * **Redirect URI**: Leave blank
+5. Click "Register"
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-f56c-76e9-a385-9bd3d33c3240/b64u-MDE5YjdmZmQtZjUxMC03ZmM2LTgwMDItOWM1MGM5ZmVlYzU2.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=f4c02685418871a76b226d10aaf30281580133bd3277a5a7069d007b1213791d)
 
 ##### **Step 2: Configure API Permissions**
 
-1.  In your app registration, go to "API permissions"
-    
-2.  Click "Add a permission" > "Microsoft Graph" > "Application permissions"
-    
-3.  Add the following permissions:
-    
-    -   Directory.Read.All
-        
-    -   Policy.Read.All
-        
-    -   RoleManagement.Read.All
-        
-    -   RoleManagement.Read.Directory
-        
-    -   RoleEligibilitySchedule.Read.Directory
-        
-    -   RoleManagementPolicy.Read.AzureADGroup
-        
-    -   RoleManagementPolicy.Read.Directory
-        
-4.  Assign the Global Reader Entra role ([more information here](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-reader)) to the App Registration
-    
+1. In your app registration, go to "API permissions"
+2. Click "Add a permission" > "Microsoft Graph" > "Application permissions"
+3. Add the following permissions:
+
+   * Directory.Read.All
+   * Policy.Read.All
+   * RoleManagement.Read.All
+   * RoleManagement.Read.Directory
+   * RoleEligibilitySchedule.Read.Directory
+   * RoleManagementPolicy.Read.AzureADGroup
+   * RoleManagementPolicy.Read.Directory
+4. Assign the Global Reader Entra role ([more information here](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-reader)) to the App Registration
 
 ##### **Step 3: Grant Admin Consent**
 
-1.  In the "API permissions" section, click "Grant admin consent for \[Your Organization\]"
-    
-2.  Confirm the consent by clicking "Yes"
-    
-3.  Verify all permissions show "Granted for \[Your Organization\]" status
-    
+1. In the "API permissions" section, click "Grant admin consent for [Your Organization]"
+2. Confirm the consent by clicking "Yes"
+3. Verify all permissions show "Granted for [Your Organization]" status
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fb99-7fb0-b757-88b431ce64e0/b64u-MDE5YjdmZmQtZmFlNi03M2NlLTgzYzUtMDZiNjM3OGZkZjIy.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a4866aaeb4d0503007483048d50746e2f27b1471817b21fd75fd109a0093fea9)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fb99-7fb0-b757-88b431ce64e0/b64u-MDE5YjdmZmQtZmFlNi03M2NlLTgzYzUtMDZiNjM3OGZkZjIy.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=36bc27afd30900ea552c82d9fd48072a24776ac011113e153a2f54ddcc02880e)
 
 ##### **Step 4: Create Federated Identity Credential**
 
-1.  In your app registration, go to "Certificates & secrets"
-    
-2.  Click the "Federated credentials" tab
-    
-3.  Click "Add credential"
-    
-4.  Select "Other issuer" as the federated credential scenario
-    
-5.  Set credential details:
-    
-    -   **Issuer**: https://cognito-idp.us-east-2.amazonaws.com/us-east-2\_zwCio82YL
-        
-    -   **Subject identifier**: YOUR-UNIQUE-USERNAME (the subject value from Step 2 of "Integration Process")
-        
-    -   **Audience**: 5nbjkqbdhuf5rnn9m9ko5v3ir1
-        
-    -   **Name**: FederationChariot (“Chariot” is required, rather than PGP)
-        
-    -   **Description**: Federated credential for PGP
-        
-6.  Click "Add"
-    
+1. In your app registration, go to "Certificates & secrets"
+2. Click the "Federated credentials" tab
+3. Click "Add credential"
+4. Select "Other issuer" as the federated credential scenario
+5. Set credential details:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fac1-7894-aeca-b880d7cf72d5/b64u-MDE5YjdmZmQtZjlkMS03YzQyLWE4YWItZTQ5Y2Y4OGMzZjQ2.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5a8ba903fe58991d287bf618339f14d134197b999b66b6e7d0d9d16041bcb0a5)
+   * **Issuer**: https://cognito-idp.us-east-2.amazonaws.com/us-east-2\_zwCio82YL
+   * **Subject identifier**: YOUR-UNIQUE-USERNAME (the subject value from Step 2 of "Integration Process")
+   * **Audience**: 5nbjkqbdhuf5rnn9m9ko5v3ir1
+   * **Name**: FederationChariot (“Chariot” is required, rather than PGP)
+   * **Description**: Federated credential for PGP
+6. Click "Add"
+
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fac1-7894-aeca-b880d7cf72d5/b64u-MDE5YjdmZmQtZjlkMS03YzQyLWE4YWItZTQ5Y2Y4OGMzZjQ2.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=5ee200df94c405d60e41e300785bceda078b2bd537ceb3088fc653b21e01500e)
 
 ##### **Step 5: Assign the Reader Role**
 
@@ -156,54 +115,34 @@ The role assignment process differs based on your integration scope:
 
 **For Tenant-Level Integration:**
 
-1.  Navigate to "Management groups" in the Azure Portal
-    
-2.  Select your tenant root management group (named with your tenant ID)
-    
-3.  Go to "Access control (IAM)"
-    
-4.  Click "Add" > "Add role assignment"
-    
-5.  Select "Reader" role
-    
-6.  Click "Next"
-    
-7.  Choose "User, group, or service principal"
-    
-8.  Click "Select members"
-    
-9.  Search for and select "Praetorian PGP Integration"
-    
-10.  Click "Select" > "Review + assign" > "Assign"
-     
+1. Navigate to "Management groups" in the Azure Portal
+2. Select your tenant root management group (named with your tenant ID)
+3. Go to "Access control (IAM)"
+4. Click "Add" > "Add role assignment"
+5. Select "Reader" role
+6. Click "Next"
+7. Choose "User, group, or service principal"
+8. Click "Select members"
+9. Search for and select "Praetorian PGP Integration"
+10. Click "Select" > "Review + assign" > "Assign"
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fadd-73bf-834e-6b25fe65b475/b64u-MDE5YjdmZmQtZmEwYy03NTM1LTlhMWUtODc4NmM5OGFjMzc0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3a11c0322bc368dcf54586f0da45dfa7da91e4c5bdfb473923e1ca3dac499a46)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fdea21178a432e0841f/019b7ffd-fadd-73bf-834e-6b25fe65b475/b64u-MDE5YjdmZmQtZmEwYy03NTM1LTlhMWUtODc4NmM5OGFjMzc0.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9fb76cd092b9ae46e451fbf28b807f90e06be00a6074680354cdb4df1a437e0f)
 
 **For Subscription-Level Integration:**
 
-1.  Navigate to "Subscriptions" in the Azure Portal
-    
-2.  Select your target subscription
-    
-3.  Go to "Access control (IAM)"
-    
-4.  Click "Add" > "Add role assignment"
-    
-5.  Select "Reader" role
-    
-6.  Follow the same member selection process as above
-    
+1. Navigate to "Subscriptions" in the Azure Portal
+2. Select your target subscription
+3. Go to "Access control (IAM)"
+4. Click "Add" > "Add role assignment"
+5. Select "Reader" role
+6. Follow the same member selection process as above
 
 ##### **Step 6: Record Application Details**
 
-1.  Go back to your app registration "Overview" page
-    
-2.  Copy the "Application (client) ID" - this will be needed for verification
-    
-3.  Note the "Directory (tenant) ID" for reference
-    
-4.  Provide the information back to PGP
-    
+1. Go back to your app registration "Overview" page
+2. Copy the "Application (client) ID" - this will be needed for verification
+3. Note the "Directory (tenant) ID" for reference
+4. Provide the information back to PGP
 
 ## **Completing Your Manual Integration**
 
@@ -219,21 +158,16 @@ Once you have completed the Azure cloud integration above, you can extend it to 
 
 To enable Azure DevOps integration through your existing Azure cloud connection, you will need to manually add the Guard Application ID (the App Registration you created during the integration steps above) to Azure DevOps and configure the appropriate access.
 
-1.  **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it access level “Basic” .
-    
-2.  **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
-    
-3.  **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
-    
+1. **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it access level “Basic” .
+2. **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
+3. **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
 
 **Permissions Are Environment-Specific** — The exact steps to configure these permissions depend heavily on your organization's Azure DevOps permissions setup. You may need to create a separate security group or a dedicated Area within the Board for Guard to be able to create and read issues. Consult your Azure DevOps administrator if you are unsure about the correct group or area configuration.
 
 ### What This Enables
 
--   **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
-    
--   **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.
-    
+* **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
+* **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.
 
 ## **Need Help?**
 

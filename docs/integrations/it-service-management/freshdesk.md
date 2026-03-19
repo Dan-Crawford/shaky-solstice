@@ -1,3 +1,9 @@
+---
+title: "Freshdesk"
+description: "Freshdesk"
+featurebaseId: "2492287"
+---
+
 ## Overview
 
 The Freshdesk integration connects the Praetorian Guard Platform (PGP) with Freshdesk's customer support and IT service management platform to discover IT assets and security-related service data. By importing asset and ticket information from Freshdesk, PGP gains visibility into devices and infrastructure tracked through your IT service management workflows.
@@ -24,22 +30,22 @@ Before setting up the Freshdesk integration, ensure you have:
 
 ### Obtaining Your API Key
 
-1. Sign in to your Freshdesk account.
-2. Click your profile icon in the top-right corner and select **Profile Settings**.
-3. Your API key is displayed on the right side of the profile page under **Your API Key**.
-4. Copy the API key. If you do not see one, contact your Freshdesk administrator to ensure API access is enabled for your account.
+- Sign in to your Freshdesk account.
+- Click your profile icon in the top-right corner and select **Profile Settings**.
+- Your API key is displayed on the right side of the profile page under **Your API Key**.
+- Copy the API key. If you do not see one, contact your Freshdesk administrator to ensure API access is enabled for your account.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **Freshdesk** from the list of available integrations.
-3. Enter your Freshdesk subdomain URL and API key.
-4. Save the integration. PGP will validate connectivity by making a test request to the Freshdesk API.
+- In PGP, navigate to the **Integrations** page.
+- Select **Freshdesk** from the list of available integrations.
+- Enter your Freshdesk subdomain URL and API key.
+- Save the integration. PGP will validate connectivity by making a test request to the Freshdesk API.
 
 ### Field Reference
 
 | Field | Description | Required |
-|-------|-------------|----------|
+| --- | --- | --- |
 | Freshdesk URL | Your Freshdesk instance URL (e.g., `https://yourcompany.freshdesk.com`) | Yes |
 | API Key | Your Freshdesk API key for authentication | Yes |
 
@@ -50,7 +56,7 @@ Before setting up the Freshdesk integration, ensure you have:
 The integration discovers IT assets (configuration items) tracked in Freshdesk and imports them into PGP.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Asset Name | Freshdesk asset record | The name or identifier of the IT asset |
 | Asset Type | Freshdesk asset type | The category of the asset (e.g., workstation, server, network device) |
 | IP Address | Freshdesk asset properties | The IP address associated with the asset, if available |
@@ -61,7 +67,7 @@ The integration discovers IT assets (configuration items) tracked in Freshdesk a
 Security-related tickets may be imported to provide context on incident history and service requests associated with discovered assets.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Ticket ID | Freshdesk ticket record | The unique identifier for the ticket |
 | Subject | Freshdesk ticket subject | The ticket summary or title |
 | Priority | Freshdesk ticket priority | The assigned priority level |
@@ -70,7 +76,7 @@ Security-related tickets may be imported to provide context on incident history 
 ## API Endpoints Used
 
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
+| --- | --- | --- |
 | `{base_url}/api/v2/assets` | GET | Retrieve IT assets from Freshdesk (paginated) |
 | `{base_url}/api/v2/tickets` | GET | Retrieve ticket data for security context |
 
@@ -79,7 +85,7 @@ Authentication is performed via HTTP Basic Authentication, with the API key as t
 ## Troubleshooting
 
 | Issue | Cause | Fix |
-|-------|-------|-----|
+| --- | --- | --- |
 | "Missing API key" | The API key field is empty | Enter your Freshdesk API key in the integration configuration |
 | "Invalid API key" (401) | The API key is incorrect or has been revoked | Verify your API key in Freshdesk Profile Settings and update it in PGP |
 | "API key does not have sufficient permissions" (403) | The API key lacks the required read permissions | Contact your Freshdesk administrator to grant the necessary API permissions |

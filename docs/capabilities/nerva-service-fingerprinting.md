@@ -1,10 +1,10 @@
 ---
 title: "Nerva: Service Fingerprinting"
 description: "Nerva: Service Fingerprinting"
-featurebaseId: "8840700"
+featurebaseId: "3679688"
 ---
 
-![Nerva: Next-Generation Service Fingerprinting for Praetorian Guard](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c052a093db795d30d/019cf33a-abd1-796d-9b8c-e56ee1a36fd4/b64u-bXl3Ynd5enAzbC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=a4f72c5934bcfe044c81a90a3ce5128ec7d578fa1b1e8508a99590e79bbacb9b)
+![Nerva: Next-Generation Service Fingerprinting for Praetorian Guard](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c052a093db795d30d/019cf33a-abd1-796d-9b8c-e56ee1a36fd4/b64u-bXl3Ynd5enAzbC53ZWJwP1gtQW0.webp?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c285fee1e8e4fc3449e06a6f4c163d65522f00948469910374b1095f2dffe176)
 
 Every open port tells a story — and now Praetorian Guard reads it better than ever.
 

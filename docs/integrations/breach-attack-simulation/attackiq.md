@@ -1,3 +1,9 @@
+---
+title: "AttackIQ"
+description: "AttackIQ"
+featurebaseId: "9417343"
+---
+
 ## Overview
 
 The AttackIQ integration connects the Praetorian Guard Platform (PGP) with your AttackIQ breach and attack simulation (BAS) platform, importing assessment results and security control validation data into your attack surface. AttackIQ tests whether your security controls actually detect and prevent real-world attack techniques — PGP imports these results as risks so you can see where your defenses have gaps alongside every other vulnerability in your environment.
@@ -9,9 +15,7 @@ This integration is ideal for organizations running AttackIQ assessments who wan
 When connected, PGP performs a **read-only** import from the AttackIQ REST API:
 
 - **Assessment Results as Risks**: Failed and partially failed assessment scenarios from AttackIQ are imported as PGP risks. Each risk captures the MITRE ATT&CK technique tested, the control that failed, the detection outcome, and the affected asset — giving you actionable proof that a specific defense is not working as expected.
-
 - **Assessment Targets as Assets**: Systems and endpoints targeted during AttackIQ assessments are imported as PGP assets, providing an inventory of tested infrastructure and its validation status.
-
 - **Tested Endpoints as Seeds**: IP addresses and hostnames of assessment targets are imported as PGP seeds, feeding them into the Guard discovery and scanning pipeline.
 
 Data flows **one direction only** — from AttackIQ into PGP. The integration never writes back to AttackIQ, modifies assessments, or triggers simulations.
@@ -20,27 +24,20 @@ Data flows **one direction only** — from AttackIQ into PGP. The integration ne
 
 Before setting up the integration, you need an AttackIQ API token:
 
-1. Log in to your AttackIQ platform at your organization's AttackIQ URL
-
-2. Navigate to **Settings**, then **API Tokens** (or **Administration**, then **API**)
-
-3. Click **Create Token**
-
-4. Assign the token **read-only** permissions for assessments and results
-
-5. Record the **API Token** — it may only be shown once
-
-6. Note your **AttackIQ Instance URL** (e.g., `https://your-org.attackiq.com`)
+- Log in to your AttackIQ platform at your organization's AttackIQ URL
+- Navigate to **Settings**, then **API Tokens** (or **Administration**, then **API**)
+- Click **Create Token**
+- Assign the token **read-only** permissions for assessments and results
+- Record the **API Token** — it may only be shown once
+- Note your **AttackIQ Instance URL** (e.g., `https://your-org.attackiq.com`)
 
 The API token must have permissions to read assessments, scenarios, and their results.
 
 ## Setup
 
-1. Go to **Integrations, then Breach and Attack Simulation, then AttackIQ** in the Guard Platform
-
-2. Enter your credentials in the setup form
-
-3. Click **Connect** — PGP will validate your credentials by attempting to fetch your assessments before saving
+- Go to **Integrations, then Breach and Attack Simulation, then AttackIQ** in the Guard Platform
+- Enter your credentials in the setup form
+- Click **Connect** — PGP will validate your credentials by attempting to fetch your assessments before saving
 
 | Field | Description | Required |
 | --- | --- | --- |
@@ -116,9 +113,6 @@ All requests use Bearer token authentication over HTTPS. The integration paginat
 ## Security and Data Handling
 
 - **Read-only access**: The integration only reads data from AttackIQ. It never creates, modifies, or deletes assessments, scenarios, or triggers any simulations.
-
 - **Credential handling**: Your API Token is stored as an encrypted credential within PGP and is never exposed in logs or the UI after initial entry.
-
 - **Authentication**: The API token is transmitted as a Bearer token in the Authorization header over HTTPS to the AttackIQ API.
-
 - **Data filtering**: Risks pass through PGP standard VM filter rules, allowing you to control which severity levels or ATT&CK techniques are imported.

@@ -1,17 +1,17 @@
 ---
 title: "Integrations Overview"
 description: "Integrations Overview"
-featurebaseId: "6995935"
+featurebaseId: "25820164038683"
 ---
 
 Organizations face increasingly complex security challenges across diverse technology environments. Third-party integrations serve as vital connectors that enhance security operations by consolidating critical data and automating key workflows across platforms. By leveraging integrations, security teams can:
 
--   Achieve Comprehensive Visibility: Combine data from multiple security tools and platforms to build a complete picture of your security posture
--   Accelerate Response Times: Automate the sharing of threat intelligence and security alerts across systems to enable faster incident detection and response
--   Reduce Manual Effort: Eliminate the need to manually collect and correlate data across different security tools
--   Enhance Decision Making: Access enriched context and detailed insights by combining data from multiple specialized security platforms
--   Scale Security Operations: Handle growing security demands without proportionally increasing staff by automating routine tasks
--   Standardize Processes: Ensure consistent security practices by integrating tools into standardized workflows
+* Achieve Comprehensive Visibility: Combine data from multiple security tools and platforms to build a complete picture of your security posture
+* Accelerate Response Times: Automate the sharing of threat intelligence and security alerts across systems to enable faster incident detection and response
+* Reduce Manual Effort: Eliminate the need to manually collect and correlate data across different security tools
+* Enhance Decision Making: Access enriched context and detailed insights by combining data from multiple specialized security platforms
+* Scale Security Operations: Handle growing security demands without proportionally increasing staff by automating routine tasks
+* Standardize Processes: Ensure consistent security practices by integrating tools into standardized workflows
 
 Through strategic integration of third-party platforms, organizations can build a more robust and efficient security program that maximizes the value of their security investments while improving their overall security posture.
 
@@ -67,10 +67,10 @@ Solutions that identify, evaluate, report on, and remediate security vulnerabili
 
 ## Best Practices for Integration
 
--   Regularly review and update integration configurations
--   Monitor integration health and performance
--   Maintain proper access controls for integrated services
--   Document custom configurations and use cases
--   Keep integration components updated to latest stable versions
+* Regularly review and update integration configurations
+* Monitor integration health and performance
+* Maintain proper access controls for integrated services
+* Document custom configurations and use cases
+* Keep integration components updated to latest stable versions
 
 For help, please reach out to [support@praetorian.com](mailto:support@praetorian.com).

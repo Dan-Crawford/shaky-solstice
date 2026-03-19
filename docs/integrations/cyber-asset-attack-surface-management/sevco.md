@@ -1,3 +1,9 @@
+---
+title: "Sevco"
+description: "Sevco"
+featurebaseId: "7075083"
+---
+
 ## Overview
 
 The Sevco integration connects the Praetorian Guard Platform (PGP) with Sevco Security's cyber asset attack surface management (CAASM) platform to import consolidated asset inventory, device telemetry, and coverage gap data. Sevco aggregates asset information from multiple sources across your environment, and this integration brings that unified view into PGP for attack surface analysis.
@@ -24,23 +30,23 @@ Before setting up the Sevco integration, ensure you have:
 
 ### Creating an API Key
 
-1. Sign in to the [Sevco Platform](https://app.sevco.io/).
-2. Navigate to **Settings** > **API Keys**.
-3. Click **Create API Key** and provide a descriptive name (e.g., "Praetorian Guard Platform").
-4. Assign read-only permissions to the key.
-5. Copy the generated API key immediately, as it may not be displayed again.
+- Sign in to the [Sevco Platform](https://app.sevco.io/).
+- Navigate to **Settings** > **API Keys**.
+- Click **Create API Key** and provide a descriptive name (e.g., "Praetorian Guard Platform").
+- Assign read-only permissions to the key.
+- Copy the generated API key immediately, as it may not be displayed again.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **Sevco** from the list of available integrations.
-3. Enter your Sevco API key and base URL in the configuration form.
-4. Save the integration. PGP will validate connectivity to the Sevco API automatically.
+- In PGP, navigate to the **Integrations** page.
+- Select **Sevco** from the list of available integrations.
+- Enter your Sevco API key and base URL in the configuration form.
+- Save the integration. PGP will validate connectivity to the Sevco API automatically.
 
 ### Field Reference
 
 | Field | Description | Required |
-|-------|-------------|----------|
+| --- | --- | --- |
 | API Key | Your Sevco API key with read permissions | Yes |
 | Base URL | The Sevco API base URL for your organization | Yes |
 
@@ -51,7 +57,7 @@ Before setting up the Sevco integration, ensure you have:
 The integration imports Sevco's correlated asset inventory into PGP.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Hostname | Asset inventory | The primary hostname of the device |
 | IP Addresses | Asset inventory | All known IP addresses associated with the device |
 | MAC Addresses | Asset inventory | Hardware MAC addresses for network identification |
@@ -66,7 +72,7 @@ The integration imports Sevco's correlated asset inventory into PGP.
 Telemetry data provides operational context about the state and health of assets.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Agent Status | Telemetry data | Status of endpoint agents installed on the device |
 | Network Activity | Telemetry data | Recent network activity indicators for the device |
 | Cloud Instance Metadata | Telemetry data | Cloud provider, instance type, and region for cloud-hosted assets |
@@ -76,7 +82,7 @@ Telemetry data provides operational context about the state and health of assets
 The integration identifies assets that are missing from expected security tool coverage.
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Missing Tool | Coverage analysis | The security tool that should be present but is not installed or reporting |
 | Affected Asset | Coverage analysis | The device that is missing the expected tool coverage |
 | Gap Type | Coverage analysis | The category of coverage gap (e.g., missing EDR, missing vulnerability scanner) |
@@ -84,7 +90,7 @@ The integration identifies assets that are missing from expected security tool c
 ## API Endpoints Used
 
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
+| --- | --- | --- |
 | `/v1/assets` | GET | Retrieve the consolidated asset inventory |
 | `/v1/assets/{id}` | GET | Retrieve detailed information for a specific asset |
 | `/v1/devices` | GET | Retrieve device telemetry and source tool data |
@@ -95,7 +101,7 @@ The integration uses pagination to handle large asset inventories and respects S
 ### Required API Permissions
 
 | Permission | Purpose |
-|------------|---------|
+| --- | --- |
 | Read Assets | Access to the consolidated asset inventory |
 | Read Devices | Access to device telemetry data |
 | Read Coverage | Access to coverage gap analysis |
@@ -103,7 +109,7 @@ The integration uses pagination to handle large asset inventories and respects S
 ## Troubleshooting
 
 | Issue | Cause | Fix |
-|-------|-------|-----|
+| --- | --- | --- |
 | "Invalid API key" or 401 error | The API key is incorrect or has been revoked | Verify your API key in the Sevco platform and update it in PGP |
 | "Forbidden" or 403 error | The API key lacks required read permissions | Ensure the API key has read access to assets, devices, and coverage data |
 | No assets discovered | The Sevco instance has no correlated asset data, or the API key scope is restricted | Verify that your Sevco instance has active data sources and that the API key has access to the relevant organization |

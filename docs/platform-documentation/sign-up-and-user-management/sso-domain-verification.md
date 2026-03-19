@@ -1,30 +1,23 @@
 ---
 title: "SSO Domain Verification"
 description: "SSO Domain Verification"
-featurebaseId: "9584436"
+featurebaseId: "33698362366875"
 ---
 
 ## Domain Verification
 
 The first step is to verify ownership of your domain by adding a DNS TXT record. Access your domain's DNS settings or management interface where you'll need to add a TXT record. The record should follow the format `"chariot=<email>"`, where <email> is your primary PGP account email address. The SSO setup pup up will show the correct value that needs to be added for the DNS record:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580e75a21178a432ddacd0/019b7ff8-79a7-7bc5-81e1-4568b341bb93/b64u-MDE5YjdmZjgtNzk2ZS03ZjU4LTk4ZTMtNTRhN2IyMTkwYWQ3.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=917ddb9531b9b756f9b24272d24075184cd51e1adf506c4c6e819ed1aa614470)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580e75a21178a432ddacd0/019b7ff8-79a7-7bc5-81e1-4568b341bb93/b64u-MDE5YjdmZjgtNzk2ZS03ZjU4LTk4ZTMtNTRhN2IyMTkwYWQ3.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=df1097e18072fb668aa9b933c7961aebba29778321b1cb664dd9275c881d3202)
 
 At your DNS management interface, set the text record for your root domain. For example, if your domain is YourDomain.com and your record is set at the root level (@), you would add a TXT record with the value `"chariot=<email>"`. Within the PGP setup pop-up, you can copy and paste this value:
 
 Once Set, your DNS TXT record might look something like this.
 
-YourDomain.com
-
-Record type:
-
-value:
-
-@
-
-TXT
-
-"chariot=YourPrimaryEmail@email.com"
+|  |  |  |
+| --- | --- | --- |
+| YourDomain.com | Record type: | value: |
+| @ | TXT | "chariot=YourPrimaryEmail@email.com" |
 
 To verify that your record has been published, you can run the command `dig +short TXT YourDomain.com` if on a Mac or `nslookup -type=TXT YourDomain.com` if using Windows, and look for your record in the output.
 

@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with the Praetorian CLI"
 description: "Getting Started with the Praetorian CLI"
-featurebaseId: "5280351"
+featurebaseId: "25815154096667"
 ---
 
 The Praetorian CLI provides command-line access to the Guard platform. The public GitHub repo can be found at [here](https://github.com/praetorian-inc/praetorian-cli). Pre-built packages are officially hosted at [PyPI](https://pypi.org/project/praetorian-cli/). The most up to date information can always be found on the [README](https://github.com/praetorian-inc/praetorian-cli?tab=readme-ov-file#readme) page.
@@ -30,18 +30,12 @@ Depending on your use cases and security requirements, you can use one of the fo
 
 ### Step 1: Generate an API Key
 
-1.  Log in to the [Guard UI](https://guard.praetorian.com)
-    
-2.  Click the Praetorian icon in the top right corner
-    
-3.  Select **User Profile → API Keys**
-    
-4.  Click **Add New Token**
-    
-5.  Provide a descriptive name for your key
-    
-6.  Copy both the **API Key ID** and **API Key Secret** (the secret is only shown once)
-    
+1. Log in to the [Guard UI](https://guard.praetorian.com)
+2. Click the Praetorian icon in the top right corner
+3. Select **User Profile → API Keys**
+4. Click **Add New Token**
+5. Provide a descriptive name for your key
+6. Copy both the **API Key ID** and **API Key Secret** (the secret is only shown once)
 
 ### Step 2: Configure the CLI
 
@@ -66,14 +60,10 @@ Enter the client ID [795dnnr45so7m17cppta0b295o]:
 Enter the assume-role account, if any []:
 ```
 
-1.  The **API Key ID** and **API Key Secret** are the credentials you generated in the Guard UI.
-    
-2.  The **profile name** can be customized, but most users should press `Enter` and proceed with the default.
-    
-3.  The **URL of the backend API** and the **client ID** should remain as the defaults. Users should press `Enter` at these steps.
-    
-4.  The **assume-role account**: if someone else has invited you to their organization within the Guard UI, you will add their account email address here.
-    
+1. The **API Key ID** and **API Key Secret** are the credentials you generated in the Guard UI.
+2. The **profile name** can be customized, but most users should press `Enter` and proceed with the default.
+3. The **URL of the backend API** and the **client ID** should remain as the defaults. Users should press `Enter` at these steps.
+4. The **assume-role account**: if someone else has invited you to their organization within the Guard UI, you will add their account email address here.
 
 After entering all the appropriate values, the Praetorian CLI will read your keychain file from `~/.praetorian/keychain.ini`. The keychain.ini file should read something like this when you are done:
 

@@ -1,7 +1,7 @@
 ---
 title: "Integrations Page"
 description: "Integrations Page"
-featurebaseId: "1502279"
+featurebaseId: "31684220733979"
 ---
 
 The integrations page serves as your central hub for connecting external services and tools with The Praetorian Guard Platform (PGP). This documentation will guide you through understanding, navigating, and configuring the various integration options available to you.
@@ -10,7 +10,7 @@ The integrations page serves as your central hub for connecting external service
 
 When you first access the integrations page, the **Add Integrations** will present a collection of integration cards organized by their primary functions. These integrations span across attack surface discovery, risk notifications, vulnerability scanning, and more. Each integration card displays the service's logo and name, making it easy to locate your desired integration.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580dbfa21178a432dc4349/019cf1d6-838f-7949-97c5-f43bd67bb4de/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMTEuMjXigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1247f2d0aa6e37d12a32953d163c7e639c40be843ebd5123e607bea295635685)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580dbfa21178a432dc4349/019cf1d6-838f-7949-97c5-f43bd67bb4de/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMTEuMjXigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1fc963460dc9c3fc4803755401c43133d87fd4dda5bb00d337e0a0c00cc0e957)
 
 ## Understanding Integration Types
 

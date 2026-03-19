@@ -1,7 +1,7 @@
 ---
 title: "Fastly WAF"
 description: "Fastly WAF"
-featurebaseId: "9941057"
+featurebaseId: "8775510"
 ---
 
 ## Overview
@@ -17,7 +17,6 @@ This integration requires a `global` (read-write) scoped API token because it ne
 The Fastly WAF integration performs two primary functions:
 
 1. **CDN Asset Discovery**: Enumerates your Fastly CDN services to discover domain names and backend configurations, identical to the Fastly CDN integration. All discovered domains are imported as assets into PGP.
-
 2. **WAF Scanner Allowlisting**: Configures allowlist rules in your Fastly Next-Gen WAF to permit Chariot scanner traffic. This ensures that PGP's automated security scanning can reach your applications without being blocked by WAF rules.
 
 The integration validates that the provided API token has the `global` scope (full read-write access) before proceeding. This is necessary because creating WAF allowlist rules requires write permissions.
@@ -26,9 +25,9 @@ The integration validates that the provided API token has the `global` scope (fu
 
 Before setting up the Fastly WAF integration, ensure you have:
 
-- **A Fastly account** with the Next-Gen WAF (Signal Sciences) enabled
-- **A Fastly API token** with `global` scope (read-write access)
-- **At least one WAF-protected service** configured in your Fastly account
+* **A Fastly account** with the Next-Gen WAF (Signal Sciences) enabled
+* **A Fastly API token** with `global` scope (read-write access)
+* **At least one WAF-protected service** configured in your Fastly account
 
 ### Creating a Fastly API Token
 
@@ -49,8 +48,9 @@ Before setting up the Fastly WAF integration, ensure you have:
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | API Token | Your Fastly API token with `global` scope | Yes |
 | Scope | The token scope -- select `global` for WAF allowlisting | Yes |
 
@@ -60,8 +60,9 @@ Before setting up the Fastly WAF integration, ensure you have:
 
 The integration discovers domains associated with your Fastly CDN services, identical to the Fastly CDN integration.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Domain Name | Fastly service domain configuration | Domain names served through Fastly CDN |
 | Service Name | Fastly service metadata | The name of the CDN service the domain belongs to |
 | Backend Hosts | Fastly backend configuration | Origin server hostnames configured as backends |
@@ -70,15 +71,17 @@ The integration discovers domains associated with your Fastly CDN services, iden
 
 The integration creates allowlist entries in your Next-Gen WAF to permit Chariot scanner IPs.
 
+|  |  |
+| --- | --- |
 | Data Field | Description |
-|------------|-------------|
 | Scanner IP Allowlist | PGP Chariot scanner IP addresses added to the WAF allowlist |
 | Rule Scope | Applied to WAF-protected services to prevent scan blocking |
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `https://api.fastly.com/tokens/self` | GET | Validate the API token and verify `global` scope |
 | `https://api.fastly.com/services` | GET | List all CDN services in the account |
 | `https://api.fastly.com/service/{id}/details` | GET | Retrieve domain and backend configuration for each service |
@@ -89,8 +92,9 @@ Authentication is performed via the `Fastly-Key` header included with every API 
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "Missing Fastly API token" | The API token field is empty | Enter a valid Fastly API token in the integration configuration |
 | "Token scope is X, but 'global' scope was selected for WAF rule management" | The token has `global:read` scope instead of `global` | Generate a new token with `global` scope. If you only need CDN discovery, use the Fastly CDN integration instead |
 | Scans still being blocked by WAF | Allowlist rules have not yet propagated, or they were overridden by other WAF rules | Wait a few minutes for rule propagation. If the issue persists, verify the allowlist rules exist in your WAF console |

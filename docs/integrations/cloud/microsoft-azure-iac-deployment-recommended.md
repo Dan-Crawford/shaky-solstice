@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Azure - IaC Deployment (Recommended)"
 description: "Microsoft Azure - IaC Deployment (Recommended)"
-featurebaseId: "2757073"
+featurebaseId: "37956598833563"
 ---
 
 This guide walks you through connecting your Azure environment to Praeotian Guard Platform (PGP) for comprehensive security monitoring and management using Infrastructure as Code (IaC) deployment methods. The integration uses Azure's federated identity credentials and role-based access control to provide PGP with the necessary permissions to assess your Azure resources while maintaining security best practices.
@@ -12,38 +12,28 @@ You can choose between tenant-level integration (recommended for full Azure envi
 
 Before starting the integration, ensure you have:
 
--   Azure portal access as a Global Administrator permissions to create app registrations and assign roles
-    
--   **Global Administrator** permissions are necessary for creating app registrations and granting admin consent
-    
--   **User Access Administrator** permissions are required for tenant-level integration role assignments at tenant root
-    
--   **Subscription Owner** or **User Access Administrator** permissions for subscription-level integration
-    
--   Terraform is required
-    
+* Azure portal access as a Global Administrator permissions to create app registrations and assign roles
+* **Global Administrator** permissions are necessary for creating app registrations and granting admin consent
+* **User Access Administrator** permissions are required for tenant-level integration role assignments at tenant root
+* **Subscription Owner** or **User Access Administrator** permissions for subscription-level integration
+* Terraform is required
 
 ## Integration Process
 
 ### Step 1: Initiate Integration Setup
 
-1.  Navigate to the Integrations section in your PGP dashboard
-    
-2.  Click "Add Integration" and select "Azure"
-    
-3.  Choose your integration scope and provide the required information
-    
+1. Navigate to the Integrations section in your PGP dashboard
+2. Click "Add Integration" and select "Azure"
+3. Choose your integration scope and provide the required information
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-553b-75e5-b08d-c77243a480f9/b64u-MDE5YjdmZmQtNTRlMy03NDI3LWJmMWMtMzM1MWY4YWYyYWM0.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=8e146ed223e7be274d0a27bd336e04c552574b946423a6db7ab5d3721c854ee0)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-553b-75e5-b08d-c77243a480f9/b64u-MDE5YjdmZmQtNTRlMy03NDI3LWJmMWMtMzM1MWY4YWYyYWM0.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=9eb322ae9ca59b842c4702470c43d02a0e1a3a4680aed7e96fa019116230df9e)
 
 #### Tenant-Level Integration (Recommended)
 
 For tenant-level integration, you'll need to provide:
 
--   **Tenant ID**: Your Azure AD tenant ID (GUID format)
-    
--   **Deployment Type**: Choose Terraform
-    
+* **Tenant ID**: Your Azure AD tenant ID (GUID format)
+* **Deployment Type**: Choose Terraform
 
 **TIP**: To get your Tenant ID, navigate to Azure Active Directory (or Microsoft Entra ID) in the Azure Portal. The tenant ID is displayed in the Overview section, or you can find it in the URL when viewing your directory.
 
@@ -51,25 +41,19 @@ For tenant-level integration, you'll need to provide:
 
 For subscription-level integration, you'll need to provide:
 
--   **Tenant ID**: Your Azure AD tenant ID (GUID format)
-    
--   **Subscription ID**: The specific Azure subscription ID you want to integrate
-    
--   **Deployment Type**: Choose Terraform
-    
+* **Tenant ID**: Your Azure AD tenant ID (GUID format)
+* **Subscription ID**: The specific Azure subscription ID you want to integrate
+* **Deployment Type**: Choose Terraform
 
 ### Step 2: Download Integration Template
 
 After providing your tenant information, PGP will generate the appropriate deployment template. This template is generated dynamically based on the information you provided.
 
-1.  Click "Download IAC Template" to download the deployment files
-    
-2.  The template contains the app registration configuration, federated credentials, and role assignments pre-configured with your unique subject ID
-    
-3.  On submission, the next step will ask for an "Application ID", which you will get after completing the infrastructure deployment
-    
+1. Click "Download IAC Template" to download the deployment files
+2. The template contains the app registration configuration, federated credentials, and role assignments pre-configured with your unique subject ID
+3. On submission, the next step will ask for an "Application ID", which you will get after completing the infrastructure deployment
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5577-7167-b249-5ccfc538197a/b64u-MDE5YjdmZmQtNTUzNy03NzA5LWE4ZTItMWE3ODFhNTJiODkz.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ea4991aaa069134ff00b0f8d408c7b819ac7553b11f8237feeeb2274577f0f3f)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5577-7167-b249-5ccfc538197a/b64u-MDE5YjdmZmQtNTUzNy03NzA5LWE4ZTItMWE3ODFhNTJiODkz.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=308790b3467e533bab85e496c05e886ea84102dec848be4d34b951627554785e)
 
 ### Step 3: Deploy the Template
 
@@ -81,16 +65,13 @@ Open Azure Cloud Shell or ensure you're authenticated to Azure within your works
 
 Ensure that the credentials you signed in with possess the necessary administrator privileges:
 
--   **Global Administrator**
-    
--   **User Access Administrator**
-    
--   **Subscription Owner** (for subscription-level integration)
-    
+* **Global Administrator**
+* **User Access Administrator**
+* **Subscription Owner** (for subscription-level integration)
 
 If you're integrating at the tenant level, ensure you have access to manage the tenant root management group. To be able to consent to the new application at the tenant root level, you need to grant yourself User Access Administrator, even as a Global Administrator. See the following screenshot to identify where to enable that access:
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5625-7d94-b7ed-5c610f99d949/b64u-MDE5YjdmZmQtNTVhNi03OWY4LWI1MjQtZmM2NmJmYzM3MjVl.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=b51dcc43336bb243085d2799a35e111eb801cc16cff55ff90dfc05a91c3b0227)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5625-7d94-b7ed-5c610f99d949/b64u-MDE5YjdmZmQtNTVhNi03OWY4LWI1MjQtZmM2NmJmYzM3MjVl.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=01b67bce0899dc4297a19efe9f1c001405e73312edd3a576cb3fd265de83d52e)
 
 If you're integrating a single subscription, set CLI to use that subscription:
 
@@ -118,49 +99,34 @@ terraform apply
 
 Ensure there are no errors during deployment, then observe the output at the end of the execution output. The deployment will produce an Application ID, which you need to provide back to PGP.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5963-7ddc-a5b5-a8e5b4410fb5/b64u-MDE5YjdmZmQtNTkyZS03YjFmLTljMmMtYWIyODJkODMxNmE1.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=00f7b39880f633d1b93761366aa09b71b8d6f0f5da1f486c72a05e8a539d18b4)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580fb4a21178a432e029fb/019b7ffd-5963-7ddc-a5b5-a8e5b4410fb5/b64u-MDE5YjdmZmQtNTkyZS03YjFmLTljMmMtYWIyODJkODMxNmE1.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=c733c2d40519c8c4ef8e3ab4ce8e3a6f8f3abd303f21b16f4f663e1a389b4924)
 
 Under the hood, the Terraform template performs a number of actions. More specifically, for the tenant-level integration, the template will:
 
--   Create an Azure AD app registration for PGP and its service principal
-    
--   Automatically grant admin consent for all API permissions
-    
--   Set up federated identity credential with PGP's Cognito pool and your unique subject identifier
-    
--   Configure required Microsoft Graph API permissions
-    
--   Assign Security Reader role at tenant root management group scope
-    
--   Elevate access to manage all Azure subscriptions and management groups
-    
+* Create an Azure AD app registration for PGP and its service principal
+* Automatically grant admin consent for all API permissions
+* Set up federated identity credential with PGP's Cognito pool and your unique subject identifier
+* Configure required Microsoft Graph API permissions
+* Assign Security Reader role at tenant root management group scope
+* Elevate access to manage all Azure subscriptions and management groups
 
 For a subscription-level integration, the template will perform similar actions:
 
--   Similar steps as the tenant-level permissions
-    
--   Assign Security Reader role at the specific subscription scope selected for integration
-    
+* Similar steps as the tenant-level permissions
+* Assign Security Reader role at the specific subscription scope selected for integration
 
 ### Step 4: Complete Integration
 
-1.  After deploying the template or completing manual setup, return to the PGP integration modal
-    
-2.  Enter the **Application ID** value provided as an output of your deployment
-    
-3.  Click "Finish" to complete the integration
-    
+1. After deploying the template or completing manual setup, return to the PGP integration modal
+2. Enter the **Application ID** value provided as an output of your deployment
+3. Click "Finish" to complete the integration
 
 PGP will automatically:
 
--   Validate the integration by authenticating with Cognito
-    
--   Perform OIDC token exchange with Azure Entra ID for both ARM and Microsoft Graph tokens
-    
--   Verify validity of access using simple Azure API calls
-    
--   Add the integration to your integrations list upon successful validation
-    
+* Validate the integration by authenticating with Cognito
+* Perform OIDC token exchange with Azure Entra ID for both ARM and Microsoft Graph tokens
+* Verify validity of access using simple Azure API calls
+* Add the integration to your integrations list upon successful validation
 
 ## Extending Your Azure Integration with Azure DevOps
 
@@ -170,34 +136,25 @@ Once you have completed the Azure cloud integration above, you can extend it to 
 
 To enable Azure DevOps integration through your existing Azure cloud connection, you will need to manually add the Guard Application ID (output from the Terraform deployment) to Azure DevOps and configure the appropriate access.
 
-1.  **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it access level “Basic”.
-    
-2.  **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
-    
-3.  **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
-    
+1. **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it access level “Basic”.
+2. **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
+3. **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
 
 **Permissions Are Environment-Specific** — The exact steps to configure these permissions depend heavily on your organization's Azure DevOps permissions setup. You may need to create a separate security group or a dedicated Area within the Board for Guard to be able to create and read issues. Consult your Azure DevOps administrator if you are unsure about the correct group or area configuration.
 
 ### What This Enables
 
--   **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
-    
--   **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.
-    
+* **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
+* **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.
 
 ## Support and Troubleshooting
 
 If you encounter any issues during the Azure integration process or need additional assistance, our support team is here to help. Please don't hesitate to reach out to **support@praetorian.com** with:
 
--   Details about your integration setup (tenant-level or subscription-level)
-    
--   Any error messages encountered during deployment
-    
--   Screenshots of relevant Azure portal configurations
-    
--   Your Application ID and Tenant ID for reference
-    
+* Details about your integration setup (tenant-level or subscription-level)
+* Any error messages encountered during deployment
+* Screenshots of relevant Azure portal configurations
+* Your Application ID and Tenant ID for reference
 
 Our team will work with you to resolve any integration challenges and ensure your Azure environment is properly connected to PGP for comprehensive security monitoring.
 
@@ -209,17 +166,13 @@ Once you have completed the Azure cloud integration above, you can extend it to 
 
 To enable Azure DevOps integration through your existing Azure cloud connection, you will need to manually add the Guard Application ID (output from the Terraform deployment) to Azure DevOps and configure the appropriate access.
 
-1.  **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it an appropriate access level (e.g., Basic or Stakeholder, depending on required capabilities).
-    
-2.  **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
-    
-3.  **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
-    
+1. **Set Access Level**: Add the Guard Application as a user in your Azure DevOps organization and assign it an appropriate access level (e.g., Basic or Stakeholder, depending on required capabilities).
+2. **Grant Access to Projects**: Provide the Guard Application with access to the desired Azure DevOps projects that you want PGP to scan.
+3. **Configure Group Permissions**: Add the Guard Application to the correct security group within those projects. At a minimum, the application needs **Read** access for repository discovery and secret scanning. If you also want PGP to create and manage **Azure DevOps Work Items** for security findings, **Read & Write** access is required.
 
 **Permissions Are Environment-Specific** — The exact steps to configure these permissions depend heavily on your organization's Azure DevOps permissions setup. You may need to create a separate security group or a dedicated Area within the Board for Guard to be able to create and read issues. Consult your Azure DevOps administrator if you are unsure about the correct group or area configuration.
 
 ### What This Enables
 
--   **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
-    
--   **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.
+* **Repository Discovery & Secret Scanning** (Read access): PGP will discover your Azure DevOps Git repositories and scan them for hardcoded secrets and credentials using Titus.
+* **Work Item Ticketing** (Read & Write access): PGP can automatically create Azure DevOps Work Items for discovered security findings and sync their status bidirectionally.

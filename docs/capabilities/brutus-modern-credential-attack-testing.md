@@ -1,10 +1,10 @@
 ---
 title: "Brutus: Modern Credential Attack Testing"
 description: "Brutus: Modern Credential Attack Testing"
-featurebaseId: "2510598"
+featurebaseId: "8944186"
 ---
 
-![Et Tu, Default Creds? Introducing Brutus for Modern Credential Testing](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb97b/019cf337-2082-75aa-8eb5-602562452bc3/b64u-amtkejJiNDdyMS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=07b8ec3e2545cde9916be65c58723e0e92c7bbb6a6e35091010a41c261c51d37)
+![Et Tu, Default Creds? Introducing Brutus for Modern Credential Testing](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174b3768ef67737eb97b/019cf337-2082-75aa-8eb5-602562452bc3/b64u-amtkejJiNDdyMS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=0a1913d13ec36611f78771ca08226414e1b0bf20775886a5359092d42935da17)
 
 **Brutus v1.0** is here, and it's about to change how you approach credential testing on every engagement.
 
@@ -28,7 +28,7 @@ That's it. Port scan to service identification to credential testing. Structured
 
 ## 23 Protocols and Counting
 
-Brutus ships with support for SSH (passwords _and_ private keys), MySQL, PostgreSQL, MSSQL, Redis, MongoDB, SMB, LDAP, WinRM, SNMP, FTP, Telnet, VNC, HTTP/HTTPS Basic Auth, and more. Each protocol is implemented as a self-contained plugin, which means the architecture is built to grow with the community.
+Brutus ships with support for SSH (passwords *and* private keys), MySQL, PostgreSQL, MSSQL, Redis, MongoDB, SMB, LDAP, WinRM, SNMP, FTP, Telnet, VNC, HTTP/HTTPS Basic Auth, and more. Each protocol is implemented as a self-contained plugin, which means the architecture is built to grow with the community.
 
 ## Embedded Bad Keys — Because Nobody Should Still Be Using Vagrant Keys in Production
 
@@ -50,7 +50,7 @@ These features are experimental and depend on external API services, but the ear
 
 If you know Praetorian's tooling, you'll notice we tend to name projects after Roman emperors — Trajan, Augustus, and the like. Brutus breaks that tradition because Marcus Junius Brutus was never an emperor. He's remembered for walking into the Roman Senate on the Ides of March and putting a dagger in the back of the most powerful man in the world. That felt more appropriate for a credential testing tool than any emperor's name ever could. Brutus doesn't build empires — it tests whether the ones you've built will let a stranger walk right through the front door.
 
-Besides, _"Et tu, default creds?"_ was too good to pass up.
+Besides, *"Et tu, default creds?"* was too good to pass up.
 
 ## Get Started Now
 

@@ -1,3 +1,9 @@
+---
+title: "Entra ID"
+description: "Entra ID"
+featurebaseId: "9541366"
+---
+
 ## Overview
 
 The Entra ID integration connects the Praetorian Guard Platform (PGP) with Microsoft Entra ID (formerly Azure AD) to discover SSO-protected web applications across your organization. By ingesting service principals that have single sign-on configured, PGP automatically identifies externally accessible portals and applications that are part of your attack surface.
@@ -20,31 +26,31 @@ Before setting up the Entra ID integration, ensure you have:
 
 - **An Azure tenant** with Microsoft Entra ID (any tier)
 - **An Azure app registration** with the following Microsoft Graph API application permissions:
-  - `Application.Read.All` -- Required to read service principals and their properties
+- `Application.Read.All` -- Required to read service principals and their properties
 - **Admin consent** granted for the above permissions in your Azure tenant
 - **Azure credential details**: Tenant ID, Client ID, and Client Secret from your app registration
 
 ### Creating the App Registration
 
-1. Sign in to the [Azure Portal](https://portal.azure.com) and navigate to **Microsoft Entra ID** > **App registrations**.
-2. Click **New registration**, provide a name (e.g., "Praetorian Guard Platform"), and register it.
-3. Under **Certificates & secrets**, create a new client secret. Copy the secret value immediately.
-4. Under **API permissions**, click **Add a permission** > **Microsoft Graph** > **Application permissions**.
-5. Search for and add `Application.Read.All`.
-6. Click **Grant admin consent** for your organization.
-7. Note your **Tenant ID** and **Application (client) ID** from the app registration overview page.
+- Sign in to the [Azure Portal](https://portal.azure.com) and navigate to **Microsoft Entra ID** > **App registrations**.
+- Click **New registration**, provide a name (e.g., "Praetorian Guard Platform"), and register it.
+- Under **Certificates & secrets**, create a new client secret. Copy the secret value immediately.
+- Under **API permissions**, click **Add a permission** > **Microsoft Graph** > **Application permissions**.
+- Search for and add `Application.Read.All`.
+- Click **Grant admin consent** for your organization.
+- Note your **Tenant ID** and **Application (client) ID** from the app registration overview page.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **Azure** from the list of available integrations.
-3. Enter your Azure credentials in the configuration form.
-4. Save the integration. PGP will validate connectivity to the Microsoft Graph API automatically.
+- In PGP, navigate to the **Integrations** page.
+- Select **Azure** from the list of available integrations.
+- Enter your Azure credentials in the configuration form.
+- Save the integration. PGP will validate connectivity to the Microsoft Graph API automatically.
 
 ### Field Reference
 
 | Field | Description | Required |
-|-------|-------------|----------|
+| --- | --- | --- |
 | Tenant ID | Your Azure AD tenant identifier | Yes |
 | Client ID | The Application (client) ID from your app registration | Yes |
 | Client Secret | The client secret value from your app registration | Yes |
@@ -56,7 +62,7 @@ Before setting up the Entra ID integration, ensure you have:
 The integration discovers web applications registered as service principals with SSO enabled. For each application, PGP extracts:
 
 | Data Field | Source | Description |
-|------------|--------|-------------|
+| --- | --- | --- |
 | Name | `displayName` | The display name of the service principal |
 | URL | `homepage`, `loginUrl`, `replyUrls` | Resolved final destination URLs for the application |
 | SSO ID | `id` | The Entra ID object identifier for the service principal |
@@ -76,7 +82,7 @@ The integration excludes:
 ## API Endpoints Used
 
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
+| --- | --- | --- |
 | `https://graph.microsoft.com/v1.0/servicePrincipals` | GET | Retrieve all service principals with SSO configuration |
 
 The integration uses OData query parameters (`$select`, `$top`) and supports pagination via `@odata.nextLink` to handle tenants with large numbers of service principals. A maximum of 999 results are requested per page.
@@ -84,13 +90,13 @@ The integration uses OData query parameters (`$select`, `$top`) and supports pag
 ### Required API Permissions
 
 | Permission | Type | Purpose |
-|------------|------|---------|
+| --- | --- | --- |
 | `Application.Read.All` | Application | Read service principal properties including SSO configuration and URLs |
 
 ## Troubleshooting
 
 | Issue | Cause | Fix |
-|-------|-------|-----|
+| --- | --- | --- |
 | "Missing Microsoft Graph access token" | The Azure credential handler did not provide a valid Graph API token | Verify your Tenant ID, Client ID, and Client Secret are correct and that the app registration has not expired |
 | "Microsoft Graph authentication failed: invalid token" (401) | The access token is invalid or expired | Regenerate the client secret in Azure and update the credential in PGP |
 | "Microsoft Graph authorization failed: insufficient permissions" (403) | The app registration lacks required permissions or admin consent | Ensure `Application.Read.All` is added and admin consent has been granted |

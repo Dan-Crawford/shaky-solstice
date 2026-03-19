@@ -1,7 +1,7 @@
 ---
 title: "Using the Guard SDK in your Script"
 description: "Using the Guard SDK in your Script"
-featurebaseId: "3001649"
+featurebaseId: "28050850251803"
 ---
 
 The Guard SDK provides a robust interface for interacting with the Guard API. In this section, we will explore some simple use-cases that deal with inserting data into the Guard system. These examples assume the context of a script function, similar to the one defined in [this nmap-example script](https://github.com/praetorian-inc/praetorian-cli/blob/main/praetorian_cli/scripts/commands/nmap-example.py). For these examples, the `sdk` variable is used for accessing the Guard API.
@@ -26,7 +26,7 @@ Within your Python script, you can experiment with the following actions using t
 
 ## Add an Asset
 
-```python
+```
 # Add an Asset
 hostname = 'hostname.value.here'
 ipaddress = '8.8.8.8'
@@ -38,7 +38,7 @@ sdk.assets.add(group=hostname, identifier=ipaddress)
 
 Use the `asset_key` helper function to build the key for linking a risk to an asset.
 
-```python
+```
 from praetorian_cli.sdk.model.utils import asset_key
 
 # Add a risk tied to an asset
@@ -84,7 +84,7 @@ sdk.risks.add(
 
 You can upload proof files to associate with risks:
 
-```python
+```
 # Upload a proof file from disk
 sdk.files.add(
     local_filepath=local_path,
@@ -96,7 +96,7 @@ sdk.files.add(
 
 The SDK provides several helper functions for building entity keys:
 
-```python
+```
 from praetorian_cli.sdk.model.utils import (
     asset_key,        # asset_key(dns, name) -> #asset#{dns}#{name}
     risk_key,         # risk_key(dns, name) -> #risk#{dns}#{name}
@@ -111,35 +111,25 @@ The Guard SDK supports additional status codes for risk lifecycle management:
 
 **Accepted:**
 
--   `II` - Accepted Info
-    
--   `IL` - Accepted Low
-    
--   `IM` - Accepted Medium
-    
--   `IH` - Accepted High
-    
--   `IC` - Accepted Critical
-    
+* `II` - Accepted Info
+* `IL` - Accepted Low
+* `IM` - Accepted Medium
+* `IH` - Accepted High
+* `IC` - Accepted Critical
 
 **Remediated:**
 
--   `RI` - Remediated Info
-    
--   `RL` - Remediated Low
-    
--   `RM` - Remediated Medium
-    
--   `RH` - Remediated High
-    
--   `RC` - Remediated Critical
-    
+* `RI` - Remediated Info
+* `RL` - Remediated Low
+* `RM` - Remediated Medium
+* `RH` - Remediated High
+* `RC` - Remediated Critical
 
 ## Legacy Support
 
 For backwards compatibility, the SDK also supports the legacy `Chariot` class name:
 
-```python
+```
 from praetorian_cli.sdk.chariot import Chariot
 from praetorian_cli.sdk.keychain import Keychain
 

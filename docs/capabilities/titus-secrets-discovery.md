@@ -1,10 +1,10 @@
 ---
 title: "Titus: Secrets Discovery"
 description: "Titus: Secrets Discovery"
-featurebaseId: "0395096"
+featurebaseId: "1254834"
 ---
 
-![Titus — Automated Secret Scanning Now Built Into Guard (And It's Open Source)](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c3768ef67737ebab9/019cf33a-4932-7fba-90e1-90fa0c3d3215/b64u-Y3ozaWRzdTFmeS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260318T050000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260318%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=049e88d696c9183689eb64a089193647215bdf68e65b5d9f737189f428c34d58)
+![Titus — Automated Secret Scanning Now Built Into Guard (And It's Open Source)](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69b7174c3768ef67737ebab9/019cf33a-4932-7fba-90e1-90fa0c3d3215/b64u-Y3ozaWRzdTFmeS5wbmc_WC1BbXo.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1d534325ed7d1e7c97864796e343c38d1b052216ef849f46b863a277d4aa2876)
 
 Your environments just got a powerful new line of defense. **Titus**, Praetorian's purpose-built secret scanner, is now running natively inside the Praetorian Guard platform — and we've open-sourced the entire thing at [github.com/praetorian-inc/titus](https://github.com/praetorian-inc/titus).
 
@@ -24,14 +24,11 @@ This validation dramatically cuts through false positive noise and lets your sec
 
 ## Safe By Design
 
-We know what you're thinking: _"You're testing my credentials?"_ Here's why validation is safe:
+We know what you're thinking: *"You're testing my credentials?"* Here's why validation is safe:
 
--   **Read-only checks.** Validation only confirms whether a credential authenticates — it never executes commands, modifies data, or accesses resources beyond the authentication handshake.
-    
--   **Off by default.** Validation is an opt-in capability, giving your team full control over when and how it runs.
-    
--   **No lateral movement.** Titus makes a single, minimal API call per credential to check validity. It doesn't enumerate permissions, access data, or perform any action beyond confirming the credential is live.
-    
+* **Read-only checks.** Validation only confirms whether a credential authenticates — it never executes commands, modifies data, or accesses resources beyond the authentication handshake.
+* **Off by default.** Validation is an opt-in capability, giving your team full control over when and how it runs.
+* **No lateral movement.** Titus makes a single, minimal API call per credential to check validity. It doesn't enumerate permissions, access data, or perform any action beyond confirming the credential is live.
 
 This is the same approach used in professional penetration testing engagements — verify the risk without creating new ones.
 

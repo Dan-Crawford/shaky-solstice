@@ -1,3 +1,9 @@
+---
+title: "Shodan"
+description: "Shodan"
+featurebaseId: "9360723"
+---
+
 ## Overview
 
 The Shodan integration connects the Praetorian Guard Platform (PGP) with Shodan's internet intelligence platform to import internet-facing assets, open ports, service banners, and vulnerability data. Shodan continuously scans the entire IPv4 address space, and this integration brings that external perspective into PGP to enhance your attack surface visibility.
@@ -18,28 +24,29 @@ All operations are strictly read-only. PGP does not modify any data in your Shod
 
 Before setting up the Shodan integration, ensure you have:
 
-- **A Shodan account** with API access (a paid membership plan is recommended for sufficient query credits)
-- **A Shodan API key** from your account settings
-- **Seed domains or IP ranges** already configured in PGP that you want to enrich with Shodan data
+* **A Shodan account** with API access (a paid membership plan is recommended for sufficient query credits)
+* **A Shodan API key** from your account settings
+* **Seed domains or IP ranges** already configured in PGP that you want to enrich with Shodan data
 
 ### Obtaining an API Key
 
-1. Sign in to [Shodan](https://account.shodan.io/).
-2. Navigate to your **Account** page.
-3. Your API key is displayed on the account overview. Copy it for use in PGP.
-4. Verify your membership plan includes sufficient query credits for the number of assets you plan to monitor. The free tier has limited query credits; a paid plan (e.g., Membership or Small Business) is recommended.
+* Sign in to [Shodan](https://account.shodan.io/).
+* Navigate to your **Account** page.
+* Your API key is displayed on the account overview. Copy it for use in PGP.
+* Verify your membership plan includes sufficient query credits for the number of assets you plan to monitor. The free tier has limited query credits; a paid plan (e.g., Membership or Small Business) is recommended.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **Shodan** from the list of available integrations.
-3. Enter your Shodan API key in the configuration form.
-4. Save the integration. PGP will validate connectivity to the Shodan API automatically.
+* In PGP, navigate to the **Integrations** page.
+* Select **Shodan** from the list of available integrations.
+* Enter your Shodan API key in the configuration form.
+* Save the integration. PGP will validate connectivity to the Shodan API automatically.
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | API Key | Your Shodan API key | Yes |
 
 ## What Data Is Synced
@@ -48,8 +55,9 @@ Before setting up the Shodan integration, ensure you have:
 
 The integration imports hosts discovered by Shodan as assets into PGP.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | IP Address | Host data | The public IPv4 or IPv6 address of the host |
 | Hostnames | Host data | DNS hostnames that resolve to the IP address |
 | Organization | Host data | The organization associated with the IP (from WHOIS/BGP data) |
@@ -62,8 +70,9 @@ The integration imports hosts discovered by Shodan as assets into PGP.
 
 For each host, the integration imports detailed service information for every open port.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Port | Banner data | The open TCP/UDP port number |
 | Protocol | Banner data | The transport protocol (TCP or UDP) |
 | Service | Banner data | The identified service (HTTP, SSH, FTP, SMTP, etc.) |
@@ -77,8 +86,9 @@ For each host, the integration imports detailed service information for every op
 
 Shodan maps known vulnerabilities to discovered services based on software version and configuration.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | CVE ID | Vulnerability data | The CVE identifier for the known vulnerability |
 | CVSS Score | Vulnerability data | The Common Vulnerability Scoring System score |
 | Summary | Vulnerability data | A brief description of the vulnerability |
@@ -87,8 +97,9 @@ Shodan maps known vulnerabilities to discovered services based on software versi
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `/shodan/host/{ip}` | GET | Retrieve all available information for a specific IP address |
 | `/shodan/host/search` | GET | Search for hosts matching a query (e.g., by domain, organization, or network range) |
 | `/dns/domain/{domain}` | GET | Retrieve DNS entries and subdomains for a given domain |
@@ -99,14 +110,16 @@ The integration uses pagination for search queries and respects Shodan API rate 
 
 ### Required API Permissions
 
+|  |  |
+| --- | --- |
 | Permission | Purpose |
-|------------|---------|
 | API Access | Read access to host search, DNS, and vulnerability data. Paid membership required for search filters and vulnerability data |
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "Invalid API key" or 401 error | The API key is incorrect or has been revoked | Verify your API key on the Shodan account page and update it in PGP |
 | "Insufficient credits" or 402 error | Your Shodan plan has exhausted its query credits | Upgrade your Shodan plan or wait for credits to refresh |
 | "Rate limit exceeded" or 429 error | Too many API requests per second | The integration respects rate limits automatically. If this persists, reduce the number of concurrent seed domains |

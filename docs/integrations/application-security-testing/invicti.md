@@ -1,7 +1,7 @@
 ---
 title: "Invicti"
 description: "Invicti"
-featurebaseId: "9978635"
+featurebaseId: "3134184"
 ---
 
 ## Overview
@@ -24,30 +24,31 @@ All operations are strictly read-only. PGP does not create scans, modify vulnera
 
 Before setting up the Invicti integration, ensure you have:
 
-- **An Invicti account** (Standard, Enterprise, or On-Premises) with completed scans
-- **A User ID and API Token** from your Invicti account
-- **API Base URL**: The URL of your Invicti instance API endpoint (e.g., `https://your-instance.invicti.com/api/1.0`)
-- **Account permissions**: The API credentials must have at least read access to scans and scan results
+* **An Invicti account** (Standard, Enterprise, or On-Premises) with completed scans
+* **A User ID and API Token** from your Invicti account
+* **API Base URL**: The URL of your Invicti instance API endpoint (e.g., `https://your-instance.invicti.com/api/1.0`)
+* **Account permissions**: The API credentials must have at least read access to scans and scan results
 
 ### Creating API Credentials
 
-1. Sign in to your Invicti instance.
-2. Navigate to **Settings** > **API** (or your user profile's API settings).
-3. Locate or generate your **User ID** and **API Token**.
-4. Copy both values and store them securely.
-5. Note your **API Base URL**, which follows the format `https://your-instance.invicti.com/api/1.0` for cloud-hosted instances, or your custom domain for on-premises deployments.
+* Sign in to your Invicti instance.
+* Navigate to **Settings** > **API** (or your user profile's API settings).
+* Locate or generate your **User ID** and **API Token**.
+* Copy both values and store them securely.
+* Note your **API Base URL**, which follows the format `https://your-instance.invicti.com/api/1.0` for cloud-hosted instances, or your custom domain for on-premises deployments.
 
 ## Setup
 
-1. In PGP, navigate to the **Integrations** page.
-2. Select **Invicti** from the list of available integrations.
-3. Enter your Invicti credentials and API Base URL in the configuration form.
-4. Save the integration. PGP will validate connectivity to the Invicti API automatically.
+* In PGP, navigate to the **Integrations** page.
+* Select **Invicti** from the list of available integrations.
+* Enter your Invicti credentials and API Base URL in the configuration form.
+* Save the integration. PGP will validate connectivity to the Invicti API automatically.
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | API Base URL | The base URL of your Invicti API (e.g., `https://your-instance.invicti.com/api/1.0`) | Yes |
 | User ID | Your Invicti user identifier for API authentication | Yes |
 | API Token | Your Invicti API token | Yes |
@@ -58,8 +59,9 @@ Before setting up the Invicti integration, ensure you have:
 
 The integration discovers target web applications from your Invicti scans and imports the hostnames as assets in PGP.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Hostname | Scan target URL, vulnerability URL | The hostname extracted from the scan target or vulnerability URL |
 | Webpage URL | Scan target URL | The full URL of the scanned web application including path |
 | Port | URL scheme | Derived from the URL (443 for HTTPS, 80 for HTTP, or explicit port) |
@@ -68,8 +70,9 @@ The integration discovers target web applications from your Invicti scans and im
 
 Vulnerabilities from completed scans are imported as risks in PGP. Only vulnerabilities with a state of "new" or "confirmed" are imported.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Name | `name` | The vulnerability name, normalized for PGP risk naming conventions |
 | Severity | `severity` | Mapped to PGP levels: Critical, High, Medium, Low, Info |
 | Description | `description` | Detailed description of the vulnerability |
@@ -86,8 +89,9 @@ Vulnerabilities from completed scans are imported as risks in PGP. Only vulnerab
 
 ### Severity Mapping
 
+|  |  |
+| --- | --- |
 | Invicti Severity | PGP Severity |
-|------------------|--------------|
 | Critical | Critical |
 | High | High |
 | Medium | Medium |
@@ -96,8 +100,9 @@ Vulnerabilities from completed scans are imported as risks in PGP. Only vulnerab
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `{baseUrl}/scans/list?page=1&pageSize=100` | GET | List completed scans with pagination |
 | `{baseUrl}/scans/{scanId}/result` | GET | Retrieve detailed scan results including vulnerabilities |
 
@@ -105,14 +110,16 @@ Authentication is performed using HTTP Basic authentication with the User ID and
 
 ### Required API Permissions
 
+|  |  |  |
+| --- | --- | --- |
 | Permission | Type | Purpose |
-|------------|------|---------|
 | Read | API Token | Read access to scan list and scan results |
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "No user id provided" | The User ID field is empty in the integration configuration | Enter your Invicti User ID in the integration settings |
 | "No api token provided" | The API Token field is empty in the integration configuration | Enter your Invicti API Token in the integration settings |
 | "No API base URL provided" | The API Base URL field is empty | Enter your Invicti API Base URL (e.g., `https://your-instance.invicti.com/api/1.0`) |
@@ -128,4 +135,3 @@ The Invicti integration operates in a strictly read-only mode. It queries the In
 Credentials are handled securely within PGP. The Invicti User ID and API Token are encrypted at rest and used exclusively for API authentication via HTTP Basic auth during sync operations. The credentials are not persisted outside of PGP's encrypted credential store.
 
 PGP does not access or store raw HTTP request/response data from Invicti scans. Only vulnerability metadata (names, severities, descriptions, and classifications) and target URL information are read and processed.
-

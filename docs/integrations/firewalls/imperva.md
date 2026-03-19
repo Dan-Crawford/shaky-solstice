@@ -1,7 +1,7 @@
 ---
 title: "Imperva"
 description: "Imperva"
-featurebaseId: "7987031"
+featurebaseId: "0856306"
 ---
 
 ## Overview
@@ -24,9 +24,9 @@ All operations are strictly read-only. PGP does not modify, create, or delete an
 
 Before setting up the Imperva integration, ensure you have:
 
-- **An Imperva Cloud WAF account** with sites configured
-- **An API ID and API Key** from your Imperva account with read permissions
-- **Account permissions**: The API credentials must have at least **Reader** access to the sites you want to discover
+* **An Imperva Cloud WAF account** with sites configured
+* **An API ID and API Key** from your Imperva account with read permissions
+* **Account permissions**: The API credentials must have at least **Reader** access to the sites you want to discover
 
 ### Creating API Credentials
 
@@ -46,8 +46,9 @@ Before setting up the Imperva integration, ensure you have:
 
 ### Field Reference
 
+|  |  |  |
+| --- | --- | --- |
 | Field | Description | Required |
-|-------|-------------|----------|
 | API ID | Your Imperva API identifier | Yes |
 | API Key | Your Imperva API key with read access | Yes |
 | Account ID | Your Imperva account identifier | Yes |
@@ -58,8 +59,9 @@ Before setting up the Imperva integration, ensure you have:
 
 The integration discovers all sites configured in your Imperva Cloud WAF account and imports them as assets in PGP.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Domain | Site configuration | The fully qualified domain name of the WAF-protected site |
 | Origin Server IPs | Site configuration | The IP addresses of the origin servers behind the WAF |
 | Site ID | Site metadata | The Imperva site identifier for correlation |
@@ -71,8 +73,9 @@ The integration discovers all sites configured in your Imperva Cloud WAF account
 
 Configuration details for each site are captured as metadata on the corresponding asset.
 
+|  |  |  |
+| --- | --- | --- |
 | Data Field | Source | Description |
-|------------|--------|-------------|
 | Security Rules | WAF policies | Active WAF rules and their enforcement mode (block, alert, disabled) |
 | DDoS Protection | Site settings | DDoS mitigation status and configuration |
 | Bot Protection | Site settings | Bot management and mitigation settings |
@@ -80,8 +83,9 @@ Configuration details for each site are captured as metadata on the correspondin
 
 ## API Endpoints Used
 
+|  |  |  |
+| --- | --- | --- |
 | Endpoint | Method | Purpose |
-|----------|--------|---------|
 | `https://my.imperva.com/api/prov/v1/sites/list` | POST | List all sites under the account |
 | `https://my.imperva.com/api/prov/v1/sites/status` | POST | Get the current status and configuration of a specific site |
 | `https://my.imperva.com/api/prov/v1/sites/dataCenters/list` | POST | List origin data centers and server IPs for a site |
@@ -89,14 +93,16 @@ Configuration details for each site are captured as metadata on the correspondin
 
 ### Required API Permissions
 
+|  |  |  |
+| --- | --- | --- |
 | Permission | Type | Purpose |
-|------------|------|---------|
 | Read | API Key | Read access to site configurations, data centers, and security settings |
 
 ## Troubleshooting
 
+|  |  |  |
+| --- | --- | --- |
 | Issue | Cause | Fix |
-|-------|-------|-----|
 | "Authentication failed" or 401 error | The API ID or API Key is incorrect or has been revoked | Verify your API credentials in the Imperva console and update them in PGP |
 | "Authorization failed" or 403 error | The API key lacks sufficient permissions | Ensure the API key has at least Reader access to the account and its sites |
 | No assets discovered | The account has no sites configured, or the API key cannot access the target sub-account | Verify that sites exist under the account and that the API key has access to the correct account ID |

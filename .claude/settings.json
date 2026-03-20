@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git diff :*)",
+      "Bash(git log :*)",
+      "Bash(git add :*)",
+      "Bash(git commit :*)",
+      "Bash(git branch :*)",
+      "Bash(git checkout :*)",
+      "Bash(git fetch :*)",
+      "Bash(git pull :*)",
+      "Bash(gh pr create :*)",
+      "Bash(gh pr comment :*)",
+      "Bash(gh api :*)",
+      "Bash(node :*)",
+      "Bash(npm :*)",
+      "Bash(npx :*)",
+      "Bash(ls :*)",
+      "Bash(pwd)",
+      "Bash(wc :*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(git push --force :*)"
+    ]
+  },
+  "includeCoAuthoredBy": false
+}

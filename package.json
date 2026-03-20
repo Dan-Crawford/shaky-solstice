@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "sync": "node scripts/sync-to-featurebase.mjs",
-    "sync:full": "node scripts/sync-to-featurebase.mjs --full-sync",
+    "push": "node scripts/push-to-featurebase.mjs",
+    "validate": "node scripts/validate-frontmatter.mjs",
+    "drift": "node scripts/check-featurebase-drift.mjs",
     "pull": "node scripts/pull-from-featurebase.mjs",
-    "poll": "node scripts/poll-chariot-prs.mjs",
-    "migrate": "node scripts/migrate-from-astro.mjs"
+    "poll": "node scripts/poll-chariot-prs.mjs"
   },
   "dependencies": {
     "marked": "^15.0.0",

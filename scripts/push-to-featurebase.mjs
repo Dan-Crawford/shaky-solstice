@@ -107,7 +107,7 @@ async function processFile(filePath) {
     };
     if (description) payload.description = description;
 
-    await apiRequest('PUT', `articles/${data.featurebaseId}`, payload);
+    await apiRequest('PATCH', `articles/${data.featurebaseId}`, payload);
     console.log(`  Updated: ${filePath} (${data.featurebaseId})`);
     return { action: 'updated' };
   } catch (err) {

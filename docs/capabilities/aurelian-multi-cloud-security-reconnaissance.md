@@ -1,58 +1,79 @@
 ---
 title: "Aurelian: Multi-Cloud Security Reconnaissance"
 description: "Aurelian: Multi-Cloud Security Reconnaissance"
+featurebaseId: "7809325"
 ---
 
-## Unified Cloud Security Reconnaissance with Aurelian
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69c08a760896fa170f0feb7b/019d1902-e83c-78f8-85fa-b6f840fc7a05/b64u-YXVyZWxpYW4ud2VicA.webp?X-Amz-Expires=3600&X-Amz-Date=20260327T080000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260327%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=799c2ff45c6c526cc8893dfe7b8d1a33d6c312e6e7d0bc456f5f146b18c33193)
 
-Your cloud environments span multiple providers — your security tooling should too. **Aurelian**, now integrated into the **Praetorian Guard Platform**, is an open-source multi-cloud security reconnaissance framework that gives your team a single, unified interface for security assessments across AWS, Azure, and GCP.
+## Overview
 
-No more juggling separate tools per cloud provider. One command structure, consistent results, complete coverage.
+Aurelian is an open-source, multi-cloud security reconnaissance framework built in Go. It provides a unified command-line interface for cloud security assessments across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
 
-### Why This Matters
+Where other tools require separate workflows per cloud provider, Aurelian gives you **one command structure that works everywhere**: `aurelian [platform] recon [module]`. Each module encapsulates a complex, multi-step security workflow — resource enumeration, content extraction, secrets scanning, policy analysis, access evaluation — behind a single command.
 
-Cloud penetration testing has historically meant learning different tools, different workflows, and different output formats for every provider. Aurelian eliminates that fragmentation. Built by Praetorian's offensive security team from years of cloud penetration testing and red team engagements, it encapsulates complex, multi-step security workflows behind single commands — so your team spends time analyzing findings, not wrestling with tooling.
+## Key Capabilities
 
-### What Aurelian Does For You
+### Secrets Discovery
 
-**Secrets Discovery Across 30+ Source Types**
-Aurelian's `find-secrets` modules enumerate cloud resources, extract content from EC2 user data, Lambda code, CloudFormation templates, CloudWatch logs, ECS task definitions, environment variables, storage blobs, and more — then scan everything with [Titus](https://github.com/praetorian-inc/titus) for hardcoded credentials, API keys, and tokens. Optional validation confirms whether discovered secrets are still active.
+Enumerates cloud resources, extracts content from 30+ source types (EC2 user data, Lambda code, CloudFormation templates, CloudWatch logs, ECS task definitions, environment variables, storage blobs, application configurations), and scans with Titus for hardcoded credentials, API keys, and tokens. Optional validation confirms whether discovered secrets are active.
 
-**Public Resource Detection**
-Unlike simple boolean-flag checks, Aurelian evaluates actual policies using an IAM policy evaluation engine that considers condition keys, SCPs, and resource ARN patterns. This identifies genuinely exposed resources — open S3 buckets, public databases, anonymous-access storage accounts — even when configuration flags suggest otherwise.
+### Public Resource Detection
 
-**IAM Privilege Escalation Analysis**
-Aurelian collects IAM data, evaluates effective permissions, and detects privilege escalation paths across your environment. Results can be exported to a Neo4j graph database for interactive exploration of multi-hop escalation chains — giving your team a visual map of blast radius and lateral movement potential.
+Combines resource listing, property enrichment, policy fetching, and access evaluation to identify publicly accessible resources — open S3 buckets, exposed databases, public IPs, anonymous-access storage accounts, and more.
 
-**Subdomain Takeover Detection**
-Identifies dangling DNS records across Route53, Azure DNS, and Cloud DNS — including CloudFront-S3 misconfigurations, orphaned NS delegations, and unclaimed cloud resources behind CNAME records.
+### IAM Privilege Escalation Analysis
 
-**OPSEC-Aware Reconnaissance**
-Aurelian includes covert techniques that minimize CloudTrail logging footprint. The `whoami` module identifies your caller ARN using APIs that leak identity in error messages without generating audit log entries — critical for engagements where detection avoidance matters.
+Collects IAM data, evaluates effective permissions, and detects privilege escalation paths. Outputs JSON or populates a Neo4j graph database for interactive exploration.
 
-### Cloud Platform Coverage
+### Subdomain Takeover Detection
 
-| Platform | Modules | Key Capabilities |
-|----------|---------|-----------------|
-| **AWS** | 12 recon + 5 analysis | Secrets, public resources, IAM graph, subdomain takeover, OPSEC whoami, CDK/CloudFront takeover, cost analysis |
-| **Azure** | 6 | Secrets, public resources, configuration scan, subdomain takeover, conditional access policies |
-| **GCP** | 4 | Secrets, public resources, subdomain takeover, resource enumeration |
+Checks DNS records in Route53, Azure DNS, and Cloud DNS against known cloud-specific takeover patterns — dangling CNAMEs pointing to unclaimed cloud resources.
 
-### How It Fits Into Guard
+### OPSEC-Aware Reconnaissance
 
-Aurelian extends the Guard Platform's attack surface management into your cloud infrastructure. Reconnaissance results flow into your existing Guard dashboard alongside your other security findings — secrets, misconfigurations, privilege escalation paths, and takeover risks all in one place.
+Covert techniques that avoid CloudTrail logging. The `whoami` module identifies the caller ARN using APIs that leak identity in error messages without generating audit log entries.
 
-Aurelian also integrates with complementary Praetorian tools already in Guard:
+## Supported Platforms
 
-* **Titus** — Powers secrets scanning within Aurelian's `find-secrets` modules
-* **Trajan** — Complements cloud reconnaissance with CI/CD pipeline security testing
+Platform
 
-### Open Source — Full Transparency
+Modules
 
-Aurelian is fully open source under [github.com/praetorian-inc/aurelian](https://github.com/praetorian-inc/aurelian). Inspect the code, understand every module's methodology, and extend it with custom modules using the plugin architecture. Written in Go with a streaming pipeline architecture designed for scale, it's been battle-tested across hundreds of enterprise cloud environments.
+Capabilities
 
-### Get Started
+**AWS**
 
-Aurelian is available now as part of the Praetorian Guard Platform. Reach out to your Praetorian engagement team to add multi-cloud security reconnaissance to your Guard coverage.
+12
 
-[Read the full deep-dive on our blog →](https://www.praetorian.com/blog/aurelian-cloud-security-tool/)
+Secrets, public resources, IAM graph, subdomain takeover, OPSEC whoami, cost analysis
+
+**Azure**
+
+6
+
+Secrets, public resources, configuration scan, subdomain takeover, conditional access
+
+**GCP**
+
+4
+
+Secrets, public resources, subdomain takeover, resource enumeration
+
+## Quick Start
+
+```
+# Verify identity (OPSEC-safe, no CloudTrail logging)aurelian aws recon whoami# Find hardcoded secrets across all AWS regionsaurelian aws recon find-secrets# Detect publicly accessible resourcesaurelian aws recon public-resources# Build IAM privilege escalation graphaurelian aws recon graph --neo4j-uri bolt://localhost:7687# Detect subdomain takeoversaurelian aws recon subdomain-takeover
+```
+
+## Installation
+
+```
+git clone https://github.com/praetorian-inc/aurelian.gitcd aureliango build -o aurelian main.go
+```
+
+Requires Go 1.24+. Docker support is also available.
+
+## Learn More
+
+Full documentation and module reference at [github.com/praetorian-inc/aurelian](https://github.com/praetorian-inc/aurelian).

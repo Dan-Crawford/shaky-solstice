@@ -10,7 +10,7 @@ The integrations page serves as your central hub for connecting external service
 
 When you first access the integrations page, the **Add Integrations** will present a collection of integration cards organized by their primary functions. These integrations span across attack surface discovery, risk notifications, vulnerability scanning, and more. Each integration card displays the service's logo and name, making it easy to locate your desired integration.
 
-![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580dbfa21178a432dc4349/019cf1d6-838f-7949-97c5-f43bd67bb4de/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMTEuMjXigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260319T200000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260319%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1fc963460dc9c3fc4803755401c43133d87fd4dda5bb00d337e0a0c00cc0e957)
+![](https://69448200be4d4ffad9065e4d.featurebase-attachments.com/c/article/69580dbfa21178a432dc4349/019cf1d6-838f-7949-97c5-f43bd67bb4de/b64u-U2NyZWVuc2hvdCAyMDI2LTAzLTE1IGF0IDkuMTEuMjXigK9BTS5wbmc.png?X-Amz-Expires=3600&X-Amz-Date=20260402T080000Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=DO801TYC4FCVNNEKURKM%2F20260402%2Ffra1%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=3cc25b1ef50657116c8160dbed6fedc6f50a01d9f8b31816d8e0b673fa531347)
 
 ## Understanding Integration Types
 
@@ -51,10 +51,6 @@ Most integrations include severity level configuration, which helps manage notif
 Throughout the integration interface, you'll find contextual help through "Learn more" links. These resources provide detailed, service-specific setup instructions and troubleshooting guidance. When configuring complex integrations like cloud providers or enterprise security tools, these resources can help ensure proper setup and optimal use of the integration features.
 
 For technical issues during setup, verify that all required fields are properly filled and that provided credentials have necessary permissions. Many integration issues stem from incorrect URLs or network access restrictions, so consider these factors when troubleshooting connection problems.
-
-## Conclusion
-
-PGP's integration capabilities provide a robust foundation for comprehensive security monitoring and risk management. By properly configuring these integrations, you can create an automated, efficient security workflow that spans across your entire technology stack. As your organization's needs evolve, you can easily add or modify integrations to maintain effective security coverage.
 
 ### Support
 

@@ -1,99 +1,99 @@
-name: Check Featurebase Drift
-
-on:
-  schedule:
+#name: Check Featurebase Drift
+#
+#on:
+#  schedule:
     # Run nightly at 07:00 UTC (after frontmatter validation at 06:00)
-    - cron: '0 7 * * *'
-  workflow_dispatch:
+#    - cron: '0 7 * * *'
+#  workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
+# permissions:
+#   contents: write
+#   pull-requests: write
 
-concurrency:
-  group: featurebase-drift
-  cancel-in-progress: false
+# concurrency:
+#   group: featurebase-drift
+#   cancel-in-progress: false
 
-jobs:
-  check-drift:
-    runs-on: ubuntu-latest
+# jobs:
+#   check-drift:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+#       - name: Install dependencies
+#         run: npm ci
 
-      - name: Check for Featurebase drift
-        id: drift
-        env:
-          FEATUREBASE_API_KEY: ${{ secrets.FEATUREBASE_API_KEY }}
-        continue-on-error: true
-        run: node scripts/check-featurebase-drift.mjs
+#       - name: Check for Featurebase drift
+#         id: drift
+#         env:
+#           FEATUREBASE_API_KEY: ${{ secrets.FEATUREBASE_API_KEY }}
+#         continue-on-error: true
+#         run: node scripts/check-featurebase-drift.mjs
 
-      # If drift detected (exit 1), create a PR with the changes
-      - name: Create PR for Featurebase changes
-        if: steps.drift.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          BRANCH="chore/featurebase-drift-$(date +%Y%m%d)"
+#       # If drift detected (exit 1), create a PR with the changes
+#       - name: Create PR for Featurebase changes
+#         if: steps.drift.outcome == 'failure'
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           BRANCH="chore/featurebase-drift-$(date +%Y%m%d)"
 
-          # Check if branch already exists (re-run same day)
-          if git ls-remote --heads origin "$BRANCH" | grep -q "$BRANCH"; then
-            echo "Branch $BRANCH already exists — skipping PR creation"
-            exit 0
-          fi
+#           # Check if branch already exists (re-run same day)
+#           if git ls-remote --heads origin "$BRANCH" | grep -q "$BRANCH"; then
+#             echo "Branch $BRANCH already exists — skipping PR creation"
+#             exit 0
+#           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+#           git config user.name "github-actions[bot]"
+#           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git checkout -b "$BRANCH"
-          git add docs/
+#           git checkout -b "$BRANCH"
+#           git add docs/
 
-          if git diff --staged --quiet; then
-            echo "No file changes to commit"
-            exit 0
-          fi
+#           if git diff --staged --quiet; then
+#             echo "No file changes to commit"
+#             exit 0
+#           fi
 
-          git commit -m "$(cat <<'EOF'
-          chore: sync docs from Featurebase drift detection [skip-sync]
+#           git commit -m "$(cat <<'EOF'
+#           chore: sync docs from Featurebase drift detection [skip-sync]
 
-          Nightly drift check found new or updated content in Featurebase
-          that is not reflected in the local docs.
+#           Nightly drift check found new or updated content in Featurebase
+#           that is not reflected in the local docs.
 
-          This PR requires human review before merging.
-          EOF
-          )"
+#           This PR requires human review before merging.
+#           EOF
+#           )"
 
-          git push origin "$BRANCH"
+#           git push origin "$BRANCH"
 
-          CHANGE_SUMMARY="${{ steps.drift.outputs.changes || 'See workflow logs for details.' }}"
-          CHANGE_COUNT="${{ steps.drift.outputs.change_count || 'unknown' }}"
+#           CHANGE_SUMMARY="${{ steps.drift.outputs.changes || 'See workflow logs for details.' }}"
+#           CHANGE_COUNT="${{ steps.drift.outputs.change_count || 'unknown' }}"
 
-          gh pr create \
-            --title "chore: sync Featurebase drift ($CHANGE_COUNT changes)" \
-            --body "$(cat <<EOF
-          ## Featurebase Drift Detected
+#           gh pr create \
+#             --title "chore: sync Featurebase drift ($CHANGE_COUNT changes)" \
+#             --body "$(cat <<EOF
+#           ## Featurebase Drift Detected
 
-          The nightly drift check found content in Featurebase that differs from the local docs.
+#           The nightly drift check found content in Featurebase that differs from the local docs.
 
-          **Changes detected:** $CHANGE_COUNT
+#           **Changes detected:** $CHANGE_COUNT
 
-          $CHANGE_SUMMARY
+#           $CHANGE_SUMMARY
 
-          ---
+#           ---
 
-          **This PR requires human approval.** Please review the changes before merging.
+#           **This PR requires human approval.** Please review the changes before merging.
 
-          _Generated by [check-featurebase-drift](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) workflow_
-          EOF
-          )" \
-            --base main \
-            --head "$BRANCH" \
-            --label "featurebase-drift"
+#           _Generated by [check-featurebase-drift](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) workflow_
+#           EOF
+#           )" \
+#             --base main \
+#             --head "$BRANCH" \
+#             --label "featurebase-drift"

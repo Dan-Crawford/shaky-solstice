@@ -1,78 +1,78 @@
-name: Push Docs to Featurebase
+# name: Push Docs to Featurebase
 
-on:
-  push:
-    branches: [main]
-    paths: ['docs/**/*.md']
-  workflow_dispatch:
-    inputs:
-      files:
-        description: 'Comma-separated list of doc files to push (required)'
-        required: true
-        type: string
+# on:
+#   push:
+#     branches: [main]
+#     paths: ['docs/**/*.md']
+#   workflow_dispatch:
+#     inputs:
+#       files:
+#         description: 'Comma-separated list of doc files to push (required)'
+#         required: true
+#         type: string
 
-permissions:
-  contents: read
+# permissions:
+#   contents: read
 
-concurrency:
-  group: featurebase-push
-  cancel-in-progress: false
+# concurrency:
+#   group: featurebase-push
+#   cancel-in-progress: false
 
-jobs:
-  push:
-    runs-on: ubuntu-latest
+# jobs:
+#   push:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2  # Need HEAD~1 for diff
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 2  # Need HEAD~1 for diff
 
-      # Skip if this is a sync-back commit from Featurebase (push events only)
-      - name: Check for skip marker
-        id: check-skip
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Manual dispatch — skip check bypassed"
-          else
-            COMMIT_MSG=$(git log -1 --pretty=%B)
-            if echo "$COMMIT_MSG" | grep -q '\[skip-sync\]'; then
-              echo "skip=true" >> "$GITHUB_OUTPUT"
-              echo "Skipping — [skip-sync] commit detected"
-            else
-              echo "skip=false" >> "$GITHUB_OUTPUT"
-            fi
-          fi
+#       # Skip if this is a sync-back commit from Featurebase (push events only)
+#       - name: Check for skip marker
+#         id: check-skip
+#         run: |
+#           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+#             echo "skip=false" >> "$GITHUB_OUTPUT"
+#             echo "Manual dispatch — skip check bypassed"
+#           else
+#             COMMIT_MSG=$(git log -1 --pretty=%B)
+#             if echo "$COMMIT_MSG" | grep -q '\[skip-sync\]'; then
+#               echo "skip=true" >> "$GITHUB_OUTPUT"
+#               echo "Skipping — [skip-sync] commit detected"
+#             else
+#               echo "skip=false" >> "$GITHUB_OUTPUT"
+#             fi
+#           fi
 
-      # Determine which doc files to process
-      - name: Compute changed files
-        if: steps.check-skip.outputs.skip == 'false'
-        id: diff
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            CHANGED="${{ inputs.files }}"
-            echo "Manual dispatch with files: $CHANGED"
-          else
-            # Push event — only changed files
-            CHANGED=$(git diff --name-only --diff-filter=ACMR HEAD~1..HEAD -- 'docs/**/*.md' | tr '\n' ',')
-            CHANGED="${CHANGED%,}"
-            echo "Changed files: ${CHANGED:-none}"
-          fi
-          echo "changed=${CHANGED}" >> "$GITHUB_OUTPUT"
+#       # Determine which doc files to process
+#       - name: Compute changed files
+#         if: steps.check-skip.outputs.skip == 'false'
+#         id: diff
+#         run: |
+#           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+#             CHANGED="${{ inputs.files }}"
+#             echo "Manual dispatch with files: $CHANGED"
+#           else
+#             # Push event — only changed files
+#             CHANGED=$(git diff --name-only --diff-filter=ACMR HEAD~1..HEAD -- 'docs/**/*.md' | tr '\n' ',')
+#             CHANGED="${CHANGED%,}"
+#             echo "Changed files: ${CHANGED:-none}"
+#           fi
+#           echo "changed=${CHANGED}" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/setup-node@v4
-        if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
-        with:
-          node-version: 20
-          cache: npm
+#       - uses: actions/setup-node@v4
+#         if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
+#         with:
+#           node-version: 20
+#           cache: npm
 
-      - name: Install dependencies
-        if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
-        run: npm ci
+#       - name: Install dependencies
+#         if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
+#         run: npm ci
 
-      # Update existing articles only — no creates, no deletes
-      - name: Push changed docs to Featurebase
-        if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
-        env:
-          FEATUREBASE_API_KEY: ${{ secrets.FEATUREBASE_API_KEY }}
-        run: node scripts/push-to-featurebase.mjs --files "${{ steps.diff.outputs.changed }}"
+#       # Update existing articles only — no creates, no deletes
+#       - name: Push changed docs to Featurebase
+#         if: steps.check-skip.outputs.skip == 'false' && steps.diff.outputs.changed != ''
+#         env:
+#           FEATUREBASE_API_KEY: ${{ secrets.FEATUREBASE_API_KEY }}
+#         run: node scripts/push-to-featurebase.mjs --files "${{ steps.diff.outputs.changed }}"
